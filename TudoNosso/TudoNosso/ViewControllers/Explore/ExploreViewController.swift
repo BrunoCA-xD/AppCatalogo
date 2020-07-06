@@ -25,7 +25,7 @@ class ExploreViewController: BaseViewController {
     var organizationsList : [Organization] = []
     var filteredOrganizationsList : [Organization] = []
     var filteredOngoingJobs : [Job] = []
-    let categories = ["Causas", "Organizações", "Todas as Vagas"]
+    let categories = ["Bebidas", "Refeições", "Promoções"]
     var searchController = UISearchController(searchResultsController: nil)
     var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
     var jobs : [Job] = []
@@ -66,7 +66,7 @@ class ExploreViewController: BaseViewController {
                 buttonAreaImage.alpha = 0
             }
         }else {
-            labelButtonLogin.text = "Cadastrar ou fazer login"
+            labelButtonLogin.text = "Entrar em contato"
             
         }
     }

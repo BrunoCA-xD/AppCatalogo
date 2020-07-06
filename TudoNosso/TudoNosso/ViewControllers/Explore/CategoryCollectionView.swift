@@ -19,7 +19,8 @@ class CategoryCollectionView : UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var categorysList = ["Combate à pobreza","Crianças","Cultura e Arte","Educação","Esportes","Idosos","LGBTQ+","Meio Ambiente","Proteção Animal","Refugiados","Saúde","Treinamento profissional"]
+    var categorysList = ["Espetinhos", "Marmitex", "Carvão", "Gelo"]
+    var drinkList = ["Espetinhos", "Marmitex", "Carvão", "Gelo"]
     let ongDM = OrganizationDM()
     var organizationsList : [Organization] = []
     var ongs : [Organization] = [] {
@@ -37,7 +38,7 @@ class CategoryCollectionView : UITableViewCell {
     
     var backgroundQueue: OperationQueue {
         let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 3
+        queue.maxConcurrentOperationCount = 2
         return queue
     }
 }
@@ -47,11 +48,9 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        var numElem = 12
-        // tag 0 is Cause collection
-        // tag 1 is Organization collection
+        var numElem = categorysList.count
         if(collectionView.tag == 1) {
-            numElem = organizationsList.count
+            numElem = drinkList.count
         }
         
         return numElem
@@ -72,27 +71,8 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
             cell.titleLabel.text = categorysList[indexPath.row]
             cell.imageView.image = UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
         } else {
-            cell.titleLabel.text = organizationsList[indexPath.row].name
-            cell.email = organizationsList[indexPath.row].email
-            
-            let imageDownloadOperation = BlockOperation {
-                
-                if let avatar = self.organizationsList[indexPath.row].avatar {
-                    FileDM().recoverProfileImage(profilePic: avatar) { (image, error) in
-                        guard let image = image else {return}
-                        OperationQueue.main.addOperation {
-                            cell.imageView.image = image
-                        }
-                    }
-                } else {
-                    let image = UIImage(named: "ong-img_job")!
-                    
-                    OperationQueue.main.addOperation {
-                        cell.imageView.image = image
-                    }
-                }
-            }
-            self.backgroundQueue.addOperation(imageDownloadOperation)
+            cell.titleLabel.text = drinkList[indexPath.row]
+             cell.imageView.image = UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
         }
         cell.titleLabel.font = UIFont(name:"Nunito-Bold", size: 14.0)
         return cell
