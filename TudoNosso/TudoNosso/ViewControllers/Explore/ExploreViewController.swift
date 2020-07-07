@@ -15,7 +15,6 @@ class ExploreViewController: BaseViewController {
     //MARK: OUTLETS
     @IBOutlet weak var jobsTableView: UITableView!
     @IBOutlet weak var buttonLogin: UIButton!
-    @IBOutlet weak var labelButtonLogin: UILabel!
     @IBOutlet weak var buttonAreaImage: UIImageView!
     
     //MARK: - PROPERTIES
@@ -53,22 +52,7 @@ class ExploreViewController: BaseViewController {
         setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
         setupJobsTableView()
         setupNavegationBar()
-        //        loadData()
         
-        if let kind = Local.userKind,
-            let tipoLogin = LoginKinds(rawValue: kind) {
-            switch tipoLogin {
-            case .ONG:
-                labelButtonLogin.text = "Criar vaga"
-            case .volunteer:
-                buttonLogin.alpha = 0
-                labelButtonLogin.alpha = 0
-                buttonAreaImage.alpha = 0
-            }
-        }else {
-            labelButtonLogin.text = "Entrar em contato"
-            
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,8 +67,8 @@ class ExploreViewController: BaseViewController {
     
     //MARK: setups
     func setupNavegationBar() {
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xFF5900, a: 1)
-        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xFF5900, a: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x007AFF, a: 1)
+        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x007AFF, a: 1)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0xFFFFFF, a: 1)
         navigationController?.navigationBar.barStyle = .black
     }
@@ -213,7 +197,7 @@ extension ExploreViewController: UITableViewDataSource  {
         if section < 2 {
             return 1
         } else {
-            return jobs.count
+            return 4
         }
     }
     
@@ -243,54 +227,75 @@ extension ExploreViewController: UITableViewDataSource  {
             let cell = tableView.dequeueReusableCell(withIdentifier:  "cell") as! CategoryCollectionView
             cell.tag = 0
             cell.delegate = self
-            cell.organizationsList = organizationsList
             return cell
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier:  "cell2") as! CategoryCollectionView
             cell.tag = 1
             cell.delegate = self
-            cell.loadDataOrganizations()
             return cell
             
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.reuseIdentifer, for: indexPath) as? JobsTableViewCell else {
-                fatalError("The dequeued cell is not an instance of JobsTableViewCell.")
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier:  "cell3")!
             
-            let job: Job
+            let viewDemo = UIView()
+            viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
+            viewDemo.layer.shadowOpacity = 0.5
+            viewDemo.layer.shadowRadius = 5
+            viewDemo.layer.shadowOffset = CGSize.zero
+            viewDemo.layer.cornerRadius = 20
+            let imageName = "feed\(indexPath.row)"
+            let image = UIImage(named: imageName)
+            let imageView = UIImageView(image: image!)
+
+            imageView.frame = CGRect(x: 0, y: 0, width: cell.frame.width - 20, height: cell.frame.height - 20)
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleAspectFill
+            imageView.layer.cornerRadius = 20
             
-            if isSearchControllerActiveAndNotEmpty() {
-                job = filteredOngoingJobs[indexPath.row]
-            } else {
-                job = jobs[indexPath.row]
-            }
+            viewDemo.addSubview(imageView)
             
-            let imageDownloadOperation = BlockOperation {
-                OrganizationDM().find(ById: job.organizationID) { (ong, err) in
-                    guard let ong = ong,
-                        let avatar = ong.avatar
-                        else { return }
-                    FileDM().recoverProfileImage(profilePic: avatar) { (image, error) in
-                        guard let image = image else {return}
-                        OperationQueue.main.addOperation {
-                            cell.jobImageView.image = image
-                        }
-                    }
-                }
-            }
-            
-            self.backgroundQueue.addOperation(imageDownloadOperation)
-            
-            cell.configure(job: job)
-            cell.backgroundColor = .clear
-            cell.selectionStyle = .none
-            
+            cell.addSubview(viewDemo)
+
             return cell
             
         default:
             return UITableViewCell()
         }
+    }
+    
+    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
+
+        let cgimage = image.cgImage!
+        let contextImage: UIImage = UIImage(cgImage: cgimage)
+        let contextSize: CGSize = contextImage.size
+        var posX: CGFloat = 0.0
+        var posY: CGFloat = 0.0
+        var cgwidth: CGFloat = CGFloat(width)
+        var cgheight: CGFloat = CGFloat(height)
+
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            cgwidth = contextSize.height
+            cgheight = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            cgwidth = contextSize.width
+            cgheight = contextSize.width
+        }
+
+        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
+
+        // Create bitmap image from context using the rect
+        let imageRef: CGImage = cgimage.cropping(to: rect)!
+
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+
+        return image
     }
 }
 
@@ -312,5 +317,50 @@ extension ExploreViewController: CategoryCollectionViewDelegate {
     }
 }
 
+class CustomCell: UITableViewCell {
 
+    weak var coverView: UIImageView!
+    weak var titleLabel: UILabel!
 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        self.initialize()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        self.initialize()
+    }
+
+    func initialize() {
+        let coverView = UIImageView(frame: .zero)
+        coverView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(coverView)
+        self.coverView = coverView
+
+        let titleLabel = UILabel(frame: .zero)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(titleLabel)
+        self.titleLabel = titleLabel
+
+        NSLayoutConstraint.activate([
+            self.contentView.topAnchor.constraint(equalTo: self.coverView.topAnchor),
+            self.contentView.bottomAnchor.constraint(equalTo: self.coverView.bottomAnchor),
+            self.contentView.leadingAnchor.constraint(equalTo: self.coverView.leadingAnchor),
+            self.contentView.trailingAnchor.constraint(equalTo: self.coverView.trailingAnchor),
+
+            self.contentView.centerXAnchor.constraint(equalTo: self.titleLabel.centerXAnchor),
+            self.contentView.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor),
+        ])
+
+        self.titleLabel.font = UIFont.systemFont(ofSize: 64)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.coverView.image = nil
+    }
+}

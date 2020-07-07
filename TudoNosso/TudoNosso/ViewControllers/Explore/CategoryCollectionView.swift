@@ -19,8 +19,8 @@ class CategoryCollectionView : UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var categorysList = ["Espetinhos", "Marmitex", "Carvão", "Gelo"]
-    var drinkList = ["Espetinhos", "Marmitex", "Carvão", "Gelo"]
+    var categorysList = ["Espetinhos", "Marmitex", "Lanches", "Carvão", "Gelo"]
+    var drinkList = ["Cervejas", "Chopp", "Destilados", "Vinhos", "Tabacaria"]
     let ongDM = OrganizationDM()
     var organizationsList : [Organization] = []
     var ongs : [Organization] = [] {
@@ -48,9 +48,9 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        var numElem = categorysList.count
+        var numElem = drinkList.count
         if(collectionView.tag == 1) {
-            numElem = drinkList.count
+            numElem = categorysList.count
         }
         
         return numElem
@@ -64,15 +64,20 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
         cell.imageView.layer.borderColor = UIColor.white.cgColor
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height/8
         cell.imageView.clipsToBounds = true
+        
+        cell.imageView.layer.shadowRadius = 20
+        cell.imageView.layer.shadowOffset = CGSize.zero
+        cell.imageView.layer.shadowOpacity = 1
+        
         cell.imageView.tag = indexPath.row
         cell.delegate = self
         
         if(collectionView.tag == 0) {
-            cell.titleLabel.text = categorysList[indexPath.row]
-            cell.imageView.image = UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
-        } else {
             cell.titleLabel.text = drinkList[indexPath.row]
-             cell.imageView.image = UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
+            cell.imageView.image = UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
+        } else {
+            cell.titleLabel.text = categorysList[indexPath.row]
+             cell.imageView.image = UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
         }
         cell.titleLabel.font = UIFont(name:"Nunito-Bold", size: 14.0)
         return cell
