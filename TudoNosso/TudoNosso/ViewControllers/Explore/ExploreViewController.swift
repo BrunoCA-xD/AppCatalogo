@@ -14,8 +14,40 @@ class ExploreViewController: BaseViewController {
     
     //MARK: OUTLETS
     @IBOutlet weak var jobsTableView: UITableView!
-    @IBOutlet weak var buttonLogin: UIButton!
-    @IBOutlet weak var buttonAreaImage: UIImageView!
+    
+    @IBAction func Pedir(_ sender: Any) {
+        showMenu()
+    }
+    
+    func showMenu() {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
+            print("reiniciar")
+        })
+        
+        let GoOrdemDasCartas = UIAlertAction(title: "Whatsapp", style: .default, handler: { (action) -> Void in
+            self.performSegue(withIdentifier: "CardsSeg", sender: nil)
+        })
+        
+        let EditAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action) -> Void in
+            self.performSegue(withIdentifier: "optionsSeg", sender: nil)
+        })
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        optionMenu.addAction(ResetGame)
+        optionMenu.addAction(GoOrdemDasCartas)
+        optionMenu.addAction(EditAction)
+        optionMenu.addAction(cancelAction)
+        
+        optionMenu.modalPresentationStyle = .popover
+        optionMenu.popoverPresentationController?.sourceView = self.view
+        optionMenu.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 1.2, width: 1.0, height: 1.0)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
     
     //MARK: - PROPERTIES
     var selectedCause: String = ""
@@ -95,14 +127,14 @@ class ExploreViewController: BaseViewController {
         filteredOngoingJobs = jobs.filter { player in
             return player.title.lowercased().contains(searchText.lowercased())
         }
-        jobsTableView.reloadData()
+//        jobsTableView.reloadData()
     }
     
     private func filterOrganizations(for searchText: String) {
         filteredOrganizationsList = organizationsList.filter { player in
             return player.name.lowercased().contains(searchText.lowercased())
         }
-        jobsTableView.reloadData()
+//        jobsTableView.reloadData()
     }
     
     //MARK: LOADER
@@ -111,7 +143,7 @@ class ExploreViewController: BaseViewController {
         jobDM.find(inField: .status, withValueEqual: true, completion: { (result, error) in
             guard let result = result else { return }
             self.jobs = result
-            self.jobsTableView.reloadData()
+//            self.jobsTableView.reloadData()
         })
         
     }
@@ -244,6 +276,7 @@ extension ExploreViewController: UITableViewDataSource  {
             viewDemo.layer.shadowRadius = 5
             viewDemo.layer.shadowOffset = CGSize.zero
             viewDemo.layer.cornerRadius = 20
+            
             let imageName = "feed\(indexPath.row)"
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
@@ -262,40 +295,6 @@ extension ExploreViewController: UITableViewDataSource  {
         default:
             return UITableViewCell()
         }
-    }
-    
-    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
-
-        let cgimage = image.cgImage!
-        let contextImage: UIImage = UIImage(cgImage: cgimage)
-        let contextSize: CGSize = contextImage.size
-        var posX: CGFloat = 0.0
-        var posY: CGFloat = 0.0
-        var cgwidth: CGFloat = CGFloat(width)
-        var cgheight: CGFloat = CGFloat(height)
-
-        // See what size is longer and create the center off of that
-        if contextSize.width > contextSize.height {
-            posX = ((contextSize.width - contextSize.height) / 2)
-            posY = 0
-            cgwidth = contextSize.height
-            cgheight = contextSize.height
-        } else {
-            posX = 0
-            posY = ((contextSize.height - contextSize.width) / 2)
-            cgwidth = contextSize.width
-            cgheight = contextSize.width
-        }
-
-        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
-
-        // Create bitmap image from context using the rect
-        let imageRef: CGImage = cgimage.cropping(to: rect)!
-
-        // Create a new image based on the imageRef and rotate back to the original orientation
-        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
-
-        return image
     }
 }
 

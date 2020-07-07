@@ -56,53 +56,28 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
         return numElem
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCasesOrganizations", for: indexPath) as! CellCasesOrganizations
-        
-        cell.imageView.layer.borderWidth = 1.0
-        cell.imageView.layer.masksToBounds = false
-        cell.imageView.layer.borderColor = UIColor.white.cgColor
-        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height/8
-        cell.imageView.clipsToBounds = true
-        
-        cell.imageView.layer.shadowRadius = 20
-        cell.imageView.layer.shadowOffset = CGSize.zero
-        cell.imageView.layer.shadowOpacity = 1
-        
-        cell.imageView.tag = indexPath.row
-        cell.delegate = self
-        
-        if(collectionView.tag == 0) {
-            cell.titleLabel.text = drinkList[indexPath.row]
-            cell.imageView.image = UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
-        } else {
-            cell.titleLabel.text = categorysList[indexPath.row]
-             cell.imageView.image = UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
-        }
-        cell.titleLabel.font = UIFont(name:"Nunito-Bold", size: 14.0)
-        return cell
-    }
-    
-    func cropToBounds(image: UIImage, portraitOrientation: Bool) -> UIImage {
+    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
         
         let cgimage = image.cgImage!
         let contextImage: UIImage = UIImage(cgImage: cgimage)
         let contextSize: CGSize = contextImage.size
         var posX: CGFloat = 0.0
         var posY: CGFloat = 0.0
-        var cgwidth: CGFloat = 0
-        var cgheight: CGFloat = 0
+        var cgwidth: CGFloat = CGFloat(width)
+        var cgheight: CGFloat = CGFloat(height)
         
-        if (portraitOrientation) { // if portrate
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
             posX = ((contextSize.width - contextSize.height) / 2)
             posY = 0
-        } else { // if landscape
+            cgwidth = contextSize.height
+            cgheight = contextSize.height
+        } else {
             posX = 0
             posY = ((contextSize.height - contextSize.width) / 2)
+            cgwidth = contextSize.width
+            cgheight = contextSize.width
         }
-        
-        cgwidth = 3000
-        cgheight = 3000
         
         let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
         
@@ -110,8 +85,40 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
         let imageRef: CGImage = cgimage.cropping(to: rect)!
         
         // Create a new image based on the imageRef and rotate back to the original orientation
-        let image: UIImage = UIImage(cgImage: imageRef, scale: 1, orientation: image.imageOrientation)
+        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+        
         return image
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCasesOrganizations", for: indexPath) as! CellCasesOrganizations
+        
+        cell.shadowView.layer.shadowRadius = 3
+        cell.shadowView.layer.shadowOffset = CGSize.zero
+        cell.shadowView.layer.shadowOpacity = 0.5
+        cell.shadowView.layer.cornerRadius = 20
+        
+        cell.imageView.tag = indexPath.row
+        cell.delegate = self
+        
+        if(collectionView.tag == 0) {
+            cell.titleLabel.text = drinkList[indexPath.row]
+            let image =  UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
+            cell.imageView.image = image
+            
+        } else {
+            cell.titleLabel.text = categorysList[indexPath.row]
+            let image =  UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
+            cell.imageView.image = image
+        }
+        
+        cell.imageView.frame = CGRect(x: 0, y: 0, width: cell.frame.width - 20, height: cell.frame.height - 20)
+        cell.imageView.clipsToBounds = true
+        cell.imageView.contentMode = .scaleAspectFill
+        cell.imageView.layer.cornerRadius = 20
+        
+        cell.titleLabel.font = UIFont(name:"Nunito-Bold", size: 14.0)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,16 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="NNp-3b-Uox">
-                                <rect key="frame" x="-41.5" y="-84.5" width="497" height="1075"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CdH-g8-XdU">
+                                <rect key="frame" x="10" y="251" width="394" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CdH-g8-XdU" secondAttribute="height" multiplier="1:1" id="I3K-Qt-Qoh"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NNp-3b-Uox" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1.2" id="7kJ-UP-fyg"/>
-                            <constraint firstItem="NNp-3b-Uox" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.2" id="DQa-sx-CGn"/>
-                            <constraint firstItem="NNp-3b-Uox" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KqM-OX-nIV"/>
-                            <constraint firstItem="NNp-3b-Uox" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Wti-jS-O0J"/>
+                            <constraint firstItem="CdH-g8-XdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Zdl-Ps-5g4"/>
+                            <constraint firstItem="CdH-g8-XdU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a6R-0P-TXp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CdH-g8-XdU" secondAttribute="trailing" constant="10" id="z89-EE-BMl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -36,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Splash" width="375" height="812"/>
+        <image name="logo" width="800" height="800"/>
     </resources>
 </document>

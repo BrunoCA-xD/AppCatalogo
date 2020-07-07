@@ -18,6 +18,7 @@ class CellCasesOrganizations : UICollectionViewCell {
     //MARK: - OUTLETS
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var shadowView: UIView!
     
     //MARK: - PROPERTIES
     weak var delegate: CellCasesOrganizationsDelegate!
