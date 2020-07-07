@@ -831,23 +831,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="LaO-qY-FWG">
-                                <rect key="frame" x="0.0" y="382" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="186" sectionHeaderHeight="2" sectionFooterHeight="2" translatesAutoresizingMaskIntoConstraints="NO" id="D89-VI-4vT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="dpr-6Y-wzq">
-                                    <rect key="frame" x="0.0" y="643.5" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="jN8-ZS-eIZ" customClass="CategoryCollectionView" customModule="TudoNosso" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
@@ -875,7 +865,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-xx-DUY">
                                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
-                                                                        <color key="backgroundColor" red="1" green="0.34901960780000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" red="0.69411764705882351" green="0.20392156862745098" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="2sB-xx-DUY" secondAttribute="height" multiplier="1:1" id="7jx-Gd-mGV"/>
                                                                         </constraints>
@@ -1047,12 +1037,15 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="D89-VI-4vT" secondAttribute="trailing" id="5h9-QJ-kJ7"/>
                             <constraint firstItem="D89-VI-4vT" firstAttribute="top" secondItem="h0x-dn-rc0" secondAttribute="bottom" id="9Ym-yy-mMQ"/>
-                            <constraint firstItem="iXS-Y1-fWR" firstAttribute="top" secondItem="D89-VI-4vT" secondAttribute="bottom" id="DfL-ER-Nbu"/>
+                            <constraint firstAttribute="bottom" secondItem="D89-VI-4vT" secondAttribute="bottom" id="DfL-ER-Nbu"/>
                             <constraint firstItem="D89-VI-4vT" firstAttribute="leading" secondItem="JtM-Ne-iCO" secondAttribute="leading" id="Kr0-o0-xpg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EEc-oX-1ja"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Beer In Night" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx"/>
+                    <navigationItem key="navigationItem" title="Beer In Night" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
+                        <barButtonItem key="leftBarButtonItem" title="Ligar" id="biw-rK-PJ0"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="XPB-FN-OpU"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="jobsTableView" destination="D89-VI-4vT" id="Zcb-fR-j1G"/>
@@ -1428,6 +1421,7 @@
         <image name="groupUser" width="91" height="84"/>
         <image name="hand" width="93" height="109"/>
         <image name="logo-monogram" width="193.5" height="91"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="user" width="61" height="72"/>
     </resources>
 </document>
