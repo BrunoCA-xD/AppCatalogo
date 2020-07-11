@@ -272,9 +272,9 @@ extension ExploreViewController: UITableViewDataSource  {
             
             let viewDemo = UIView()
             viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
-            viewDemo.layer.shadowOpacity = 0.5
-            viewDemo.layer.shadowRadius = 5
-            viewDemo.layer.shadowOffset = CGSize.zero
+//            viewDemo.layer.shadowOpacity = 0.5
+//            viewDemo.layer.shadowRadius = 5
+//            viewDemo.layer.shadowOffset = CGSize.zero
             viewDemo.layer.cornerRadius = 20
             
             let imageName = "feed\(indexPath.row)"
