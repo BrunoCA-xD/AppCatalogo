@@ -38,10 +38,17 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        headerItem.title = titleHeader
         imageProduct.image = UIImage(named: titleHeader)!
         imageProduct.layer.cornerRadius = 30
         imageProduct.layer.masksToBounds = true
+        
+        var currentTitle = titleHeader.replacingOccurrences(of: " 1", with: "", options: .literal, range: nil)
+        currentTitle = currentTitle.replacingOccurrences(of: " 2", with: "", options: .literal, range: nil)
+        currentTitle = currentTitle.replacingOccurrences(of: " 3", with: "", options: .literal, range: nil)
+        currentTitle = currentTitle.replacingOccurrences(of: " 4", with: "", options: .literal, range: nil)
+        currentTitle = currentTitle.replacingOccurrences(of: " 0", with: "", options: .literal, range: nil)
+        
+        headerItem.title = currentTitle
         
     }
     

@@ -209,8 +209,9 @@ extension ExploreViewController: UISearchBarDelegate {
 // MARK: - UITableViewDelegate
 extension ExploreViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,  didSelectRowAt indexPath: IndexPath) {
-        let selectedJob = jobs[indexPath.row]
-        self.performSegue(withIdentifier: "showDetailSegue", sender: selectedJob)
+        
+        self.selectedCause = "Promo do dia \(indexPath.row)"
+        self.performSegue(withIdentifier: "showCauses", sender: self)
     }
 }
 
@@ -309,12 +310,9 @@ extension ExploreViewController: UITableViewDataSource  {
             
             let viewDemo = UIView()
             viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
-            //            viewDemo.layer.shadowOpacity = 0.5
-            //            viewDemo.layer.shadowRadius = 5
-            //            viewDemo.layer.shadowOffset = CGSize.zero
             viewDemo.layer.cornerRadius = 20
             
-            let imageName = "feed\(indexPath.row)"
+            let imageName = "Promo do dia \(indexPath.row)"
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
             
