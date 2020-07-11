@@ -19,8 +19,8 @@ class CategoryCollectionView : UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var categorysList = ["Espetinhos", "Marmitex", "Lanches", "Carvão", "Gelo"]
-    var drinkList = ["Cervejas", "Chopp", "Destilados", "Vinhos", "Tabacaria"]
+    var categorysList = ["Suco de laranja", "Coca-Cola Lata", "Guarana Lata", "Fanta Lata", "Coca-Cola 2 litros"]
+    var drinkList = ["Bacon Cheddar", "Rogger Pepperoni", "Rogger Egg", "Rogger Onion", "Pepperoni Venture"]
     let ongDM = OrganizationDM()
     var organizationsList : [Organization] = []
     var ongs : [Organization] = [] {

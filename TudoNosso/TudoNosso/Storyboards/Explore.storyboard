@@ -19,12 +19,12 @@
         <!--Login View Controller-->
         <scene sceneID="zHT-em-6mV">
             <objects>
-                <viewController storyboardIdentifier="LoginSBID" id="LlD-Ol-P6E" customClass="LoginViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginSBID" id="LlD-Ol-P6E" customClass="LoginViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nil-fy-SrL"/>
                         <viewControllerLayoutGuide type="bottom" id="Bet-sA-Php"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Qk-nb-inm" customClass="KeyboardDismissingView" customModule="TudoNosso" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="7Qk-nb-inm" customClass="KeyboardDismissingView" customModule="Beer_In_Night" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -213,7 +213,7 @@
         <!--Tipo de conta-->
         <scene sceneID="J8a-7T-lGj">
             <objects>
-                <viewController id="WEC-Ud-zU6" customClass="userRegisterViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WEC-Ud-zU6" customClass="userRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCO-et-bPe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,7 +331,7 @@
         <!--Cadastro Organização-->
         <scene sceneID="o60-4x-fb4">
             <objects>
-                <viewController storyboardIdentifier="DataOrganization" id="EvJ-Zh-U4b" customClass="informationsRegisterViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataOrganization" id="EvJ-Zh-U4b" customClass="informationsRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZXW-P1-5SE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -652,7 +652,7 @@
         <!--Confirm Register View Controller-->
         <scene sceneID="8U4-Hk-Yu4">
             <objects>
-                <viewController id="TTN-en-0QR" customClass="ConfirmRegisterViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TTN-en-0QR" customClass="ConfirmRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JtS-hY-XS1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -740,7 +740,7 @@
         <!--Causa-->
         <scene sceneID="shk-25-POf">
             <objects>
-                <viewController id="WXa-Y1-UIt" customClass="CategoryOportunitiesViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WXa-Y1-UIt" customClass="CategoryOportunitiesViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Sp-qs-5YM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -819,10 +819,10 @@
             </objects>
             <point key="canvasLocation" x="1787" y="708"/>
         </scene>
-        <!--Beer In Night-->
+        <!--Rogger Burguer's-->
         <scene sceneID="psT-e2-Nmf">
             <objects>
-                <viewController id="82i-MY-zrX" customClass="ExploreViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="82i-MY-zrX" customClass="ExploreViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h0x-dn-rc0"/>
                         <viewControllerLayoutGuide type="bottom" id="iXS-Y1-fWR"/>
@@ -832,14 +832,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="186" sectionHeaderHeight="2" sectionFooterHeight="2" translatesAutoresizingMaskIntoConstraints="NO" id="D89-VI-4vT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="-5" width="414" height="813"/>
                                 <color key="backgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="jN8-ZS-eIZ" customClass="CategoryCollectionView" customModule="TudoNosso" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="jN8-ZS-eIZ" customClass="CategoryCollectionView" customModule="Beer_In_Night" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jN8-ZS-eIZ" id="tVs-VA-CSR">
@@ -856,7 +856,7 @@
                                                         <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="3u5-Je-OTF" customClass="CellCasesOrganizations" customModule="TudoNosso" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="3u5-Je-OTF" customClass="CellCasesOrganizations" customModule="Beer_In_Night" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="15" width="140" height="170"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -942,7 +942,7 @@
                                             <outlet property="collectionView" destination="ZNJ-0v-6UX" id="SjX-hC-dw4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="200" id="gFN-nL-nFY" customClass="CategoryCollectionView" customModule="TudoNosso" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="200" id="gFN-nL-nFY" customClass="CategoryCollectionView" customModule="Beer_In_Night" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="255.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFN-nL-nFY" id="FQH-Ie-StJ">
@@ -959,7 +959,7 @@
                                                         <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="RNp-A9-VIr" customClass="CellCasesOrganizations" customModule="TudoNosso" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="RNp-A9-VIr" customClass="CellCasesOrganizations" customModule="Beer_In_Night" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="15" width="140" height="170"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1059,13 +1059,13 @@
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="D89-VI-4vT" secondAttribute="trailing" id="5h9-QJ-kJ7"/>
-                            <constraint firstItem="D89-VI-4vT" firstAttribute="top" secondItem="h0x-dn-rc0" secondAttribute="bottom" id="9Ym-yy-mMQ"/>
+                            <constraint firstItem="D89-VI-4vT" firstAttribute="top" secondItem="h0x-dn-rc0" secondAttribute="bottom" constant="-5" id="9Ym-yy-mMQ"/>
                             <constraint firstAttribute="bottom" secondItem="D89-VI-4vT" secondAttribute="bottom" id="DfL-ER-Nbu"/>
                             <constraint firstItem="D89-VI-4vT" firstAttribute="leading" secondItem="JtM-Ne-iCO" secondAttribute="leading" id="Kr0-o0-xpg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EEc-oX-1ja"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Beer In Night" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
+                    <navigationItem key="navigationItem" title="Rogger Burguer's" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
                         <barButtonItem key="rightBarButtonItem" title="Pedir" id="XPB-FN-OpU">
                             <connections>
                                 <action selector="Pedir:" destination="82i-MY-zrX" id="baD-tj-e5J"/>
@@ -1118,7 +1118,7 @@
         <!--Cadastro Voluntário-->
         <scene sceneID="WKx-OZ-PJP">
             <objects>
-                <viewController storyboardIdentifier="DataVoluntary" id="ypJ-EX-X5j" customClass="informationsRegisterViewController" customModule="TudoNosso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataVoluntary" id="ypJ-EX-X5j" customClass="informationsRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIB-B0-RFh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
