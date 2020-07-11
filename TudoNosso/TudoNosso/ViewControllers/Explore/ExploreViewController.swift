@@ -23,8 +23,12 @@ class ExploreViewController: BaseViewController {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
-//             14)99898-5360
-            
+          let number = 14998985360
+            if let url = URL(string: "tel://\(number)") {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                }
+            }
         })
         
         let GoOrdemDasCartas = UIAlertAction(title: "Whatsapp", style: .default, handler: { (action) -> Void in
@@ -48,7 +52,8 @@ class ExploreViewController: BaseViewController {
         })
         
         let EditAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action) -> Void in
-            self.performSegue(withIdentifier: "optionsSeg", sender: nil)
+            guard let url = URL(string: "https://www.facebook.com/RoggerBurguers/") else { return }
+            UIApplication.shared.open(url)
         })
         
         

@@ -25,15 +25,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Bet-sA-Php"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Qk-nb-inm" customClass="KeyboardDismissingView" customModule="Beer_In_Night" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C0b-lX-rkI">
-                                <rect key="frame" x="-103.5" y="-243.5" width="621" height="1212"/>
+                                <rect key="frame" x="-103.5" y="-243.5" width="621" height="1344"/>
                                 <color key="backgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwc-gG-pIO">
-                                <rect key="frame" x="0.0" y="285" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="373" width="414" height="190"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TQW-8t-q9Z">
                                         <rect key="frame" x="10" y="30" width="394" height="40"/>
@@ -85,14 +85,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxl-VN-qKj">
-                                <rect key="frame" x="10" y="20" width="394" height="245"/>
+                                <rect key="frame" x="10" y="64" width="394" height="289"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJX-Tc-vXJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="289"/>
                                         <color key="backgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-monogram" translatesAutoresizingMaskIntoConstraints="NO" id="6fh-pt-a3Z">
-                                        <rect key="frame" x="79" y="24.5" width="236" height="196"/>
+                                        <rect key="frame" x="79" y="29" width="236" height="231"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,7 +108,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW4-20-CTJ">
-                                <rect key="frame" x="41.5" y="555" width="331" height="40"/>
+                                <rect key="frame" x="41.5" y="643" width="331" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vT5-9c-o4A"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-IB-95f">
-                                <rect key="frame" x="41.5" y="495" width="331" height="40"/>
+                                <rect key="frame" x="41.5" y="583" width="331" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zMl-0o-6Pn"/>
                                 </constraints>
@@ -128,19 +128,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fazer login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFw-3w-3Xb">
-                                <rect key="frame" x="41.5" y="505" width="331" height="20"/>
+                                <rect key="frame" x="41.5" y="593" width="331" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7Q-gL-96t">
-                                <rect key="frame" x="41.5" y="555" width="331" height="40"/>
+                                <rect key="frame" x="41.5" y="643" width="331" height="40"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.92730671167373657" green="0.39461386203765869" blue="0.16853019595146179" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ5-JP-M2C">
-                                <rect key="frame" x="20" y="625" width="374" height="30"/>
+                                <rect key="frame" x="20" y="713" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZJu-aD-64u"/>
                                 </constraints>
@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8LB-OR-9EP">
-                                <rect key="frame" x="74" y="438" width="266" height="154"/>
+                                <rect key="frame" x="74" y="526" width="266" height="154"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -215,7 +215,7 @@
             <objects>
                 <viewController id="WEC-Ud-zU6" customClass="userRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCO-et-bPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Selecione seu perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVP-wY-6gt">
@@ -333,11 +333,11 @@
             <objects>
                 <viewController storyboardIdentifier="DataOrganization" id="EvJ-Zh-U4b" customClass="informationsRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZXW-P1-5SE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-7h-oIW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="829"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-Sm-aUC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
@@ -654,11 +654,11 @@
             <objects>
                 <viewController id="TTN-en-0QR" customClass="ConfirmRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JtS-hY-XS1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-0g-EEJ">
-                                <rect key="frame" x="20.5" y="668" width="373" height="37"/>
+                                <rect key="frame" x="20.5" y="751" width="373" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lQo-0g-EEJ" secondAttribute="height" multiplier="434:43" id="9vz-SK-IBA"/>
                                 </constraints>
@@ -668,7 +668,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo3-NP-lT0">
-                                <rect key="frame" x="83" y="238.5" width="248" height="248"/>
+                                <rect key="frame" x="83" y="280" width="248" height="248"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastro feito com sucesso." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD1-Q8-EZh">
                                         <rect key="frame" x="0.0" y="218" width="248" height="30"/>
@@ -1040,20 +1040,16 @@
                                             <outlet property="collectionView" destination="H06-l2-Fjf" id="FBQ-7j-ido"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" id="HgM-sp-wGb" userLabel="cell3">
-                                        <rect key="frame" x="0.0" y="455.5" width="414" height="186"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HgM-sp-wGb" id="Uio-Xd-FfL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="186"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="82i-MY-zrX" id="bry-4g-bGn"/>
                                     <outlet property="delegate" destination="82i-MY-zrX" id="K1W-5k-AnY"/>
                                 </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-uh-eqT">
+                                <rect key="frame" x="87" y="340" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1078,7 +1074,6 @@
                         <segue destination="Rkt-ep-pso" kind="show" identifier="showDetailSegue" id="hNG-PQ-MgU"/>
                         <segue destination="WXa-Y1-UIt" kind="show" identifier="showCauses" id="odP-zg-rXS"/>
                         <segue destination="p5g-qt-6RG" kind="show" identifier="showProfile" id="HeD-Hc-NSb"/>
-                        <segue destination="LlD-Ol-P6E" kind="show" identifier="showLogin" id="y6C-sl-KVh"/>
                         <segue destination="9jL-Wu-BOU" kind="show" identifier="ShowAddJob" id="CWb-gs-jDJ"/>
                     </connections>
                 </viewController>
@@ -1120,11 +1115,11 @@
             <objects>
                 <viewController storyboardIdentifier="DataVoluntary" id="ypJ-EX-X5j" customClass="informationsRegisterViewController" customModule="Beer_In_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIB-B0-RFh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blm-ik-qiP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="829"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7Y-FD-tJS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
