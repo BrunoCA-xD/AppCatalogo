@@ -23,11 +23,28 @@ class ExploreViewController: BaseViewController {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
-            print("reiniciar")
+//             14)99898-5360
+            
         })
         
         let GoOrdemDasCartas = UIAlertAction(title: "Whatsapp", style: .default, handler: { (action) -> Void in
-            self.performSegue(withIdentifier: "CardsSeg", sender: nil)
+            
+            var str = "Olá, gostaria de realizar um novo pedido"
+            str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
+            
+            let phoneNumber =  "+5514998985367" // you need to change this number
+            
+            let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)&text=\(str)")!
+            if UIApplication.shared.canOpenURL(appURL) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+                }
+                else {
+                    UIApplication.shared.openURL(appURL)
+                }
+            } else {
+                print("WhatsApp is not installed")
+            }
         })
         
         let EditAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action) -> Void in
