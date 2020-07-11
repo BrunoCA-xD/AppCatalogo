@@ -23,7 +23,7 @@ class ExploreViewController: BaseViewController {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
-          let number = 14998985360
+            let number = 14998985360
             if let url = URL(string: "tel://\(number)") {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url)
@@ -149,14 +149,12 @@ class ExploreViewController: BaseViewController {
         filteredOngoingJobs = jobs.filter { player in
             return player.title.lowercased().contains(searchText.lowercased())
         }
-//        jobsTableView.reloadData()
     }
     
     private func filterOrganizations(for searchText: String) {
         filteredOrganizationsList = organizationsList.filter { player in
             return player.name.lowercased().contains(searchText.lowercased())
         }
-//        jobsTableView.reloadData()
     }
     
     //MARK: LOADER
@@ -165,7 +163,6 @@ class ExploreViewController: BaseViewController {
         jobDM.find(inField: .status, withValueEqual: true, completion: { (result, error) in
             guard let result = result else { return }
             self.jobs = result
-//            self.jobsTableView.reloadData()
         })
         
     }
@@ -220,7 +217,7 @@ extension ExploreViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension ExploreViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
+        
         let myLabel = UILabel()
         
         if (section == 0) {
@@ -237,10 +234,10 @@ extension ExploreViewController: UITableViewDataSource  {
             myLabel.font = UIFont(name:"Nunito-Bold", size: 18.0)
             myLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
         }
-
+        
         let headerView = UIView()
         headerView.addSubview(myLabel)
-
+        
         return headerView
     }
     
@@ -252,6 +249,24 @@ extension ExploreViewController: UITableViewDataSource  {
             return 1
         } else {
             return 4
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.section < 2) {
+            return 200
+        }
+        else {
+            return 400
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.section < 2) {
+            return 200
+        }
+        else {
+            return 400
         }
     }
     
@@ -294,15 +309,15 @@ extension ExploreViewController: UITableViewDataSource  {
             
             let viewDemo = UIView()
             viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
-//            viewDemo.layer.shadowOpacity = 0.5
-//            viewDemo.layer.shadowRadius = 5
-//            viewDemo.layer.shadowOffset = CGSize.zero
+            //            viewDemo.layer.shadowOpacity = 0.5
+            //            viewDemo.layer.shadowRadius = 5
+            //            viewDemo.layer.shadowOffset = CGSize.zero
             viewDemo.layer.cornerRadius = 20
             
             let imageName = "feed\(indexPath.row)"
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
-
+            
             imageView.frame = CGRect(x: 0, y: 0, width: cell.frame.width - 20, height: cell.frame.height - 20)
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
@@ -311,7 +326,7 @@ extension ExploreViewController: UITableViewDataSource  {
             viewDemo.addSubview(imageView)
             
             cell.addSubview(viewDemo)
-
+            
             return cell
             
         default:
@@ -324,64 +339,57 @@ extension ExploreViewController: UITableViewDataSource  {
 extension ExploreViewController: CategoryCollectionViewDelegate {
     func causeSelected(_ view: CategoryCollectionView, causeTitle: String?, OrganizationEmail: String?,tagCollection: Int) {
         
-        if(tagCollection == 0) {
-            if let title = causeTitle {
-                self.selectedCause = title
-            }
-            self.performSegue(withIdentifier: "showCauses", sender: self)
-        } else {
-            if let title = OrganizationEmail {
-                self.selectedOrganization = title
-            }
-            self.performSegue(withIdentifier: "showProfile", sender: self)
+        if let title = causeTitle {
+            self.selectedCause = title
         }
+        self.performSegue(withIdentifier: "showCauses", sender: self)
     }
 }
 
 class CustomCell: UITableViewCell {
-
+    
     weak var coverView: UIImageView!
     weak var titleLabel: UILabel!
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         self.initialize()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
+        
         self.initialize()
     }
-
+    
     func initialize() {
         let coverView = UIImageView(frame: .zero)
         coverView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(coverView)
         self.coverView = coverView
-
+        
         let titleLabel = UILabel(frame: .zero)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
-
+        
         NSLayoutConstraint.activate([
             self.contentView.topAnchor.constraint(equalTo: self.coverView.topAnchor),
             self.contentView.bottomAnchor.constraint(equalTo: self.coverView.bottomAnchor),
             self.contentView.leadingAnchor.constraint(equalTo: self.coverView.leadingAnchor),
             self.contentView.trailingAnchor.constraint(equalTo: self.coverView.trailingAnchor),
-
+            
             self.contentView.centerXAnchor.constraint(equalTo: self.titleLabel.centerXAnchor),
             self.contentView.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor),
         ])
-
+        
         self.titleLabel.font = UIFont.systemFont(ofSize: 64)
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-
+        
         self.coverView.image = nil
     }
 }

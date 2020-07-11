@@ -503,9 +503,9 @@
 		C46E72942375C01400D57BB9 /* Explore list */ = {
 			isa = PBXGroup;
 			children = (
-				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C4226733237057A3000A6DA3 /* ExploreViewController.swift */,
 				C46E728323745C1200D57BB9 /* CategoryCollectionView.swift */,
+				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C430DBB02386D70B007B800A /* JobsDataSource.swift */,
 				C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */,
 				C491412D23996D3200D7FEE7 /* SetupsLayout.swift */,

@@ -11,8 +11,16 @@ import UIKit
 class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate {
     
     //MARK: - OUTLETS
-    @IBOutlet weak var jobsTableView: UITableView!
     @IBOutlet weak var headerItem: UINavigationItem!
+    @IBOutlet weak var imageProduct: UIImageView!
+    
+    //MARK: - ACTIONS
+    @IBAction func closeView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     
     //MARK: - PROPERTIES
     var filteredOngoingJobs : [Job] = []
@@ -29,53 +37,15 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
-        setupJobsTableView()
-        
-        loadData()
+
         headerItem.title = titleHeader
-    }
-    
-    //MARK: - SETUP
-    
-    func setupJobsTableView() {
-        jobsTableView.isHidden = false
-        jobsTableView.backgroundColor = .clear
+        imageProduct.image = UIImage(named: titleHeader)!
+        imageProduct.layer.cornerRadius = 30
+        imageProduct.layer.masksToBounds = true
         
-        jobsTableView.delegate = self
-        jobsTableView.dataSource = self
-        
-        jobsTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.reuseIdentifer)
-        jobsTableView.register(JobsTableViewHeader.nib, forHeaderFooterViewReuseIdentifier: JobsTableViewHeader.reuseIdentifer)
     }
     
-    func setupTableView(){
-        jobsTableView.backgroundColor = .clear
-        jobsTableView.delegate = self
-        jobsTableView.dataSource = self
-    }
-    
-//MARK: LOADER
-    func loadData() {
-//        var cat:[String] = []
-//        cat.append()
-        let jobDM = JobDM()
-        jobDM.find(inField: .categories, comparison: .arrayContains, withValue: jobsData.nameKeyBD(key: titleHeader)) { (result, error) in
-            guard let result = result else { return }
-            self.jobs = result
-            self.jobsTableView.reloadData()
-        }
-    }
-    
-    //MARK: - FILTER
-    private func filterJobs(for searchText: String) {
-        filteredOngoingJobs = ongoingJobs.filter { player in
-            return player.title.lowercased().contains(searchText.lowercased())
-        }
-        jobsTableView.reloadData()
-    }
-    
+
     func sortJobs(){
         for job in jobs {
             if job.status {
@@ -140,10 +110,5 @@ extension CategoryOportunitiesViewController : UITableViewDataSource {
     }
 }
 
-// MARK: - UISearchResultsUpdating
-extension CategoryOportunitiesViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        filterJobs(for: searchController.searchBar.text ?? "")
-    }
-}
+
 
