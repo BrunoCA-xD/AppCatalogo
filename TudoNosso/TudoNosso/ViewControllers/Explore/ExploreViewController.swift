@@ -78,7 +78,7 @@ class ExploreViewController: BaseViewController {
     var organizationsList : [Organization] = []
     var filteredOrganizationsList : [Organization] = []
     var filteredOngoingJobs : [Job] = []
-    let categories = ["Bebidas", "Refeições", "Promoções"]
+    let categories = ["Lanches", "Bebidas", "Promoções"]
     var searchController = UISearchController(searchResultsController: nil)
     var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
     var jobs : [Job] = []
