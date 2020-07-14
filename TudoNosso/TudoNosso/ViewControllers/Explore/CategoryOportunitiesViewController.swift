@@ -19,9 +19,6 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
     //MARK: - PROPERTIES
     var filteredOngoingJobs : [Job] = []
     var searchController = UISearchController(searchResultsController: nil)

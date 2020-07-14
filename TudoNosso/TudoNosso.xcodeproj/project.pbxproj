@@ -1136,7 +1136,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.TudoNosso;
+				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.TudoNosso234;
 				PRODUCT_NAME = "Beer In Night";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1156,7 +1156,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.TudoNosso;
+				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.TudoNosso234;
 				PRODUCT_NAME = "Beer In Night";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
