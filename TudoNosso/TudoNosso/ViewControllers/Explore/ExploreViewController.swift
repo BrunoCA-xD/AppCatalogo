@@ -18,6 +18,8 @@ class ExploreViewController: BaseViewController {
     @IBAction func Pedir(_ sender: Any) {
         showMenu()
     }
+    @IBOutlet weak var buttonCarrinho: UIButton!
+    
     
     func showMenu() {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -33,7 +35,27 @@ class ExploreViewController: BaseViewController {
         
         let GoOrdemDasCartas = UIAlertAction(title: "Whatsapp", style: .default, handler: { (action) -> Void in
             
-            var str = "Olá, gostaria de realizar um novo pedido"
+            var str =
+                
+                "*Pedido* \n" +
+                "1x Bacon Cheddar \n" +
+                "   * _catupiry_\n" +
+                "   * _onion_\n\n" +
+                
+                "1x Guaraná lata \n\n" +
+                    
+                "*Observações* \n" +
+                "Lanche sem alface\n\n" +
+            
+                "*Pagamento* \n" +
+                "Cartão Elo \n\n" +
+                    
+                "*Total* \n" +
+                "R$ 30,00 \n\n" +
+                    
+                "*Endereço* \n" +
+                "Rua Número, Bairro - Cidade"
+            
             str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
             
             let phoneNumber =  "+5514998985367" // you need to change this number
@@ -51,17 +73,11 @@ class ExploreViewController: BaseViewController {
             }
         })
         
-        let EditAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action) -> Void in
-            guard let url = URL(string: "https://www.facebook.com/RoggerBurguers/") else { return }
-            UIApplication.shared.open(url)
-        })
-        
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
         
         optionMenu.addAction(ResetGame)
         optionMenu.addAction(GoOrdemDasCartas)
-        optionMenu.addAction(EditAction)
         optionMenu.addAction(cancelAction)
         
         optionMenu.modalPresentationStyle = .popover
@@ -78,7 +94,7 @@ class ExploreViewController: BaseViewController {
     var organizationsList : [Organization] = []
     var filteredOrganizationsList : [Organization] = []
     var filteredOngoingJobs : [Job] = []
-    let categories = ["Lanches", "Bebidas", "Promoções"]
+    let categories = ["Lanches", "Bebidas", "Destaques"]
     var searchController = UISearchController(searchResultsController: nil)
     var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
     var jobs : [Job] = []
@@ -107,7 +123,10 @@ class ExploreViewController: BaseViewController {
         setupJobsTableView()
         setupNavegationBar()
         
+        buttonCarrinho.isHidden = true
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -212,6 +231,8 @@ extension ExploreViewController: UITableViewDelegate {
         
         self.selectedCause = "Promo do dia \(indexPath.row)"
         self.performSegue(withIdentifier: "showCauses", sender: self)
+        
+        buttonCarrinho.isHidden = false
     }
 }
 
@@ -341,6 +362,7 @@ extension ExploreViewController: CategoryCollectionViewDelegate {
             self.selectedCause = title
         }
         self.performSegue(withIdentifier: "showCauses", sender: self)
+        buttonCarrinho.isHidden = false
     }
 }
 

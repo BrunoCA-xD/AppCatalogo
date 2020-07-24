@@ -76,6 +76,7 @@
 		C46E728623745C1300D57BB9 /* CellCasesOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */; };
 		C46E729E2379985B00D57BB9 /* CategoryOportunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */; };
 		C46E72A3237AE4A400D57BB9 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */; };
+		C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */; };
 		C491412823981C0700D7FEE7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412723981C0700D7FEE7 /* EditProfileViewController.swift */; };
 		C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412923982B5900D7FEE7 /* DataUser.swift */; };
 		C491412E23996D3200D7FEE7 /* SetupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412D23996D3200D7FEE7 /* SetupsLayout.swift */; };
@@ -169,7 +170,7 @@
 		7A8AABBB59DCDBB0CAA3CC4E /* Pods-TudoNosso-TudoNossoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TudoNosso-TudoNossoUITests.debug.xcconfig"; path = "Target Support Files/Pods-TudoNosso-TudoNossoUITests/Pods-TudoNosso-TudoNossoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D779667FEF2192A7F627FE1 /* Pods-TudoNosso-TudoNossoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TudoNosso-TudoNossoUITests.release.xcconfig"; path = "Target Support Files/Pods-TudoNosso-TudoNossoUITests/Pods-TudoNosso-TudoNossoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0D801E2A4895B6AC82B5B55 /* Pods_TudoNosso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TudoNosso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C40A2E7423704BA500DB87BB /* Rogger Burguer's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rogger Burguer's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A2E7423704BA500DB87BB /* Rogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40A2E7723704BA500DB87BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40A2E7B23704BA500DB87BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C40A2E7E23704BA500DB87BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCasesOrganizations.swift; sourceTree = "<group>"; };
 		C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOportunitiesViewController.swift; sourceTree = "<group>"; };
 		C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
+		C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
 		C491412723981C0700D7FEE7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C491412923982B5900D7FEE7 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		C491412D23996D3200D7FEE7 /* SetupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsLayout.swift; sourceTree = "<group>"; };
@@ -406,7 +408,7 @@
 		C40A2E7523704BA500DB87BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C40A2E7423704BA500DB87BB /* Rogger Burguer's.app */,
+				C40A2E7423704BA500DB87BB /* Rogger.app */,
 				C40A2E8D23704BA700DB87BB /* TudoNossoTests.xctest */,
 				C40A2E9823704BA700DB87BB /* TudoNossoUITests.xctest */,
 			);
@@ -504,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				C4226733237057A3000A6DA3 /* ExploreViewController.swift */,
+				C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */,
 				C46E728323745C1200D57BB9 /* CategoryCollectionView.swift */,
 				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C430DBB02386D70B007B800A /* JobsDataSource.swift */,
@@ -643,7 +646,7 @@
 			);
 			name = TudoNosso;
 			productName = TudoNosso;
-			productReference = C40A2E7423704BA500DB87BB /* Rogger Burguer's.app */;
+			productReference = C40A2E7423704BA500DB87BB /* Rogger.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C40A2E8C23704BA700DB87BB /* TudoNossoTests */ = {
@@ -925,6 +928,7 @@
 				C46E728523745C1300D57BB9 /* CategoryCollectionView.swift in Sources */,
 				C46791F8238FF579004C108D /* userRegisterViewController.swift in Sources */,
 				560C30652388291D004BD536 /* Channel.swift in Sources */,
+				C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */,
 				56247D41238C1C48008245D0 /* ChannelMemberTableViewCell.swift in Sources */,
 				C42267462371AF28000A6DA3 /* (null) in Sources */,
 				5680A9C9239A8C7000523EF9 /* UIViewController+extension.swift in Sources */,
@@ -1137,7 +1141,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.TudoNosso234;
-				PRODUCT_NAME = "Rogger Burguer's";
+				PRODUCT_NAME = Rogger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1157,7 +1161,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.TudoNosso234;
-				PRODUCT_NAME = "Rogger Burguer's";
+				PRODUCT_NAME = Rogger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

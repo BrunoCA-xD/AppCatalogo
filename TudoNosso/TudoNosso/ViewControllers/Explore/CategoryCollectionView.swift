@@ -21,7 +21,7 @@ class CategoryCollectionView : UITableViewCell {
     //MARK: - PROPERTIES
     var drinkList = ["Bacon Cheddar", "Rogger Pepperoni", "Rogger Egg", "Rogger Onion", "Pepperoni Venture"]
     
-    var categorysList = ["Suco de laranja", "Coca-Cola Lata", "Guarana Lata", "Fanta Lata", "Coca-Cola 2 litros"]
+    var categorysList = ["Refrigerante", "Heineken", "Stela Artois", "Budweiser", "Água"]
     
     let ongDM = OrganizationDM()
     var organizationsList : [Organization] = []

@@ -13,12 +13,17 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     //MARK: - OUTLETS
     @IBOutlet weak var headerItem: UINavigationItem!
     @IBOutlet weak var imageProduct: UIImageView!
+    @IBOutlet weak var buttonBuy: UIButton!
     
     //MARK: - ACTIONS
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func addMarketPlace(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        print("clicou")
+    }
     //MARK: - PROPERTIES
     var filteredOngoingJobs : [Job] = []
     var searchController = UISearchController(searchResultsController: nil)
@@ -47,6 +52,7 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         
         headerItem.title = currentTitle
         
+        buttonBuy.layer.cornerRadius = 10
     }
     
 
