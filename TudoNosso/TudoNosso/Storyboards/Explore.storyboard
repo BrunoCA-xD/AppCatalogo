@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="2793" y="265"/>
         </scene>
-        <!--Shark Burguer's-->
+        <!--Burguer's-->
         <scene sceneID="psT-e2-Nmf">
             <objects>
                 <viewController id="82i-MY-zrX" customClass="ExploreViewController" customModule="Rogger" customModuleProvider="target" sceneMemberID="viewController">
@@ -453,7 +453,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EEc-oX-1ja"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shark Burguer's" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
+                    <navigationItem key="navigationItem" title="Burguer's" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
                         <barButtonItem key="leftBarButtonItem" title="Repetir" id="2Fz-nd-m4q">
                             <connections>
                                 <segue destination="lD9-sI-S5i" kind="presentation" id="qjJ-j6-Yke"/>
