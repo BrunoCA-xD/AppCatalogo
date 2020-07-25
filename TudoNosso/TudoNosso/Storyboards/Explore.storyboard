@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zvJ-uw-NgZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zvJ-uw-NgZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="2793" y="265"/>
         </scene>
-        <!--Rogger Burguer's-->
+        <!--Shark Burguer's-->
         <scene sceneID="psT-e2-Nmf">
             <objects>
                 <viewController id="82i-MY-zrX" customClass="ExploreViewController" customModule="Rogger" customModuleProvider="target" sceneMemberID="viewController">
@@ -411,7 +411,7 @@
                                             <outlet property="collectionView" destination="H06-l2-Fjf" id="FBQ-7j-ido"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="center" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="HgM-sp-wGb" userLabel="cell3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="HgM-sp-wGb" userLabel="cell3">
                                         <rect key="frame" x="0.0" y="455.5" width="414" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HgM-sp-wGb" id="Uio-Xd-FfL">
@@ -453,7 +453,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EEc-oX-1ja"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Rogger Burguer's" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
+                    <navigationItem key="navigationItem" title="Shark Burguer's" leftItemsSupplementBackButton="YES" id="LN9-ih-qyx">
                         <barButtonItem key="leftBarButtonItem" title="Repetir" id="2Fz-nd-m4q">
                             <connections>
                                 <segue destination="lD9-sI-S5i" kind="presentation" id="qjJ-j6-Yke"/>
