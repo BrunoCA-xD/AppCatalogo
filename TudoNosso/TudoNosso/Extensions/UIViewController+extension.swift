@@ -24,7 +24,7 @@ extension UIViewController {
         if #available(iOS 13, *) {
             searchController.searchBar.searchTextField.backgroundColor = .bg
         }
-        searchController.searchBar.barTintColor = UIColor(rgb: 0x0030B2, a: 1)
+        searchController.searchBar.barTintColor = UIColor(rgb: 0xB13424, a: 1)
         searchController.searchBar.tintColor = .white //UIColor(rgb: 0xFF5900, a: 1)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false

@@ -140,8 +140,8 @@ class ExploreViewController: BaseViewController {
     
     //MARK: setups
     func setupNavegationBar() {
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x0030B2, a: 1)
-        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x0030B2, a: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xB13424, a: 1)
+        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xB13424, a: 1)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0xFFFFFF, a: 1)
         navigationController?.navigationBar.barStyle = .black
     }

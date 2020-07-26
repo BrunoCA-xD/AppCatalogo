@@ -10,10 +10,49 @@ import UIKit
 
 class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate {
     
+    //MARK: - Variables
+    var dictPrice =
+    [
+        "Bacon Cheddar": "R$ 21",
+        "Pepperoni Venture": "R$ 22",
+        "X-Egg": "R$ 23",
+        "X-Onion": "R$ 24",
+        "X-Pepperoni": "R$ 25"
+    ]
+    
+    var dictDescription =
+    [
+        "Bacon Cheddar":
+        "Alface americana, tomate, milho, cebola, hamburguer premium 200grs, mussarela, porção grande de bacon, maionese, catchup, mostarda.",
+        
+        "Pepperoni Venture":
+        "Alface americana, tomate, milho, cebola, hamburguer premium 200grs, mussarela, bacon, maionese, catchup, mostarda, provolone e catupiry.",
+        
+        "X-Egg":
+        "Alface americana, tomate, milho, cebola, bacon, hamburguer premium de 200 grs, mussarela, ovo, salsicha, catupiry, maionese, catchup e mostarda.",
+        
+        "X-Onion":
+        "Hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
+        
+        "X-Pepperoni":
+        "Hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, e queijo mineiro"
+    ]
+    
+    var unitsInt = 1
+    
     //MARK: - OUTLETS
     @IBOutlet weak var headerItem: UINavigationItem!
     @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var buttonBuy: UIButton!
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var unitsProduct: UILabel!
+    
+    @IBOutlet weak var aditionalsButton: UIButton!
+    @IBOutlet weak var aditionalDescriptionView: UIView!
+    
     
     //MARK: - ACTIONS
     @IBAction func closeView(_ sender: Any) {
@@ -22,28 +61,46 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     
     @IBAction func addMarketPlace(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        print("clicou")
     }
-    //MARK: - PROPERTIES
-    var filteredOngoingJobs : [Job] = []
-    var searchController = UISearchController(searchResultsController: nil)
-    var titleHeader: String = ""
-    var jobsData = JobsDataSource()
-    var ongoingJobs : [Job] = []
-    var jobs : [Job] = [] {
-        didSet {
-            self.sortJobs()
+    
+    @IBAction func showAdditionals(_ sender: Any) {
+        if(aditionalDescriptionView.isHidden) {
+            aditionalsButton.titleLabel?.text = "Adicionais"
+            aditionalDescriptionView.isHidden = false
+        }
+        else {
+            aditionalsButton.titleLabel?.text = "Esconder"
+            aditionalDescriptionView.isHidden = true
         }
     }
     
+    @IBAction func addUnit(_ sender: Any) {
+        unitsInt += 1
+        unitsProduct.text = String(unitsInt)
+    }
+    
+    @IBAction func subUnit(_ sender: Any) {
+        if(unitsInt > 1) {
+            unitsInt -= 1
+            unitsProduct.text = String(unitsInt)
+        }
+    }
+    
+    
+    
+    
+    //MARK: - PROPERTIES
+    var titleHeader: String = ""
+    
     //MARK: - LIFECYCLE
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    func setupStyle() {
         imageProduct.image = UIImage(named: titleHeader)!
         imageProduct.layer.cornerRadius = 30
         imageProduct.layer.masksToBounds = true
-        
+        buttonBuy.layer.cornerRadius = 10
+    }
+    
+    func setupPopulate() {
         var currentTitle = titleHeader.replacingOccurrences(of: " 1", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 2", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 3", with: "", options: .literal, range: nil)
@@ -51,72 +108,16 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         currentTitle = currentTitle.replacingOccurrences(of: " 0", with: "", options: .literal, range: nil)
         
         headerItem.title = currentTitle
-        
-        buttonBuy.layer.cornerRadius = 10
+        priceLabel.text = dictPrice[currentTitle]
+        descriptionLabel.text = dictDescription[currentTitle]
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    func sortJobs(){
-        for job in jobs {
-            if job.status {
-                ongoingJobs.append(job)
-            }
-        }
-    }
-    
-    //MARK: - SEGUES
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.destination is JobViewController {
-            if let vc = segue.destination as? JobViewController,
-                let selectedJob = sender as? Job {
-                vc.job = selectedJob
-            }
-        }
-    }
-}
-
-//MARK: - UITableViewDelegate
-extension CategoryOportunitiesViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedJob = ongoingJobs[indexPath.row]
-        self.performSegue(withIdentifier: "showDetailJobSegue", sender: selectedJob)
-    }
-    
-}
-// MARK: - UITableViewDataSource
-extension CategoryOportunitiesViewController : UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
-            return filteredOngoingJobs.count
-        } else {
-            return ongoingJobs.count
-        }
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.reuseIdentifer, for: indexPath) as? JobsTableViewCell else {
-            fatalError("The dequeued cell is not an instance of JobsTableViewCell.")
-        }
-        
-        let jobList: Job
-        
-        if searchController.isActive && searchController.searchBar.text != "" {
-            jobList = filteredOngoingJobs[indexPath.row]
-        } else {
-            jobList = ongoingJobs[indexPath.row]
-        }
-        
-        cell.configure(job: jobList)
-        cell.backgroundColor = .clear
-        cell.selectionStyle = .none
-        
-        return cell
+        setupStyle()
+        setupPopulate()
+        aditionalsButton.titleLabel?.text = "Ver Adicionais"
     }
 }
 

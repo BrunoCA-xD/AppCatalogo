@@ -22,7 +22,7 @@ class SetupsLayout {
         } else {
             // Fallback on earlier versions
         }
-        searchController.searchBar.barTintColor = UIColor(rgb: 0x0030B2, a: 1)
+        searchController.searchBar.barTintColor = UIColor(rgb: 0xB13424, a: 1)
         searchController.searchBar.tintColor = .white
         searchController.searchBar.isTranslucent = false
         searchController.dimsBackgroundDuringPresentation = false
@@ -31,8 +31,8 @@ class SetupsLayout {
     }
     
     func setupNavegationBarLayout(navigationController: UINavigationController?) {
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x0030B2, a: 1)
-        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0x0030B2, a: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xB13424, a: 1)
+        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xB13424, a: 1)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0xFFFFFF, a: 1)
         navigationController?.navigationBar.barStyle = .black
     }

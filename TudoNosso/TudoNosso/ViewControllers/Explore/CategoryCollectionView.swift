@@ -11,7 +11,6 @@ import UIKit
 protocol CategoryCollectionViewDelegate: NSObjectProtocol {
     func causeSelected(_ view: CategoryCollectionView, causeTitle: String?, OrganizationEmail: String?, tagCollection: Int )
 }
-//showDetailsProduct
 
 class CategoryCollectionView : UITableViewCell {
     
@@ -19,7 +18,7 @@ class CategoryCollectionView : UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var drinkList = ["Bacon Cheddar", "Rogger Pepperoni", "Rogger Egg", "Rogger Onion", "Pepperoni Venture"]
+    var drinkList = ["Bacon Cheddar", "Pepperoni Venture", "X-Egg", "X-Onion", "X-Pepperoni"]
     
     var categorysList = ["Refrigerante", "Cerveja", "Suco Natural", "Doses", "Água"]
     
