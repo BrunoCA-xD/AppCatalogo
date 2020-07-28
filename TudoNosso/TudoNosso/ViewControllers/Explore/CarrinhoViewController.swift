@@ -56,7 +56,7 @@ class CarrinhoViewController: UIViewController {
         
         str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
         
-        let phoneNumber =  "+5514998985367" // you need to change this number
+        let phoneNumber =  "+5514996525883" // you need to change this number
         
         let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)&text=\(str)")!
         if UIApplication.shared.canOpenURL(appURL) {
@@ -71,14 +71,12 @@ class CarrinhoViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func closeView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    @IBAction func clearList(_ sender: Any) {
+        print("limpando carrinho")
+    }
+    
 }

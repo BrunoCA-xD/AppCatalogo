@@ -12,6 +12,7 @@ import SDWebImage
 
 class ExploreViewController: BaseViewController {
     
+    
     //MARK: OUTLETS
     @IBOutlet weak var jobsTableView: UITableView!
     
@@ -20,12 +21,17 @@ class ExploreViewController: BaseViewController {
     }
     @IBOutlet weak var buttonCarrinho: UIButton!
     
-    
+    var promoArray = [
+    "Duplo Salada",
+    "Duplo Burguer",
+    "Triplo Cheese",
+    "Duplo Cheddar"
+    ]
     func showMenu() {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
-            let number = 14998985360
+            let number = 14996525883
             if let url = URL(string: "tel://\(number)") {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url)
@@ -58,7 +64,7 @@ class ExploreViewController: BaseViewController {
             
             str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
             
-            let phoneNumber =  "+5514998985367" // you need to change this number
+            let phoneNumber =  "+5514996525883" // you need to change this number
             
             let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)&text=\(str)")!
             if UIApplication.shared.canOpenURL(appURL) {
@@ -119,7 +125,7 @@ class ExploreViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
+//        setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
         setupJobsTableView()
         setupNavegationBar()
         
@@ -191,11 +197,9 @@ class ExploreViewController: BaseViewController {
         if segue.destination is CategoryOportunitiesViewController {
             let vc = segue.destination as? CategoryOportunitiesViewController
             vc?.titleHeader = selectedCause
-        } else if segue.destination is JobViewController {
-            if let vc = segue.destination as? JobViewController,
-                let selectedJob = sender as? Job {
-                vc.job = selectedJob
-            }
+        } else if segue.destination is DrinksViewController {
+            let vc = segue.destination as? DrinksViewController
+            vc?.titleHeader = selectedCause
         } else if segue.destination is ProfileViewController {
             if let vc = segue.destination as? ProfileViewController{
                 vc.email = selectedOrganization
@@ -229,15 +233,18 @@ extension ExploreViewController: UISearchBarDelegate {
 extension ExploreViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,  didSelectRowAt indexPath: IndexPath) {
         
-        self.selectedCause = "Promo do dia \(indexPath.row)"
+        self.selectedCause = promoArray[indexPath.row]
         self.performSegue(withIdentifier: "showCauses", sender: self)
         
         buttonCarrinho.isHidden = false
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 // MARK: - UITableViewDataSource
 extension ExploreViewController: UITableViewDataSource  {
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let myLabel = UILabel()
@@ -333,7 +340,7 @@ extension ExploreViewController: UITableViewDataSource  {
             viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
             viewDemo.layer.cornerRadius = 20
             
-            let imageName = "Promo do dia \(indexPath.row)"
+            let imageName = promoArray[indexPath.row]
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
             
@@ -361,8 +368,15 @@ extension ExploreViewController: CategoryCollectionViewDelegate {
         if let title = causeTitle {
             self.selectedCause = title
         }
-        self.performSegue(withIdentifier: "showCauses", sender: self)
-        buttonCarrinho.isHidden = false
+        
+        if(OrganizationEmail == "0") {
+            self.performSegue(withIdentifier: "showCauses", sender: self)
+            buttonCarrinho.isHidden = false
+        }
+        else {
+            self.performSegue(withIdentifier: "showDrinks", sender: self)
+            buttonCarrinho.isHidden = false
+        }
     }
 }
 
@@ -412,4 +426,6 @@ class CustomCell: UITableViewCell {
         
         self.coverView.image = nil
     }
+    
+    
 }

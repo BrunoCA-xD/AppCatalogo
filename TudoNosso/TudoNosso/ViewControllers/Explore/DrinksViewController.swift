@@ -1,58 +1,60 @@
 //
-//  CategoryOportunitiesViewController.swift
+//  DrinksViewController.swift
 //  TudoNosso
 //
-//  Created by Joao Flores on 11/11/19.
-//  Copyright © 2019 Joao Flores. All rights reserved.
+//  Created by Joao Flores on 26/07/20.
+//  Copyright © 2020 Joao Flores. All rights reserved.
 //
 
 import UIKit
-class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate {
+
+class DrinksViewController: UIViewController,UISearchBarDelegate {
     
     //MARK: - Variables
     var dictPrice =
     [
-        "Bacon Cheddar": "R$ 21",
-        "Pepperoni Venture": "R$ 22",
-        "X-Egg": "R$ 23",
-        "X-Onion": "R$ 24",
-        "X-Pepperoni": "R$ 25",
-        
-        "Duplo Salada": "R$ 40",
-        "Duplo Burguer": "R$ 40",
-        "Triplo Cheese": "R$ 65",
-        "Duplo Cheddar": "R$ 45"
+        "Suco Natural": "R$ 8",
+        "Refrigerante": "R$ 5",
+        "Doses": "R$ 20",
+        "Cerveja": "R$ 8",
+        "Água": "R$ 5"
     ]
     
     var dictDescription =
     [
-        "Bacon Cheddar":
-        "Alface americana, tomate, milho, cebola, hamburguer premium 200grs, mussarela, porção grande de bacon, maionese, catchup, mostarda.",
+        "Suco Natural":
+        "Sucos naturais 500 ml",
         
-        "Pepperoni Venture":
-        "Alface americana, tomate, milho, cebola, hamburguer premium 200grs, mussarela, bacon, maionese, catchup, mostarda, provolone e catupiry.",
+        "Refrigerante":
+        "Refrigerante lata 350 ml",
         
-        "X-Egg":
-        "Alface americana, tomate, milho, cebola, bacon, hamburguer premium de 200 grs, mussarela, ovo, salsicha, catupiry, maionese, catchup e mostarda.",
+        "Doses":
+        "Doses 50 ml",
         
-        "X-Onion":
-        "Hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
+        "Cerveja":
+        "Cervejas long neck 390 ml",
         
-        "X-Pepperoni":
-        "Hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, e queijo mineiro",
-        
-        "Duplo Salada":
-        "Dois lanches com hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
-        
-        "Duplo Burguer":
-        "Dois lanches com hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
-        
-        "Triplo Cheese":
-        "Três lanches com hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
-        
-        "Duplo Cheddar":
-        "Dois lanches com hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
+        "Água":
+        "Garrafa de água 500 ml"
     ]
+    
+    var dictDescription2 =
+    [
+        "Suco Natural":
+        ["Laranja", "Abacaxi", "Uva"],
+        
+        "Refrigerante":
+        ["Coca-Cola", "Guaraná", "Sprite"],
+        
+        "Doses":
+        ["Vodka Smirnoff", "Whiskey Red Label"],
+        
+        "Cerveja":
+        ["Brahma", "Skol", "Itaipava"],
+        
+        "Água":
+        ["Com gás", "Sem gás"]
+        ] as [String : Array<String>]
     
     var unitsInt = 1
     
@@ -78,14 +80,6 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBOutlet weak var aditionalsButton: UIButton!
-    @IBAction func showAdditionals(_ sender: Any) {
-        if(aditionalDescriptionView.isHidden) {
-            aditionalDescriptionView.isHidden = false
-            aditionalsButton.isHidden = true
-        }
-    }
-    
     @IBAction func addUnit(_ sender: Any) {
         unitsInt += 1
         unitsProduct.text = String(unitsInt)
@@ -108,6 +102,12 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         else {
             onionLabel.textColor = UIColor.init(rgb: 0x33BE00)
             onionImage.image = UIImage(named: "circleSelected")
+            
+            cheeseLabel.textColor = UIColor.black
+            cheeseImage.image = UIImage(named: "circle")
+            
+            hamburgerLabel.textColor = UIColor.black
+            hambuergerImage.image = UIImage(named: "circle")
         }
     }
     
@@ -121,6 +121,12 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         else {
             cheeseLabel.textColor = UIColor.init(rgb: 0x33BE00)
             cheeseImage.image = UIImage(named: "circleSelected")
+            
+            onionLabel.textColor = UIColor.black
+            onionImage.image = UIImage(named: "circle")
+            
+            hamburgerLabel.textColor = UIColor.black
+            hambuergerImage.image = UIImage(named: "circle")
         }
     }
     
@@ -134,6 +140,12 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         else {
             hamburgerLabel.textColor = UIColor.init(rgb: 0x33BE00)
             hambuergerImage.image = UIImage(named: "circleSelected")
+            
+            onionLabel.textColor = UIColor.black
+            onionImage.image = UIImage(named: "circle")
+            
+            cheeseLabel.textColor = UIColor.black
+            cheeseImage.image = UIImage(named: "circle")
         }
     }
     
@@ -142,38 +154,52 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     
     //MARK: - SETUPS
     func setupStyle() {
-        imageProduct.image = UIImage(named: titleHeader)!
+        if let imageProd = UIImage(named: titleHeader) {
+            imageProduct.image = imageProd
+        }
         imageProduct.layer.cornerRadius = 30
         imageProduct.layer.masksToBounds = true
         buttonBuy.layer.cornerRadius = 10
     }
     
     func setupPopulate() {
+        
+        priceLabel.text = dictPrice[titleHeader]
+        descriptionLabel.text = dictDescription[titleHeader]
+        
         var currentTitle = titleHeader.replacingOccurrences(of: " 1", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 2", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 3", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 4", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 0", with: "", options: .literal, range: nil)
-        
+        print(currentTitle)
         headerItem.title = currentTitle
-        priceLabel.text = dictPrice[currentTitle]
-        descriptionLabel.text = dictDescription[currentTitle]
+    }
+    
+    func populateOptions() {
+        
+        if let options = dictDescription2[titleHeader] {
+            
+            let optionsLabels = [onionLabel, cheeseLabel, hamburgerLabel]
+            let optionsVar = options
+            
+            for i in 0...(options.count-1) {
+                print(i)
+                optionsLabels[i]?.text = optionsVar[i]
+            }
+        }
     }
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        populateOptions()
         setupStyle()
         setupPopulate()
-        aditionalsButton.titleLabel?.text = "Ver Adicionais"
         
         cheeseLabel.tintColor = UIColor.black
         hamburgerLabel.tintColor = UIColor.black
         onionLabel.tintColor = UIColor.black
-        aditionalDescriptionView.isHidden = true
     }
 }
-
-
-

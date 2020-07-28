@@ -102,6 +102,7 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
         cell.imageView.tag = indexPath.row
         cell.delegate = self
         
+        cell.email = String(collectionView.tag)
         if(collectionView.tag == 0) {
             cell.titleLabel.text = drinkList[indexPath.row]
             let image =  UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!

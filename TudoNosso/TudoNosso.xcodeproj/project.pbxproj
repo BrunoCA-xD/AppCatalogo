@@ -69,6 +69,7 @@
 		C42267462371AF28000A6DA3 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C42267482371AFBE000A6DA3 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C430DBB12386D70B007B800A /* JobsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430DBB02386D70B007B800A /* JobsDataSource.swift */; };
+		C46082B524CD3AC000723751 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46082B424CD3AC000723751 /* DrinksViewController.swift */; };
 		C46791F8238FF579004C108D /* userRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46791F7238FF579004C108D /* userRegisterViewController.swift */; };
 		C4679200239034E5004C108D /* informationsRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46791FF239034E5004C108D /* informationsRegisterViewController.swift */; };
 		C467920423918828004C108D /* ConfirmRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467920323918828004C108D /* ConfirmRegisterViewController.swift */; };
@@ -192,6 +193,7 @@
 		C4226735237057B1000A6DA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C4226737237057C1000A6DA3 /* JobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewController.swift; sourceTree = "<group>"; };
 		C430DBB02386D70B007B800A /* JobsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsDataSource.swift; sourceTree = "<group>"; };
+		C46082B424CD3AC000723751 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		C46791F7238FF579004C108D /* userRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRegisterViewController.swift; sourceTree = "<group>"; };
 		C46791FF239034E5004C108D /* informationsRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = informationsRegisterViewController.swift; sourceTree = "<group>"; };
 		C467920323918828004C108D /* ConfirmRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRegisterViewController.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				C430DBB02386D70B007B800A /* JobsDataSource.swift */,
 				C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */,
 				C491412D23996D3200D7FEE7 /* SetupsLayout.swift */,
+				C46082B424CD3AC000723751 /* DrinksViewController.swift */,
 			);
 			name = "Explore list";
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				C4679200239034E5004C108D /* informationsRegisterViewController.swift in Sources */,
 				C40E1FE523843EF800F3E5F7 /* FileDM.swift in Sources */,
 				560C307923887B41004BD536 /* ChannelTableViewCell.swift in Sources */,
+				C46082B524CD3AC000723751 /* DrinksViewController.swift in Sources */,
 				D7C0139D237C4E68001CDD36 /* AddressUtil.swift in Sources */,
 				C40A2E8223704BA500DB87BB /* TudoNosso.xcdatamodeld in Sources */,
 				567380FB237350F700F1B6C5 /* DatabaseRepresentation.swift in Sources */,
