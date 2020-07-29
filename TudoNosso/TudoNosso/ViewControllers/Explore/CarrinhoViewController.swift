@@ -108,8 +108,31 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
         // Fetch Fruit
         let fruit = fruits[indexPath.row]
 
-        let label = cell.viewWithTag(1000) as! UILabel
-        label.text = fruit
+        let title = cell.viewWithTag(titleTag) as! UILabel
+        title.text = fruit
+        
+        let adds = cell.viewWithTag(addsTag) as! UILabel
+        adds.text = "Hamburguer extra"
+        
+        let obs = cell.viewWithTag(obsTag) as! UILabel
+        obs.text = "Sem Alface"
+        
+        let price = cell.viewWithTag(priceTag) as! UILabel
+        price.text = "R$ 25"
+        
+        let units = cell.viewWithTag(unitsTag) as! UILabel
+        units.text = "1"
+        
+        let viewProd = cell.viewWithTag(viewTag)!
+        viewProd.layer.cornerRadius = 10
+        viewProd.layer.shadowOpacity = 0.5
+        viewProd.layer.shadowRadius = 3
+        viewProd.layer.shadowOffset = CGSize.zero
+
+        
+        let image = cell.viewWithTag(imageTag) as! UIImageView
+        image.image = UIImage(named: "Bacon Cheddar")
+        image.layer.cornerRadius = 5
         
         
         
