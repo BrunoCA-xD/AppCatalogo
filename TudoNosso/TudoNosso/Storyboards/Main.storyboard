@@ -311,6 +311,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BV3-kr-qX5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2X-EG-V8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Explore" automaticallyAdjustsScrollViewInsets="NO" id="zvJ-uw-NgZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -333,7 +334,6 @@
                         <segue destination="82i-MY-zrX" kind="relationship" relationship="rootViewController" id="skz-gb-RBO"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x2X-EG-V8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909" y="289"/>
         </scene>
@@ -1160,7 +1160,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2DF-Fi-l9N"/>
+        <segue reference="tB4-oc-hJO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle" width="50" height="50"/>
