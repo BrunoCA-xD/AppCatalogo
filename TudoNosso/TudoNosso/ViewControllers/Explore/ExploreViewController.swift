@@ -12,26 +12,71 @@ import SDWebImage
 
 class ExploreViewController: BaseViewController {
     
+    
     //MARK: OUTLETS
     @IBOutlet weak var jobsTableView: UITableView!
     
     @IBAction func Pedir(_ sender: Any) {
         showMenu()
     }
+    @IBOutlet weak var buttonCarrinho: UIButton!
     
+    var promoArray = [
+    "Duplo Salada",
+    "Duplo Burguer",
+    "Triplo Cheese",
+    "Duplo Cheddar"
+    ]
     func showMenu() {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
-            print("reiniciar")
+            let number = 14996525883
+            if let url = URL(string: "tel://\(number)") {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                }
+            }
         })
         
         let GoOrdemDasCartas = UIAlertAction(title: "Whatsapp", style: .default, handler: { (action) -> Void in
-            self.performSegue(withIdentifier: "CardsSeg", sender: nil)
-        })
-        
-        let EditAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action) -> Void in
-            self.performSegue(withIdentifier: "optionsSeg", sender: nil)
+            
+            var str =
+                
+                "*Pedido* \n" +
+                "1x Bacon Cheddar \n" +
+                "   * _catupiry_\n" +
+                "   * _onion_\n\n" +
+                
+                "1x Guaraná lata \n\n" +
+                    
+                "*Observações* \n" +
+                "Lanche sem alface\n\n" +
+            
+                "*Pagamento* \n" +
+                "Cartão Elo \n\n" +
+                    
+                "*Total* \n" +
+                "R$ 30,00 \n\n" +
+                    
+                "*Endereço* \n" +
+                "Rua Número, Bairro - Cidade"
+            
+            str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
+            
+            let phoneNumber =  "+5514996525883" // you need to change this number
+            
+            let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)&text=\(str)")!
+            if UIApplication.shared.canOpenURL(appURL) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+                }
+                else {
+                    UIApplication.shared.openURL(appURL)
+                }
+            } else {
+                print("WhatsApp is not installed")
+            }
         })
         
         
@@ -39,7 +84,6 @@ class ExploreViewController: BaseViewController {
         
         optionMenu.addAction(ResetGame)
         optionMenu.addAction(GoOrdemDasCartas)
-        optionMenu.addAction(EditAction)
         optionMenu.addAction(cancelAction)
         
         optionMenu.modalPresentationStyle = .popover
@@ -56,7 +100,7 @@ class ExploreViewController: BaseViewController {
     var organizationsList : [Organization] = []
     var filteredOrganizationsList : [Organization] = []
     var filteredOngoingJobs : [Job] = []
-    let categories = ["Bebidas", "Refeições", "Promoções"]
+    let categories = ["Lanches", "Bebidas", "Destaques"]
     var searchController = UISearchController(searchResultsController: nil)
     var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
     var jobs : [Job] = []
@@ -81,11 +125,14 @@ class ExploreViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
+//        setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
         setupJobsTableView()
         setupNavegationBar()
         
+        buttonCarrinho.isHidden = true
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -127,14 +174,12 @@ class ExploreViewController: BaseViewController {
         filteredOngoingJobs = jobs.filter { player in
             return player.title.lowercased().contains(searchText.lowercased())
         }
-//        jobsTableView.reloadData()
     }
     
     private func filterOrganizations(for searchText: String) {
         filteredOrganizationsList = organizationsList.filter { player in
             return player.name.lowercased().contains(searchText.lowercased())
         }
-//        jobsTableView.reloadData()
     }
     
     //MARK: LOADER
@@ -143,7 +188,6 @@ class ExploreViewController: BaseViewController {
         jobDM.find(inField: .status, withValueEqual: true, completion: { (result, error) in
             guard let result = result else { return }
             self.jobs = result
-//            self.jobsTableView.reloadData()
         })
         
     }
@@ -153,11 +197,9 @@ class ExploreViewController: BaseViewController {
         if segue.destination is CategoryOportunitiesViewController {
             let vc = segue.destination as? CategoryOportunitiesViewController
             vc?.titleHeader = selectedCause
-        } else if segue.destination is JobViewController {
-            if let vc = segue.destination as? JobViewController,
-                let selectedJob = sender as? Job {
-                vc.job = selectedJob
-            }
+        } else if segue.destination is DrinksViewController {
+            let vc = segue.destination as? DrinksViewController
+            vc?.titleHeader = selectedCause
         } else if segue.destination is ProfileViewController {
             if let vc = segue.destination as? ProfileViewController{
                 vc.email = selectedOrganization
@@ -190,15 +232,21 @@ extension ExploreViewController: UISearchBarDelegate {
 // MARK: - UITableViewDelegate
 extension ExploreViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,  didSelectRowAt indexPath: IndexPath) {
-        let selectedJob = jobs[indexPath.row]
-        self.performSegue(withIdentifier: "showDetailSegue", sender: selectedJob)
+        
+        self.selectedCause = promoArray[indexPath.row]
+        self.performSegue(withIdentifier: "showCauses", sender: self)
+        
+        buttonCarrinho.isHidden = false
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 // MARK: - UITableViewDataSource
 extension ExploreViewController: UITableViewDataSource  {
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
+        
         let myLabel = UILabel()
         
         if (section == 0) {
@@ -215,10 +263,10 @@ extension ExploreViewController: UITableViewDataSource  {
             myLabel.font = UIFont(name:"Nunito-Bold", size: 18.0)
             myLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
         }
-
+        
         let headerView = UIView()
         headerView.addSubview(myLabel)
-
+        
         return headerView
     }
     
@@ -230,6 +278,24 @@ extension ExploreViewController: UITableViewDataSource  {
             return 1
         } else {
             return 4
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.section < 2) {
+            return 200
+        }
+        else {
+            return 400
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.section < 2) {
+            return 200
+        }
+        else {
+            return 400
         }
     }
     
@@ -272,15 +338,12 @@ extension ExploreViewController: UITableViewDataSource  {
             
             let viewDemo = UIView()
             viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
-//            viewDemo.layer.shadowOpacity = 0.5
-//            viewDemo.layer.shadowRadius = 5
-//            viewDemo.layer.shadowOffset = CGSize.zero
             viewDemo.layer.cornerRadius = 20
             
-            let imageName = "feed\(indexPath.row)"
+            let imageName = promoArray[indexPath.row]
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
-
+            
             imageView.frame = CGRect(x: 0, y: 0, width: cell.frame.width - 20, height: cell.frame.height - 20)
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
@@ -289,7 +352,7 @@ extension ExploreViewController: UITableViewDataSource  {
             viewDemo.addSubview(imageView)
             
             cell.addSubview(viewDemo)
-
+            
             return cell
             
         default:
@@ -302,64 +365,67 @@ extension ExploreViewController: UITableViewDataSource  {
 extension ExploreViewController: CategoryCollectionViewDelegate {
     func causeSelected(_ view: CategoryCollectionView, causeTitle: String?, OrganizationEmail: String?,tagCollection: Int) {
         
-        if(tagCollection == 0) {
-            if let title = causeTitle {
-                self.selectedCause = title
-            }
+        if let title = causeTitle {
+            self.selectedCause = title
+        }
+        
+        if(OrganizationEmail == "0") {
             self.performSegue(withIdentifier: "showCauses", sender: self)
-        } else {
-            if let title = OrganizationEmail {
-                self.selectedOrganization = title
-            }
-            self.performSegue(withIdentifier: "showProfile", sender: self)
+            buttonCarrinho.isHidden = false
+        }
+        else {
+            self.performSegue(withIdentifier: "showDrinks", sender: self)
+            buttonCarrinho.isHidden = false
         }
     }
 }
 
 class CustomCell: UITableViewCell {
-
+    
     weak var coverView: UIImageView!
     weak var titleLabel: UILabel!
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         self.initialize()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
+        
         self.initialize()
     }
-
+    
     func initialize() {
         let coverView = UIImageView(frame: .zero)
         coverView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(coverView)
         self.coverView = coverView
-
+        
         let titleLabel = UILabel(frame: .zero)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
-
+        
         NSLayoutConstraint.activate([
             self.contentView.topAnchor.constraint(equalTo: self.coverView.topAnchor),
             self.contentView.bottomAnchor.constraint(equalTo: self.coverView.bottomAnchor),
             self.contentView.leadingAnchor.constraint(equalTo: self.coverView.leadingAnchor),
             self.contentView.trailingAnchor.constraint(equalTo: self.coverView.trailingAnchor),
-
+            
             self.contentView.centerXAnchor.constraint(equalTo: self.titleLabel.centerXAnchor),
             self.contentView.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor),
         ])
-
+        
         self.titleLabel.font = UIFont.systemFont(ofSize: 64)
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-
+        
         self.coverView.image = nil
     }
+    
+    
 }

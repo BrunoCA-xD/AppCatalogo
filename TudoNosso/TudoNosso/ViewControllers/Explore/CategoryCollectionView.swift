@@ -12,15 +12,16 @@ protocol CategoryCollectionViewDelegate: NSObjectProtocol {
     func causeSelected(_ view: CategoryCollectionView, causeTitle: String?, OrganizationEmail: String?, tagCollection: Int )
 }
 
-
 class CategoryCollectionView : UITableViewCell {
     
     //MARK: - OUTLETS
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var categorysList = ["Espetinhos", "Marmitex", "Lanches", "Carvão", "Gelo"]
-    var drinkList = ["Cervejas", "Chopp", "Destilados", "Vinhos", "Tabacaria"]
+    var drinkList = ["Bacon Cheddar", "Pepperoni Venture", "X-Egg", "X-Onion", "X-Pepperoni"]
+    
+    var categorysList = ["Refrigerante", "Cerveja", "Suco Natural", "Doses", "Água"]
+    
     let ongDM = OrganizationDM()
     var organizationsList : [Organization] = []
     var ongs : [Organization] = [] {
@@ -101,6 +102,7 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
         cell.imageView.tag = indexPath.row
         cell.delegate = self
         
+        cell.email = String(collectionView.tag)
         if(collectionView.tag == 0) {
             cell.titleLabel.text = drinkList[indexPath.row]
             let image =  UIImage(named: drinkList[indexPath.row]) ?? UIImage(named: "ong-img_job")!

@@ -25,7 +25,7 @@ class JobsTableViewHeader: UITableViewHeaderFooterView {
         
         var circleColor: UIColor {
             switch self {
-            case .ongoing:  return UIColor(rgb: 0x82E148)
+            case .ongoing:  return UIColor(rgb: 0xB13424)
             case .finished: return UIColor.thinGray
             }
         }

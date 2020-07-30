@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CdH-g8-XdU">
-                                <rect key="frame" x="10" y="251" width="394" height="394"/>
+                                <rect key="frame" x="30" y="271" width="354" height="354"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CdH-g8-XdU" secondAttribute="height" multiplier="1:1" id="I3K-Qt-Qoh"/>
                                 </constraints>
@@ -25,9 +25,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="CdH-g8-XdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Zdl-Ps-5g4"/>
+                            <constraint firstItem="CdH-g8-XdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Zdl-Ps-5g4"/>
                             <constraint firstItem="CdH-g8-XdU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a6R-0P-TXp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CdH-g8-XdU" secondAttribute="trailing" constant="10" id="z89-EE-BMl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CdH-g8-XdU" secondAttribute="trailing" constant="30" id="z89-EE-BMl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="800" height="800"/>
+        <image name="logo" width="2679" height="2679"/>
     </resources>
 </document>
