@@ -40,7 +40,6 @@
 		567380F723730B9B00F1B6C5 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567380F623730B9B00F1B6C5 /* Job.swift */; };
 		567380F923730C1D00F1B6C5 /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567380F823730C1D00F1B6C5 /* CategoryEnum.swift */; };
 		567380FB237350F700F1B6C5 /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567380FA237350F700F1B6C5 /* DatabaseRepresentation.swift */; };
-		5673810B23742F1B00F1B6C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673810723742F1B00F1B6C5 /* LoginViewController.swift */; };
 		567381282374535A00F1B6C5 /* OrganizationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567381272374535A00F1B6C5 /* OrganizationDM.swift */; };
 		5673812C2374A95900F1B6C5 /* JobDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673812B2374A95900F1B6C5 /* JobDM.swift */; };
 		567D0C4F2370530A00420704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 567D0C4E2370530A00420704 /* GoogleService-Info.plist */; };
@@ -67,15 +66,11 @@
 		C42267482371AFBE000A6DA3 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C430DBB12386D70B007B800A /* JobsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430DBB02386D70B007B800A /* JobsDataSource.swift */; };
 		C46082B524CD3AC000723751 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46082B424CD3AC000723751 /* DrinksViewController.swift */; };
-		C46791F8238FF579004C108D /* userRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46791F7238FF579004C108D /* userRegisterViewController.swift */; };
-		C4679200239034E5004C108D /* informationsRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46791FF239034E5004C108D /* informationsRegisterViewController.swift */; };
-		C467920423918828004C108D /* ConfirmRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467920323918828004C108D /* ConfirmRegisterViewController.swift */; };
 		C46E728523745C1300D57BB9 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E728323745C1200D57BB9 /* CategoryCollectionView.swift */; };
 		C46E728623745C1300D57BB9 /* CellCasesOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */; };
 		C46E729E2379985B00D57BB9 /* CategoryOportunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */; };
 		C46E72A3237AE4A400D57BB9 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */; };
 		C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */; };
-		C491412823981C0700D7FEE7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412723981C0700D7FEE7 /* EditProfileViewController.swift */; };
 		C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412923982B5900D7FEE7 /* DataUser.swift */; };
 		C491412E23996D3200D7FEE7 /* SetupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412D23996D3200D7FEE7 /* SetupsLayout.swift */; };
 		D7210584238FEC550094EE0D /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210583238FEC550094EE0D /* Checkbox.swift */; };
@@ -153,7 +148,6 @@
 		567380F623730B9B00F1B6C5 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		567380F823730C1D00F1B6C5 /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		567380FA237350F700F1B6C5 /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
-		5673810723742F1B00F1B6C5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		567381272374535A00F1B6C5 /* OrganizationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDM.swift; sourceTree = "<group>"; };
 		5673812B2374A95900F1B6C5 /* JobDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDM.swift; sourceTree = "<group>"; };
 		567D0C4E2370530A00420704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -187,15 +181,11 @@
 		C4226737237057C1000A6DA3 /* JobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewController.swift; sourceTree = "<group>"; };
 		C430DBB02386D70B007B800A /* JobsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsDataSource.swift; sourceTree = "<group>"; };
 		C46082B424CD3AC000723751 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
-		C46791F7238FF579004C108D /* userRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRegisterViewController.swift; sourceTree = "<group>"; };
-		C46791FF239034E5004C108D /* informationsRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = informationsRegisterViewController.swift; sourceTree = "<group>"; };
-		C467920323918828004C108D /* ConfirmRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRegisterViewController.swift; sourceTree = "<group>"; };
 		C46E728323745C1200D57BB9 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCasesOrganizations.swift; sourceTree = "<group>"; };
 		C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOportunitiesViewController.swift; sourceTree = "<group>"; };
 		C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
 		C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		C491412723981C0700D7FEE7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C491412923982B5900D7FEE7 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		C491412D23996D3200D7FEE7 /* SetupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsLayout.swift; sourceTree = "<group>"; };
 		D7210583238FEC550094EE0D /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
@@ -471,22 +461,9 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		C46791F6238FF4F1004C108D /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				C46791F7238FF579004C108D /* userRegisterViewController.swift */,
-				C46791FF239034E5004C108D /* informationsRegisterViewController.swift */,
-				C467920323918828004C108D /* ConfirmRegisterViewController.swift */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
 		C46E72932375B06900D57BB9 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				C4914124239807DC00D7FEE7 /* EditProfile */,
-				C46791F6238FF4F1004C108D /* Register */,
-				C46E72952375C03000D57BB9 /* Login */,
 				C46E72942375C01400D57BB9 /* Explore list */,
 			);
 			path = Explore;
@@ -505,14 +482,6 @@
 				C46082B424CD3AC000723751 /* DrinksViewController.swift */,
 			);
 			name = "Explore list";
-			sourceTree = "<group>";
-		};
-		C46E72952375C03000D57BB9 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				5673810723742F1B00F1B6C5 /* LoginViewController.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		C46E72982375C06300D57BB9 /* Profile */ = {
@@ -535,14 +504,6 @@
 				D7C0139C237C4E68001CDD36 /* Base64Converter.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		C4914124239807DC00D7FEE7 /* EditProfile */ = {
-			isa = PBXGroup;
-			children = (
-				C491412723981C0700D7FEE7 /* EditProfileViewController.swift */,
-			);
-			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		D75A3F23238EAF230075FD94 /* Add Job */ = {
@@ -873,7 +834,6 @@
 				D776C4D723744C6E002C3F3E /* JobsTableViewCell.swift in Sources */,
 				560C30712388753A004BD536 /* UIScrollView+extensions.swift in Sources */,
 				D765D324237303CF00F596CD /* UIView+Extensions.swift in Sources */,
-				C4679200239034E5004C108D /* informationsRegisterViewController.swift in Sources */,
 				C40E1FE523843EF800F3E5F7 /* FileDM.swift in Sources */,
 				560C307923887B41004BD536 /* ChannelTableViewCell.swift in Sources */,
 				C46082B524CD3AC000723751 /* DrinksViewController.swift in Sources */,
@@ -884,9 +844,7 @@
 				567284D923833A4700DF4EA5 /* Volunteer.swift in Sources */,
 				56A74711237193AA00A3FA76 /* Date+extensions.swift in Sources */,
 				C46E728623745C1300D57BB9 /* CellCasesOrganizations.swift in Sources */,
-				C467920423918828004C108D /* ConfirmRegisterViewController.swift in Sources */,
 				C42267482371AFBE000A6DA3 /* (null) in Sources */,
-				C491412823981C0700D7FEE7 /* EditProfileViewController.swift in Sources */,
 				C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */,
 				56247D37238C048A008245D0 /* ChannelInfoViewController.swift in Sources */,
 				5680A9C7239A874C00523EF9 /* BaseViewController.swift in Sources */,
@@ -914,7 +872,6 @@
 				D7C97E92237D97680010BAC0 /* AreaCollectionCell.swift in Sources */,
 				D7210584238FEC550094EE0D /* Checkbox.swift in Sources */,
 				C46E728523745C1300D57BB9 /* CategoryCollectionView.swift in Sources */,
-				C46791F8238FF579004C108D /* userRegisterViewController.swift in Sources */,
 				560C30652388291D004BD536 /* Channel.swift in Sources */,
 				C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */,
 				56247D41238C1C48008245D0 /* ChannelMemberTableViewCell.swift in Sources */,
@@ -928,7 +885,6 @@
 				5633E5BA237D8D6800E46EE3 /* LoginDM.swift in Sources */,
 				56247D3B238C132B008245D0 /* ChannelGeneralInfoTableViewCell.swift in Sources */,
 				560C3067238868F9004BD536 /* ChannelDM.swift in Sources */,
-				5673810B23742F1B00F1B6C5 /* LoginViewController.swift in Sources */,
 				567380F22373016000F1B6C5 /* CLLocationCoordinate2D+extensions.swift in Sources */,
 				567380F723730B9B00F1B6C5 /* Job.swift in Sources */,
 				560C3075238877FC004BD536 /* ChannelsTableViewController.swift in Sources */,

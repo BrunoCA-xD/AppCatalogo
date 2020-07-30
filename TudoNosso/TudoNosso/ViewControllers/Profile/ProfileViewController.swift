@@ -250,17 +250,6 @@ class ProfileViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.destination is EditProfileViewController {
-            let vc = segue.destination as? EditProfileViewController
-            
-            vc?.name = profileData?.name ?? ""
-            vc?.phone = profileData?.phone ?? ""
-            vc?.email = profileData?.email ?? ""
-            vc?.descriptionText = profileData?.description ?? ""
-            vc?.facebook = profileData?.facebook ?? ""
-            vc?.webSite = profileData?.site ?? ""
-        }
-        
         switch segue.identifier {
         case profileSegueID:
             if let nextVC = segue.destination as? ProfileTableViewController {
