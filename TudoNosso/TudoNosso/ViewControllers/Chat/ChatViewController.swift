@@ -102,11 +102,11 @@ final class ChatViewController: MessagesViewController {
     
     
     @objc func openGroupInfo() {
-        let storyboard = UIStoryboard(name: "Channels", bundle: nil)
-        
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelInfoSBID") as? ChannelInfoViewController else {return}
-        viewController.channel = channel
-        self.navigationController?.pushViewController(viewController, animated: true)
+//        let storyboard = UIStoryboard(name: "Channels", bundle: nil)
+//        
+//        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelInfoSBID") as? ChannelInfoViewController else {return}
+//        viewController.channel = channel
+//        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     // MARK: - Helpers
