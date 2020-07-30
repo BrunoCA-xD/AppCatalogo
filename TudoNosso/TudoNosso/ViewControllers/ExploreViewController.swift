@@ -97,28 +97,17 @@ class ExploreViewController: UIViewController {
     var selectedCause: String = ""
     var selectedOrganization: String = ""
     var selectedJob: Int = 0
-    var organizationsList : [Organization] = []
-    var filteredOrganizationsList : [Organization] = []
-    var filteredOngoingJobs : [Job] = []
+//    var organizationsList : [Organization] = []
+//    var filteredOrganizationsList : [Organization] = []
+//    var filteredOngoingJobs : [Job] = []
     let categories = ["Lanches", "Bebidas", "Destaques"]
     var searchController = UISearchController(searchResultsController: nil)
-    var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
-    var jobs : [Job] = []
+//    var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
+//    var jobs : [Job] = []
     var backgroundQueue: OperationQueue {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 3
         return queue
-    }
-    
-    //MARK: IBAction
-    @IBAction func actionButtonLogin(_ sender: Any) {
-        if let kind = Local.userKind{
-            if(kind == LoginKinds.ONG.rawValue) {
-                self.performSegue(withIdentifier: "ShowAddJob", sender: self)
-            }
-        } else {
-            self.performSegue(withIdentifier: "showLogin", sender: self)
-        }
     }
     
     //MARK: - LIFECYCLE
@@ -136,9 +125,7 @@ class ExploreViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadData()
-        
-        
+		
         // remove border from nav bar
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
@@ -158,38 +145,13 @@ class ExploreViewController: UIViewController {
         
         jobsTableView.delegate = self
         jobsTableView.dataSource = self
-        
-//        jobsTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.reuseIdentifer)
-//        jobsTableView.register(JobsTableViewHeader.nib, forHeaderFooterViewReuseIdentifier: JobsTableViewHeader.reuseIdentifer)
+
     }
     
     func setupTableView(){
         jobsTableView.backgroundColor = .clear
         jobsTableView.delegate = self
         jobsTableView.dataSource = self
-    }
-    
-    //MARK: - FILTER
-    private func filterJobs(for searchText: String) {
-        filteredOngoingJobs = jobs.filter { player in
-            return player.title.lowercased().contains(searchText.lowercased())
-        }
-    }
-    
-    private func filterOrganizations(for searchText: String) {
-        filteredOrganizationsList = organizationsList.filter { player in
-            return player.name.lowercased().contains(searchText.lowercased())
-        }
-    }
-    
-    //MARK: LOADER
-    func loadData() {
-//        let jobDM = JobDM()
-//        jobDM.find(inField: .status, withValueEqual: true, completion: { (result, error) in
-//            guard let result = result else { return }
-//            self.jobs = result
-//        })
-        
     }
     
     //MARK: - SEGUES
@@ -201,19 +163,6 @@ class ExploreViewController: UIViewController {
             let vc = segue.destination as? DrinksViewController
             vc?.titleHeader = selectedCause
         }
-    }
-}
-
-// MARK: - UISearchResultsUpdating
-extension ExploreViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        filterJobs(for: searchController.searchBar.text ?? "")
-        filterOrganizations(for: searchController.searchBar.text ?? "")
-    }
-    
-    func isSearchControllerActiveAndNotEmpty() -> Bool {
-        return (searchController.isActive && searchController.searchBar.text != "")
     }
 }
 
@@ -259,9 +208,6 @@ extension ExploreViewController: UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearchControllerActiveAndNotEmpty() {
-            return filteredOngoingJobs.count
-        }
         if section < 2 {
             return 1
         } else {
@@ -288,25 +234,16 @@ extension ExploreViewController: UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if isSearchControllerActiveAndNotEmpty() {
-            return categories[2]
-        }
         return categories[section]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if isSearchControllerActiveAndNotEmpty() {
-            return 1
-        }
         return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var typeCell = indexPath.section
-        
-        if isSearchControllerActiveAndNotEmpty() {
-            typeCell = 2
-        }
+		let typeCell = indexPath.section
+
         
         switch typeCell {
         case 0:
