@@ -10,10 +10,10 @@ import UIKit
 
 
 protocol CellCasesOrganizationsDelegate: NSObjectProtocol {
-    func causeSelected(_ cell: CellCasesOrganizations)
+    func causeSelected(_ cell: CellCategoryProd)
 }
 
-class CellCasesOrganizations : UICollectionViewCell {
+class CellCategoryProd : UICollectionViewCell {
     
     //MARK: - OUTLETS
     @IBOutlet weak var imageView: UIImageView!
