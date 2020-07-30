@@ -77,12 +77,10 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		//tap.cancelsTouchesInView = false
 
 		view.addGestureRecognizer(tap)
-		// Do any additional setup after loading the view.
-	}
 
-	@objc func dismissKeyboard() {
-		//Causes the view (or one of its embedded text fields) to resign the first responder status.
-		view.endEditing(true)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
 	}
 
 	//  MARK: - TableView
@@ -139,7 +137,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		return cell
 	}
 
-	let fruits = ["Apple", "Pineapple", "Orange", "Blackberry", "Banana", "Pear", "Kiwi", "Strawberry", "Mango", "Walnut", "Apricot", "Tomato", "Almond", "Date", "Melon"]
+	let fruits = ["Apple", "Pineapple", "Orange", "Blackberry"]
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let numberOfRows = fruits.count
@@ -152,5 +150,35 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return fruits.count
+	}
+
+//	MARK:  - Keyboard
+
+	var isShowing = false
+
+	@objc func dismissKeyboard() {
+		if(isShowing) {
+			view.endEditing(true)
+			isShowing = false
+		}
+	}
+
+	@objc func keyboardWillShow(sender: NSNotification) {
+		if (!isShowing)  {
+
+			let info = sender.userInfo!
+			let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+			self.view.frame.origin.y = -keyboardFrame.size.height
+
+			isShowing = true
+		}
+	}
+
+	@objc func keyboardWillHide(sender: NSNotification) {
+		if (isShowing)  {
+			self.view.frame.origin.y = 0 // Move view to original position
+			isShowing = false
+		}
 	}
 }
