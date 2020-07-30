@@ -159,8 +159,8 @@ class ExploreViewController: BaseViewController {
         jobsTableView.delegate = self
         jobsTableView.dataSource = self
         
-        jobsTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.reuseIdentifer)
-        jobsTableView.register(JobsTableViewHeader.nib, forHeaderFooterViewReuseIdentifier: JobsTableViewHeader.reuseIdentifer)
+//        jobsTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.reuseIdentifer)
+//        jobsTableView.register(JobsTableViewHeader.nib, forHeaderFooterViewReuseIdentifier: JobsTableViewHeader.reuseIdentifer)
     }
     
     func setupTableView(){
@@ -200,10 +200,6 @@ class ExploreViewController: BaseViewController {
         } else if segue.destination is DrinksViewController {
             let vc = segue.destination as? DrinksViewController
             vc?.titleHeader = selectedCause
-        } else if segue.destination is ProfileViewController {
-            if let vc = segue.destination as? ProfileViewController{
-                vc.email = selectedOrganization
-            }
         }
     }
 }

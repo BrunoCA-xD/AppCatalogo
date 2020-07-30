@@ -72,10 +72,6 @@
 		D765D324237303CF00F596CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D323237303CF00F596CD /* UIView+Extensions.swift */; };
 		D765D3262373041B00F596CD /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D3252373041B00F596CD /* RoundedViews.swift */; };
 		D776C4CE23743C7E002C3F3E /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776C4CD23743C7E002C3F3E /* CustomSegmentedControl.swift */; };
-		D776C4D5237442C0002C3F3E /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D776C4D4237442C0002C3F3E /* JobsTableViewCell.xib */; };
-		D776C4D723744C6E002C3F3E /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776C4D623744C6E002C3F3E /* JobsTableViewCell.swift */; };
-		D78A53CB23758D58004B4689 /* JobsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A53CA23758D58004B4689 /* JobsTableViewHeader.swift */; };
-		D78A53CD23758D6B004B4689 /* JobsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78A53CC23758D6B004B4689 /* JobsTableViewHeader.xib */; };
 		D7A707612382CF8500D164AC /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A707602382CF8500D164AC /* ProfileTableViewController.swift */; };
 		D7A707632382EA9000D164AC /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A707622382EA9000D164AC /* JobsTableViewController.swift */; };
 		D7B8229A2386A2B80017F306 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B822992386A2B80017F306 /* Local.swift */; };
@@ -176,10 +172,6 @@
 		D765D323237303CF00F596CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D765D3252373041B00F596CD /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		D776C4CD23743C7E002C3F3E /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
-		D776C4D4237442C0002C3F3E /* JobsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
-		D776C4D623744C6E002C3F3E /* JobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
-		D78A53CA23758D58004B4689 /* JobsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewHeader.swift; sourceTree = "<group>"; };
-		D78A53CC23758D6B004B4689 /* JobsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTableViewHeader.xib; sourceTree = "<group>"; };
 		D7A707602382CF8500D164AC /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		D7A707622382EA9000D164AC /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		D7B822992386A2B80017F306 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
@@ -487,31 +479,11 @@
 		D776C4CF23743E62002C3F3E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				D78A53C923758D1D004B4689 /* Header for Jobs Table */,
-				D776C4D3237442A1002C3F3E /* Cells for Jobs Table */,
 				D765D3252373041B00F596CD /* RoundedViews.swift */,
 				D776C4CD23743C7E002C3F3E /* CustomSegmentedControl.swift */,
 				D7210583238FEC550094EE0D /* Checkbox.swift */,
 			);
 			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		D776C4D3237442A1002C3F3E /* Cells for Jobs Table */ = {
-			isa = PBXGroup;
-			children = (
-				D776C4D623744C6E002C3F3E /* JobsTableViewCell.swift */,
-				D776C4D4237442C0002C3F3E /* JobsTableViewCell.xib */,
-			);
-			path = "Cells for Jobs Table";
-			sourceTree = "<group>";
-		};
-		D78A53C923758D1D004B4689 /* Header for Jobs Table */ = {
-			isa = PBXGroup;
-			children = (
-				D78A53CA23758D58004B4689 /* JobsTableViewHeader.swift */,
-				D78A53CC23758D6B004B4689 /* JobsTableViewHeader.xib */,
-			);
-			path = "Header for Jobs Table";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -624,11 +596,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D776C4D5237442C0002C3F3E /* JobsTableViewCell.xib in Resources */,
 				567D0C4F2370530A00420704 /* GoogleService-Info.plist in Resources */,
 				C40A2EAF23704E7C00DB87BB /* Explore.storyboard in Resources */,
 				C40A2E8723704BA700DB87BB /* LaunchScreen.storyboard in Resources */,
-				D78A53CD23758D6B004B4689 /* JobsTableViewHeader.xib in Resources */,
 				1663B33923730D90005E3363 /* Nunito-Regular.ttf in Resources */,
 				1663B33823730D90005E3363 /* Nunito-Bold.ttf in Resources */,
 				56FC6DC8238EC28D00BD75BE /* Localizable.strings in Resources */,
@@ -762,7 +732,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C46E72A3237AE4A400D57BB9 /* ViewUtilities.swift in Sources */,
-				D776C4D723744C6E002C3F3E /* JobsTableViewCell.swift in Sources */,
 				560C30712388753A004BD536 /* UIScrollView+extensions.swift in Sources */,
 				D765D324237303CF00F596CD /* UIView+Extensions.swift in Sources */,
 				C40E1FE523843EF800F3E5F7 /* FileDM.swift in Sources */,
@@ -789,7 +758,6 @@
 				D7C0139E237C4E68001CDD36 /* Base64Converter.swift in Sources */,
 				5633E5B8237D851300E46EE3 /* Login.swift in Sources */,
 				D765D3222373021000F596CD /* UIColor+Extension.swift in Sources */,
-				D78A53CB23758D58004B4689 /* JobsTableViewHeader.swift in Sources */,
 				D7A707612382CF8500D164AC /* ProfileTableViewController.swift in Sources */,
 				C46E729E2379985B00D57BB9 /* CategoryOportunitiesViewController.swift in Sources */,
 				560C306923886BF8004BD536 /* Message.swift in Sources */,
