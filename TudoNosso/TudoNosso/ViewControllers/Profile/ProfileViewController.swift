@@ -251,10 +251,10 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch segue.identifier {
-        case profileSegueID:
-            if let nextVC = segue.destination as? ProfileTableViewController {
-                nextVC.receivedData = self.profileData
-            }
+//        case profileSegueID:
+//            if let nextVC = segue.destination as? ProfileTableViewController {
+//                nextVC.receivedData = self.profileData
+//            }
         case jobsSegueID:
             if let nextVC = segue.destination as? JobsTableViewController {
                 let dependencies = JobsTableViewController.Dependencies(jobs: self.jobs ?? [], isMyProfile: self.isMyProfile)
