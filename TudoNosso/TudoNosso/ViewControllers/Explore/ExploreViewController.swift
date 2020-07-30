@@ -184,11 +184,11 @@ class ExploreViewController: BaseViewController {
     
     //MARK: LOADER
     func loadData() {
-        let jobDM = JobDM()
-        jobDM.find(inField: .status, withValueEqual: true, completion: { (result, error) in
-            guard let result = result else { return }
-            self.jobs = result
-        })
+//        let jobDM = JobDM()
+//        jobDM.find(inField: .status, withValueEqual: true, completion: { (result, error) in
+//            guard let result = result else { return }
+//            self.jobs = result
+//        })
         
     }
     

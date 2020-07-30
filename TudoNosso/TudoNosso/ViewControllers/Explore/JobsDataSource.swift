@@ -43,15 +43,15 @@ class JobsDataSource {
     }
     
     func loadDataJobs(key : String, view : UITableView) {
-        let jobDM = JobDM()
-        
-        jobDM.find(inField: .categories, withValueEqual: self.nameKeyBD(key: key), completion: {
-            (result, error) in
-            guard let result = result else { return }
-            self.jobs = result
-            
-            view.reloadData()
-        })
+//        let jobDM = JobDM()
+//        
+//        jobDM.find(inField: .categories, withValueEqual: self.nameKeyBD(key: key), completion: {
+//            (result, error) in
+//            guard let result = result else { return }
+//            self.jobs = result
+//            
+//            view.reloadData()
+//        })
     }
     
     func nameKeyBD (key : String) -> String{
