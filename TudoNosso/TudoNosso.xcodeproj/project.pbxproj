@@ -16,10 +16,7 @@
 		560C3067238868F9004BD536 /* ChannelDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C3066238868F9004BD536 /* ChannelDM.swift */; };
 		560C306923886BF8004BD536 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C306823886BF8004BD536 /* Message.swift */; };
 		560C306B23886F44004BD536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C306A23886F44004BD536 /* User.swift */; };
-		560C306F2388738E004BD536 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C306E2388738E004BD536 /* ChatViewController.swift */; };
 		560C30712388753A004BD536 /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C30702388753A004BD536 /* UIScrollView+extensions.swift */; };
-		560C3075238877FC004BD536 /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C3074238877FC004BD536 /* ChannelsTableViewController.swift */; };
-		56247D37238C048A008245D0 /* ChannelInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56247D36238C048A008245D0 /* ChannelInfoViewController.swift */; };
 		5633E5B8237D851300E46EE3 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633E5B7237D851300E46EE3 /* Login.swift */; };
 		5633E5BA237D8D6800E46EE3 /* LoginDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633E5B9237D8D6800E46EE3 /* LoginDM.swift */; };
 		564C81C52396FD4E00AB33AE /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C81C42396FD4E00AB33AE /* UIImage+extensions.swift */; };
@@ -66,12 +63,9 @@
 		C46E72A3237AE4A400D57BB9 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */; };
 		C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */; };
 		C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412923982B5900D7FEE7 /* DataUser.swift */; };
-		D7210584238FEC550094EE0D /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210583238FEC550094EE0D /* Checkbox.swift */; };
 		D75A3F27238EB3940075FD94 /* AddJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A3F26238EB3940075FD94 /* AddJobTableViewController.swift */; };
 		D765D3222373021000F596CD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D3212373021000F596CD /* UIColor+Extension.swift */; };
 		D765D324237303CF00F596CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D323237303CF00F596CD /* UIView+Extensions.swift */; };
-		D765D3262373041B00F596CD /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D3252373041B00F596CD /* RoundedViews.swift */; };
-		D776C4CE23743C7E002C3F3E /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776C4CD23743C7E002C3F3E /* CustomSegmentedControl.swift */; };
 		D7A707612382CF8500D164AC /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A707602382CF8500D164AC /* ProfileTableViewController.swift */; };
 		D7A707632382EA9000D164AC /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A707622382EA9000D164AC /* JobsTableViewController.swift */; };
 		D7B8229A2386A2B80017F306 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B822992386A2B80017F306 /* Local.swift */; };
@@ -110,10 +104,7 @@
 		560C3066238868F9004BD536 /* ChannelDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDM.swift; sourceTree = "<group>"; };
 		560C306823886BF8004BD536 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		560C306A23886F44004BD536 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		560C306E2388738E004BD536 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		560C30702388753A004BD536 /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
-		560C3074238877FC004BD536 /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
-		56247D36238C048A008245D0 /* ChannelInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelInfoViewController.swift; sourceTree = "<group>"; };
 		5633E5B7237D851300E46EE3 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5633E5B9237D8D6800E46EE3 /* LoginDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDM.swift; sourceTree = "<group>"; };
 		564C81C42396FD4E00AB33AE /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
@@ -166,12 +157,9 @@
 		C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
 		C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C491412923982B5900D7FEE7 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
-		D7210583238FEC550094EE0D /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		D75A3F26238EB3940075FD94 /* AddJobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobTableViewController.swift; sourceTree = "<group>"; };
 		D765D3212373021000F596CD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D765D323237303CF00F596CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		D765D3252373041B00F596CD /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
-		D776C4CD23743C7E002C3F3E /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		D7A707602382CF8500D164AC /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		D7A707622382EA9000D164AC /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		D7B822992386A2B80017F306 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
@@ -267,16 +255,6 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
-		560C306D23887365004BD536 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				560C306E2388738E004BD536 /* ChatViewController.swift */,
-				560C3074238877FC004BD536 /* ChannelsTableViewController.swift */,
-				56247D36238C048A008245D0 /* ChannelInfoViewController.swift */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
 		567380F32373016F00F1B6C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +330,6 @@
 		C40A2E7623704BA500DB87BB /* TudoNosso */ = {
 			isa = PBXGroup;
 			children = (
-				D776C4CF23743E62002C3F3E /* Custom Views */,
 				D765D31E2373015500F596CD /* Extensions */,
 				1663B33523730D24005E3363 /* Fonts */,
 				567380F32373016F00F1B6C5 /* Models */,
@@ -402,7 +379,6 @@
 			children = (
 				5680A9C5239A872900523EF9 /* Base */,
 				D75A3F23238EAF230075FD94 /* Add Job */,
-				560C306D23887365004BD536 /* Chat */,
 				560C305923875C58004BD536 /* Job */,
 				C46E72982375C06300D57BB9 /* Profile */,
 				C46E72932375B06900D57BB9 /* Explore */,
@@ -474,16 +450,6 @@
 				5680A9C8239A8C7000523EF9 /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D776C4CF23743E62002C3F3E /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				D765D3252373041B00F596CD /* RoundedViews.swift */,
-				D776C4CD23743C7E002C3F3E /* CustomSegmentedControl.swift */,
-				D7210583238FEC550094EE0D /* Checkbox.swift */,
-			);
-			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,10 +711,8 @@
 				C46E728623745C1300D57BB9 /* CellCasesOrganizations.swift in Sources */,
 				C42267482371AFBE000A6DA3 /* (null) in Sources */,
 				C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */,
-				56247D37238C048A008245D0 /* ChannelInfoViewController.swift in Sources */,
 				5680A9C7239A874C00523EF9 /* BaseViewController.swift in Sources */,
 				C40A2E7C23704BA500DB87BB /* ViewController.swift in Sources */,
-				D776C4CE23743C7E002C3F3E /* CustomSegmentedControl.swift in Sources */,
 				5669CB54238B28700093B898 /* MessageDM.swift in Sources */,
 				C4226734237057A3000A6DA3 /* ExploreViewController.swift in Sources */,
 				567284D7238330E000DF4EA5 /* DictionaryInterpreter.swift in Sources */,
@@ -761,10 +725,8 @@
 				D7A707612382CF8500D164AC /* ProfileTableViewController.swift in Sources */,
 				C46E729E2379985B00D57BB9 /* CategoryOportunitiesViewController.swift in Sources */,
 				560C306923886BF8004BD536 /* Message.swift in Sources */,
-				560C306F2388738E004BD536 /* ChatViewController.swift in Sources */,
 				5601523D2388A4D100D9D8E8 /* SenderType+extensions.swift in Sources */,
 				560C306B23886F44004BD536 /* User.swift in Sources */,
-				D7210584238FEC550094EE0D /* Checkbox.swift in Sources */,
 				C46E728523745C1300D57BB9 /* CategoryCollectionView.swift in Sources */,
 				560C30652388291D004BD536 /* Channel.swift in Sources */,
 				C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */,
@@ -774,12 +736,10 @@
 				5673812C2374A95900F1B6C5 /* JobDM.swift in Sources */,
 				564C81C52396FD4E00AB33AE /* UIImage+extensions.swift in Sources */,
 				C4226736237057B1000A6DA3 /* ProfileViewController.swift in Sources */,
-				D765D3262373041B00F596CD /* RoundedViews.swift in Sources */,
 				5633E5BA237D8D6800E46EE3 /* LoginDM.swift in Sources */,
 				560C3067238868F9004BD536 /* ChannelDM.swift in Sources */,
 				567380F22373016000F1B6C5 /* CLLocationCoordinate2D+extensions.swift in Sources */,
 				567380F723730B9B00F1B6C5 /* Job.swift in Sources */,
-				560C3075238877FC004BD536 /* ChannelsTableViewController.swift in Sources */,
 				567380F923730C1D00F1B6C5 /* CategoryEnum.swift in Sources */,
 				C40A2E7823704BA500DB87BB /* AppDelegate.swift in Sources */,
 				567284DB23833DB800DF4EA5 /* VolunteerDM.swift in Sources */,
