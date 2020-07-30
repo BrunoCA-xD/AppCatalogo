@@ -22,19 +22,19 @@ class CategoryCollectionView : UITableViewCell {
     
     var categorysList = ["Refrigerante", "Cerveja", "Água"]
     
-    let ongDM = OrganizationDM()
-    var organizationsList : [Organization] = []
-    var ongs : [Organization] = [] {
-        didSet {
-            self.sortOrganizations()
-        }
-    }
+//    let ongDM = OrganizationDM()
+//    var organizationsList : [Organization] = []
+//    var ongs : [Organization] = [] {
+//        didSet {
+//            self.sortOrganizations()
+//        }
+//    }
     
     //MARK: - METHODS
-    func sortOrganizations(){
-        organizationsList = ongs
-    }
-    
+//    func sortOrganizations(){
+//        organizationsList = ongs
+//    }
+//
     weak var delegate: CategoryCollectionViewDelegate!
     
     var backgroundQueue: OperationQueue {
@@ -130,18 +130,18 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
         return CGSize(width: itemHeight, height: itemHeight)
     }
     
-    func loadDataOrganizations() {
-        let orgDM = OrganizationDM()
-        
-        orgDM.listAll {
-            (result, error) in
-            guard let result = result else { return }
-            self.ongs = result
-            
-            self.reloadInputViews()
-            self.collectionView.reloadData()
-        }
-    }
+//    func loadDataOrganizations() {
+////        let orgDM = OrganizationDM()
+//        
+//        orgDM.listAll {
+//            (result, error) in
+//            guard let result = result else { return }
+//            self.ongs = result
+//            
+//            self.reloadInputViews()
+//            self.collectionView.reloadData()
+//        }
+//    }
 }
 
 
