@@ -14,9 +14,9 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     [
         "Bacon Cheddar": "R$ 21",
         "Pepperoni Venture": "R$ 22",
-        "X-Egg": "R$ 23",
-        "X-Onion": "R$ 24",
-        "X-Pepperoni": "R$ 25",
+        "Rogger Egg": "R$ 23",
+        "Rogger Onion": "R$ 24",
+        "Rogger Pepperoni": "R$ 25",
         
         "Duplo Salada": "R$ 40",
         "Duplo Burguer": "R$ 40",
@@ -32,13 +32,13 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         "Pepperoni Venture":
         "Alface americana, tomate, milho, cebola, hamburguer premium 200grs, mussarela, bacon, maionese, catchup, mostarda, provolone e catupiry.",
         
-        "X-Egg":
+        "Rogger Egg":
         "Alface americana, tomate, milho, cebola, bacon, hamburguer premium de 200 grs, mussarela, ovo, salsicha, catupiry, maionese, catchup e mostarda.",
         
-        "X-Onion":
+        "Rogger Onion":
         "Hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
         
-        "X-Pepperoni":
+        "Rogger Pepperoni":
         "Hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, e queijo mineiro",
         
         "Duplo Salada":

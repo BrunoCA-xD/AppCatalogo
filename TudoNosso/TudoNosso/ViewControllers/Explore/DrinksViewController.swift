@@ -13,23 +13,15 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     //MARK: - Variables
     var dictPrice =
     [
-        "Suco Natural": "R$ 8",
         "Refrigerante": "R$ 5",
-        "Doses": "R$ 20",
         "Cerveja": "R$ 8",
         "Água": "R$ 5"
     ]
     
     var dictDescription =
     [
-        "Suco Natural":
-        "Sucos naturais 500 ml",
-        
         "Refrigerante":
         "Refrigerante lata 350 ml",
-        
-        "Doses":
-        "Doses 50 ml",
         
         "Cerveja":
         "Cervejas long neck 390 ml",
@@ -40,14 +32,8 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     
     var dictDescription2 =
     [
-        "Suco Natural":
-        ["Laranja", "Abacaxi", "Uva"],
-        
         "Refrigerante":
         ["Coca-Cola", "Guaraná", "Sprite"],
-        
-        "Doses":
-        ["Vodka Smirnoff", "Whiskey Red Label"],
         
         "Cerveja":
         ["Brahma", "Skol", "Itaipava"],
