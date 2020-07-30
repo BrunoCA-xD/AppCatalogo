@@ -183,8 +183,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			let info = sender.userInfo!
 			let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
-//			let const = buttonSend.constraints.first(where: {$0.identifier == "bottom"})
-//			const?.constant = 300 //keyboardFrame.size.height
 			self.view.frame.origin.y = -keyboardFrame.size.height
 
 			isShowing = true
