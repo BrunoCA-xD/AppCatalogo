@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuyListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if Local.userMail == nil {  // no logged account
-            
+
             ViewUtilities.navigateToStoryBoard(storyboardName: "Explore", storyboardID: "Explore", window: window)
         } else {
             ViewUtilities.navigateToStoryBoard(storyboardName: "Main", storyboardID: "Tab", window: window)
