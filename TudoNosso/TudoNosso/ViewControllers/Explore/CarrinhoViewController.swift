@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
@@ -73,14 +73,21 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		tableItens.delegate = self
 		tableItens.dataSource = self
-		//Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-		//tap.cancelsTouchesInView = false
 
 		view.addGestureRecognizer(tap)
 
+		//keyboard
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
 
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+
+		nameText.delegate = self
+		cellphoneText.delegate = self
+		endressText.delegate = self
+		payformText.delegate = self
+		obsText.delegate = self
+
+		
 	}
 
 	//  MARK: - TableView
@@ -154,6 +161,13 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 //	MARK:  - Keyboard
 
+	//IBOutlet
+	@IBOutlet weak var nameText: UITextField!
+	@IBOutlet weak var cellphoneText: UITextField!
+	@IBOutlet weak var endressText: UITextField!
+	@IBOutlet weak var payformText: UITextField!
+	@IBOutlet weak var obsText: UITextField!
+
 	var isShowing = false
 
 	@objc func dismissKeyboard() {
@@ -169,6 +183,8 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			let info = sender.userInfo!
 			let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
+//			let const = buttonSend.constraints.first(where: {$0.identifier == "bottom"})
+//			const?.constant = 300 //keyboardFrame.size.height
 			self.view.frame.origin.y = -keyboardFrame.size.height
 
 			isShowing = true
@@ -177,8 +193,20 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	@objc func keyboardWillHide(sender: NSNotification) {
 		if (isShowing)  {
-			self.view.frame.origin.y = 0 // Move view to original position
+			self.view.frame.origin.y = 0
 			isShowing = false
 		}
+	}
+
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		let nextTag = textField.tag + 1
+
+		if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+			nextResponder.becomeFirstResponder()
+		} else {
+			textField.resignFirstResponder()
+		}
+
+		return true
 	}
 }
