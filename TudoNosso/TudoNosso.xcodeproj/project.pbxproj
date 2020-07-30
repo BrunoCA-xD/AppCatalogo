@@ -18,7 +18,6 @@
 		560C306B23886F44004BD536 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C306A23886F44004BD536 /* User.swift */; };
 		560C306F2388738E004BD536 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C306E2388738E004BD536 /* ChatViewController.swift */; };
 		560C30712388753A004BD536 /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C30702388753A004BD536 /* UIScrollView+extensions.swift */; };
-		560C3073238877C3004BD536 /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560C3072238877C3004BD536 /* Channels.storyboard */; };
 		560C3075238877FC004BD536 /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C3074238877FC004BD536 /* ChannelsTableViewController.swift */; };
 		560C307923887B41004BD536 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C307723887B41004BD536 /* ChannelTableViewCell.swift */; };
 		560C307A23887B41004BD536 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560C307823887B41004BD536 /* ChannelTableViewCell.xib */; };
@@ -59,8 +58,6 @@
 		C40A2E8723704BA700DB87BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40A2E8523704BA700DB87BB /* LaunchScreen.storyboard */; };
 		C40A2E9D23704BA700DB87BB /* TudoNossoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A2E9C23704BA700DB87BB /* TudoNossoUITests.swift */; };
 		C40A2EAF23704E7C00DB87BB /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40A2EAE23704E7C00DB87BB /* Explore.storyboard */; };
-		C40A2EB323704EB200DB87BB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40A2EB223704EB200DB87BB /* Profile.storyboard */; };
-		C40A2EB523704EC700DB87BB /* Job.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40A2EB423704EC700DB87BB /* Job.storyboard */; };
 		C40E1FE523843EF800F3E5F7 /* FileDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E1FE423843EF800F3E5F7 /* FileDM.swift */; };
 		C4226734237057A3000A6DA3 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4226733237057A3000A6DA3 /* ExploreViewController.swift */; };
 		C4226736237057B1000A6DA3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4226735237057B1000A6DA3 /* ProfileViewController.swift */; };
@@ -82,7 +79,6 @@
 		C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412923982B5900D7FEE7 /* DataUser.swift */; };
 		C491412E23996D3200D7FEE7 /* SetupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412D23996D3200D7FEE7 /* SetupsLayout.swift */; };
 		D7210584238FEC550094EE0D /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210583238FEC550094EE0D /* Checkbox.swift */; };
-		D75A3F22238EAEE10075FD94 /* AddJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75A3F21238EAEE10075FD94 /* AddJob.storyboard */; };
 		D75A3F27238EB3940075FD94 /* AddJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A3F26238EB3940075FD94 /* AddJobTableViewController.swift */; };
 		D765D3222373021000F596CD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D3212373021000F596CD /* UIColor+Extension.swift */; };
 		D765D324237303CF00F596CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D323237303CF00F596CD /* UIView+Extensions.swift */; };
@@ -136,7 +132,6 @@
 		560C306A23886F44004BD536 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		560C306E2388738E004BD536 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		560C30702388753A004BD536 /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
-		560C3072238877C3004BD536 /* Channels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Channels.storyboard; sourceTree = "<group>"; };
 		560C3074238877FC004BD536 /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
 		560C307723887B41004BD536 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		560C307823887B41004BD536 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
@@ -186,8 +181,6 @@
 		C40A2E9C23704BA700DB87BB /* TudoNossoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TudoNossoUITests.swift; sourceTree = "<group>"; };
 		C40A2E9E23704BA700DB87BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40A2EAE23704E7C00DB87BB /* Explore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
-		C40A2EB223704EB200DB87BB /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		C40A2EB423704EC700DB87BB /* Job.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Job.storyboard; sourceTree = "<group>"; };
 		C40E1FE423843EF800F3E5F7 /* FileDM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDM.swift; sourceTree = "<group>"; };
 		C4226733237057A3000A6DA3 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		C4226735237057B1000A6DA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -206,7 +199,6 @@
 		C491412923982B5900D7FEE7 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		C491412D23996D3200D7FEE7 /* SetupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsLayout.swift; sourceTree = "<group>"; };
 		D7210583238FEC550094EE0D /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		D75A3F21238EAEE10075FD94 /* AddJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddJob.storyboard; sourceTree = "<group>"; };
 		D75A3F26238EB3940075FD94 /* AddJobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobTableViewController.swift; sourceTree = "<group>"; };
 		D765D3212373021000F596CD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D765D323237303CF00F596CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -461,10 +453,6 @@
 				C40A2E8523704BA700DB87BB /* LaunchScreen.storyboard */,
 				C40A2EAE23704E7C00DB87BB /* Explore.storyboard */,
 				C40A2E7D23704BA500DB87BB /* Main.storyboard */,
-				C40A2EB223704EB200DB87BB /* Profile.storyboard */,
-				D75A3F21238EAEE10075FD94 /* AddJob.storyboard */,
-				C40A2EB423704EC700DB87BB /* Job.storyboard */,
-				560C3072238877C3004BD536 /* Channels.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -741,19 +729,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D776C4D5237442C0002C3F3E /* JobsTableViewCell.xib in Resources */,
-				C40A2EB323704EB200DB87BB /* Profile.storyboard in Resources */,
 				567D0C4F2370530A00420704 /* GoogleService-Info.plist in Resources */,
 				C40A2EAF23704E7C00DB87BB /* Explore.storyboard in Resources */,
 				560C307A23887B41004BD536 /* ChannelTableViewCell.xib in Resources */,
 				C40A2E8723704BA700DB87BB /* LaunchScreen.storyboard in Resources */,
 				D78A53CD23758D6B004B4689 /* JobsTableViewHeader.xib in Resources */,
 				56247D3C238C132B008245D0 /* ChannelGeneralInfoTableViewCell.xib in Resources */,
-				C40A2EB523704EC700DB87BB /* Job.storyboard in Resources */,
 				1663B33923730D90005E3363 /* Nunito-Regular.ttf in Resources */,
 				1663B33823730D90005E3363 /* Nunito-Bold.ttf in Resources */,
-				560C3073238877C3004BD536 /* Channels.storyboard in Resources */,
 				56FC6DC8238EC28D00BD75BE /* Localizable.strings in Resources */,
-				D75A3F22238EAEE10075FD94 /* AddJob.storyboard in Resources */,
 				D7C97E90237D97570010BAC0 /* AreaCollectionCell.xib in Resources */,
 				56247D42238C1C48008245D0 /* ChannelMemberTableViewCell.xib in Resources */,
 				C40A2E8423704BA700DB87BB /* Assets.xcassets in Resources */,
