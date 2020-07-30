@@ -72,7 +72,6 @@
 		C46E72A3237AE4A400D57BB9 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */; };
 		C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */; };
 		C491412A23982B5900D7FEE7 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412923982B5900D7FEE7 /* DataUser.swift */; };
-		C491412E23996D3200D7FEE7 /* SetupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491412D23996D3200D7FEE7 /* SetupsLayout.swift */; };
 		D7210584238FEC550094EE0D /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210583238FEC550094EE0D /* Checkbox.swift */; };
 		D75A3F27238EB3940075FD94 /* AddJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A3F26238EB3940075FD94 /* AddJobTableViewController.swift */; };
 		D765D3222373021000F596CD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D3212373021000F596CD /* UIColor+Extension.swift */; };
@@ -88,8 +87,6 @@
 		D7B8229A2386A2B80017F306 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B822992386A2B80017F306 /* Local.swift */; };
 		D7C0139D237C4E68001CDD36 /* AddressUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0139B237C4E68001CDD36 /* AddressUtil.swift */; };
 		D7C0139E237C4E68001CDD36 /* Base64Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0139C237C4E68001CDD36 /* Base64Converter.swift */; };
-		D7C013A1237C4E87001CDD36 /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0139F237C4E87001CDD36 /* KeyboardDismissingView.swift */; };
-		D7C013A2237C4E87001CDD36 /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C013A0237C4E87001CDD36 /* KeyboardAvoiding.swift */; };
 		D7C97E90237D97570010BAC0 /* AreaCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C97E8F237D97570010BAC0 /* AreaCollectionCell.xib */; };
 		D7C97E92237D97680010BAC0 /* AreaCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C97E91237D97680010BAC0 /* AreaCollectionCell.swift */; };
 /* End PBXBuildFile section */
@@ -187,7 +184,6 @@
 		C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
 		C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C491412923982B5900D7FEE7 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
-		C491412D23996D3200D7FEE7 /* SetupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsLayout.swift; sourceTree = "<group>"; };
 		D7210583238FEC550094EE0D /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		D75A3F26238EB3940075FD94 /* AddJobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobTableViewController.swift; sourceTree = "<group>"; };
 		D765D3212373021000F596CD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -203,8 +199,6 @@
 		D7B822992386A2B80017F306 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
 		D7C0139B237C4E68001CDD36 /* AddressUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressUtil.swift; sourceTree = "<group>"; };
 		D7C0139C237C4E68001CDD36 /* Base64Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base64Converter.swift; sourceTree = "<group>"; };
-		D7C0139F237C4E87001CDD36 /* KeyboardDismissingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardDismissingView.swift; sourceTree = "<group>"; };
-		D7C013A0237C4E87001CDD36 /* KeyboardAvoiding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoiding.swift; sourceTree = "<group>"; };
 		D7C97E8F237D97570010BAC0 /* AreaCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaCollectionCell.xib; sourceTree = "<group>"; };
 		D7C97E91237D97680010BAC0 /* AreaCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -478,7 +472,6 @@
 				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C430DBB02386D70B007B800A /* JobsDataSource.swift */,
 				C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */,
-				C491412D23996D3200D7FEE7 /* SetupsLayout.swift */,
 				C46082B424CD3AC000723751 /* DrinksViewController.swift */,
 			);
 			name = "Explore list";
@@ -497,8 +490,6 @@
 		C46E72A1237AE48B00D57BB9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D7C013A0237C4E87001CDD36 /* KeyboardAvoiding.swift */,
-				D7C0139F237C4E87001CDD36 /* KeyboardDismissingView.swift */,
 				C46E72A2237AE4A400D57BB9 /* ViewUtilities.swift */,
 				D7C0139B237C4E68001CDD36 /* AddressUtil.swift */,
 				D7C0139C237C4E68001CDD36 /* Base64Converter.swift */,
@@ -853,14 +844,11 @@
 				5669CB54238B28700093B898 /* MessageDM.swift in Sources */,
 				C4226734237057A3000A6DA3 /* ExploreViewController.swift in Sources */,
 				567284D7238330E000DF4EA5 /* DictionaryInterpreter.swift in Sources */,
-				D7C013A2237C4E87001CDD36 /* KeyboardAvoiding.swift in Sources */,
 				D75A3F27238EB3940075FD94 /* AddJobTableViewController.swift in Sources */,
 				C430DBB12386D70B007B800A /* JobsDataSource.swift in Sources */,
 				D7B8229A2386A2B80017F306 /* Local.swift in Sources */,
 				D7C0139E237C4E68001CDD36 /* Base64Converter.swift in Sources */,
-				C491412E23996D3200D7FEE7 /* SetupsLayout.swift in Sources */,
 				5633E5B8237D851300E46EE3 /* Login.swift in Sources */,
-				D7C013A1237C4E87001CDD36 /* KeyboardDismissingView.swift in Sources */,
 				D765D3222373021000F596CD /* UIColor+Extension.swift in Sources */,
 				D78A53CB23758D58004B4689 /* JobsTableViewHeader.swift in Sources */,
 				D7A707612382CF8500D164AC /* ProfileTableViewController.swift in Sources */,
