@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import SDWebImage
 
-class ExploreViewController: BaseViewController {
+class ExploreViewController: UIViewController {
     
     
     //MARK: OUTLETS
@@ -214,14 +214,6 @@ extension ExploreViewController: UISearchResultsUpdating {
     
     func isSearchControllerActiveAndNotEmpty() -> Bool {
         return (searchController.isActive && searchController.searchBar.text != "")
-    }
-}
-
-// MARK: - UISearchBarDelegate
-extension ExploreViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        //focus in
-        isDarkStatusBar = true
     }
 }
 
