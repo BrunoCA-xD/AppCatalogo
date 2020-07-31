@@ -63,9 +63,33 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     }
     
     @IBAction func addMarketPlace(_ sender: Any) {
+		let adds = getAditionals()
+		CoreDataManager().save(
+			title: titleHeader,
+			units: String(unitsInt),
+			adds: adds
+		)
+
         self.dismiss(animated: true, completion: nil)
     }
-    
+
+	func getAditionals() -> String{
+		var addsVet = [String]()
+
+		if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+			addsVet.append("Coca-Cola")
+		}
+		if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+			addsVet.append("Guaraná")
+		}
+		if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+			addsVet.append("Sprite")
+		}
+
+		let stringRepresentation = addsVet.joined(separator:" • ")
+		return stringRepresentation
+	}
+
     @IBAction func addUnit(_ sender: Any) {
         unitsInt += 1
         unitsProduct.text = String(unitsInt)
@@ -187,5 +211,14 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
         cheeseLabel.tintColor = UIColor.black
         hamburgerLabel.tintColor = UIColor.black
         onionLabel.tintColor = UIColor.black
+
+		onionLabel.textColor = UIColor.init(rgb: 0x33BE00)
+		onionImage.image = UIImage(named: "circleSelected")
+
+		cheeseLabel.textColor = UIColor.black
+		cheeseImage.image = UIImage(named: "circle")
+
+		hamburgerLabel.textColor = UIColor.black
+		hambuergerImage.image = UIImage(named: "circle")
     }
 }

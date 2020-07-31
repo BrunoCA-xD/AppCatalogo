@@ -85,19 +85,26 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
 	func getAditionals() -> String{
 		var addsVet = [String]()
-
 		if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("hamburger")
+			addsVet.append("Hamburger")
 		}
 		if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("onion")
+			addsVet.append("Onion")
 		}
 		if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("cheese")
+			addsVet.append("Cheese")
 		}
 
 		let stringRepresentation = addsVet.joined(separator:" • ")
-		return stringRepresentation
+
+		var adds = ""
+		if(!addsVet.isEmpty) {
+			adds = "Adicionais: \n" + stringRepresentation
+		}
+		else {
+			adds = "Adicionais: \n" + "Sem  adicionais"
+		}
+		return adds
 	}
 
     @IBOutlet weak var aditionalsButton: UIButton!

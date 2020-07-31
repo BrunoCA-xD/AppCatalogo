@@ -1,55 +1,24 @@
 //
-//  CarrinhoViewController.swift
+//  RepeatViewController.swift
 //  TudoNosso
 //
-//  Created by Joao Flores on 20/07/20.
+//  Created by Joao Flores on 31/07/20.
 //  Copyright © 2020 Joao Flores. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class RepeatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
 	@IBOutlet weak var tableItens: UITableView!
 
 	//  MARK: - IBAction
-	func saveInRepeatPurchase() {
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-			return
-		}
-
-		let managedContext = appDelegate.persistentContainer.viewContext
-		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "RepeatPurchase")
-
-		do {
-			people = try managedContext.fetch(fetchRequest)
-		} catch let error as NSError {
-			print("Could not fetch. \(error), \(error.userInfo)")
-		}
-
-		RepeatCoreDataManager().deleteAllRecords()
-
-		let managedContext2 = appDelegate.persistentContainer.viewContext
-		let fetchRequest2 = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
-
-		do {
-			people = try managedContext2.fetch(fetchRequest2)
-		} catch let error as NSError {
-			print("Could not fetch. \(error), \(error.userInfo)")
-		}
-
-		for person in people {
-			RepeatCoreDataManager().save(title: (person.value(forKeyPath: "title") as? String)!, units: (person.value(forKeyPath: "units") as? String)!, adds: (person.value(forKeyPath: "adds") as? String)!)
-		}
-	}
-
 	@IBAction func sendCarrinho(_ sender: Any) {
 
 		updateTextFields()
-		saveInRepeatPurchase()
 
 		var str =
 
@@ -94,7 +63,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 	@IBAction func clearList(_ sender: Any) {
-		CoreDataManager().deleteAllRecords()
+		RepeatCoreDataManager().deleteAllRecords()
 		updateData()
 		tableItens.reloadData()
 	}
@@ -186,7 +155,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 
 		let managedContext = appDelegate.persistentContainer.viewContext
-		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "RepeatPurchase")
 		if let result = try? managedContext.fetch(fetchRequest) {
 			managedContext.delete(result[buttonTag])
 		}
@@ -214,7 +183,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		return people.count
 	}
 
-//	MARK: - Textfield
+	//	MARK: - Textfield
 	//IBOutlet
 	@IBOutlet weak var nameText: UITextField!
 	@IBOutlet weak var cellphoneText: UITextField!
@@ -243,7 +212,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 
-//	MARK:  - Keyboard
+	//	MARK:  - Keyboard
 
 	func setepKeyboard() {
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -301,7 +270,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		return true
 	}
 
-//	MARK: - COREDATA
+	//	MARK: - COREDATA
 	var people: [NSManagedObject] = []
 
 	func updateData() {
@@ -310,7 +279,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 
 		let managedContext = appDelegate.persistentContainer.viewContext
-		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "RepeatPurchase")
 
 		do {
 			people = try managedContext.fetch(fetchRequest)
