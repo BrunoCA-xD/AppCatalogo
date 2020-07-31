@@ -973,7 +973,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="150" id="K7F-Ow-mZf" customClass="cellPurchase" customModule="Burger" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="150" id="K7F-Ow-mZf" customClass="CellPurchase" customModule="Burger">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K7F-Ow-mZf" id="roq-dy-dPE">
@@ -995,9 +995,10 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOa-Tw-Le5">
-                                                            <rect key="frame" x="287" y="98" width="42" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOa-Tw-Le5">
+                                                            <rect key="frame" x="299" y="98" width="40" height="21"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="YqJ-tc-HDm"/>
                                                                 <constraint firstAttribute="height" constant="21" id="r9s-7p-oTi"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1028,15 +1029,29 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="subButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwl-LT-Vu0">
-                                                            <rect key="frame" x="257" y="82" width="30" height="53"/>
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="subButton" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwl-LT-Vu0">
+                                                            <rect key="frame" x="259" y="83.5" width="40" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="8ea-L6-j1T"/>
+                                                                <constraint firstAttribute="height" constant="50" id="vki-iC-Ah5"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="30"/>
                                                             <state key="normal" title="-"/>
+                                                            <connections>
+                                                                <action selector="subButton:" destination="K7F-Ow-mZf" eventType="touchUpInside" id="22k-7X-Q7w"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="addButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8H-8b-AOD">
-                                                            <rect key="frame" x="329" y="82" width="30" height="53"/>
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="addButton" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8H-8b-AOD">
+                                                            <rect key="frame" x="339" y="83.5" width="40" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="mAf-NU-fyb"/>
+                                                                <constraint firstAttribute="height" constant="50" id="qQs-LS-TQt"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="30"/>
                                                             <state key="normal" title="+"/>
+                                                            <connections>
+                                                                <action selector="AddButton:" destination="K7F-Ow-mZf" eventType="touchUpInside" id="Uhf-OI-XsW"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1059,10 +1074,10 @@
                                                         <constraint firstItem="vLQ-LR-RdQ" firstAttribute="top" secondItem="cbS-7w-VpS" secondAttribute="top" constant="10" id="liO-2a-FLc"/>
                                                         <constraint firstItem="Kwl-LT-Vu0" firstAttribute="centerY" secondItem="rOa-Tw-Le5" secondAttribute="centerY" id="lwb-ns-fok"/>
                                                         <constraint firstItem="l8H-8b-AOD" firstAttribute="centerY" secondItem="rOa-Tw-Le5" secondAttribute="centerY" id="vrK-yW-6Y3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="rOa-Tw-Le5" secondAttribute="trailing" constant="40" id="ygj-WT-Gbp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rOa-Tw-Le5" secondAttribute="trailing" constant="30" id="ygj-WT-Gbp"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmh-lI-IeN">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmh-lI-IeN">
                                                     <rect key="frame" x="379" y="6" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Nmh-lI-IeN" secondAttribute="height" multiplier="1:1" id="aKD-IH-oOu"/>
@@ -1080,13 +1095,17 @@
                                                 <constraint firstAttribute="bottom" secondItem="cbS-7w-VpS" secondAttribute="bottom" constant="5" id="pcN-oA-eu4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="Nmh-lI-IeN" id="ONf-72-Gvb"/>
+                                            <outlet property="unitsItem" destination="rOa-Tw-Le5" id="OwS-nJ-RwK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXp-DD-IFA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
-                                    <navigationItem title="Title" id="Be6-f1-7RY">
+                                    <navigationItem title="Ver Carrinho" id="Be6-f1-7RY">
                                         <barButtonItem key="leftBarButtonItem" title="Fechar" id="YjV-GF-KiV">
                                             <connections>
                                                 <action selector="closeView:" destination="sSK-rH-Pxk" id="O5d-ln-3uP"/>

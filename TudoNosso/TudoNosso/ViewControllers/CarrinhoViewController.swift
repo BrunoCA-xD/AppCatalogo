@@ -91,13 +91,14 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	let unitsTag = 1004
 	let viewTag = 100
 	let imageTag = 10
+	let deleteTag = 1
 
 	func dataTableview() {
 
 		tableItens.delegate = self
 		tableItens.dataSource = self
 
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+		guard (UIApplication.shared.delegate as? AppDelegate) != nil else {
 			return
 		}
 
@@ -110,7 +111,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CellPurchase
 
 		let viewProd = cell.viewWithTag(viewTag)!
 		viewProd.layer.cornerRadius = 10
@@ -137,15 +138,10 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		image.image = UIImage(named: (fruit.value(forKeyPath: "title") as? String)!)
 		image.layer.cornerRadius = 5
 
-		cell
-		let addButton = cell.viewWithTag(1) as! UIButton
-		let subButton = cell.viewWithTag(2) as! UIButton
+		let addButton = cell.deleteButton
 
-		addButton.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
-		addButton.tag = (indexPath.row * 10) + 1
-
-		subButton.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
-		subButton.tag = (indexPath.row * 10)
+		addButton!.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+		addButton!.tag = indexPath.row
 
 		return cell
 	}
@@ -154,25 +150,26 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let buttonTag = sender.tag
 		print(buttonTag)
 
-		let cell = Int(buttonTag/10)
-		let typeButton = Int(buttonTag%10)
-		print("cell", cell)
-		print("typeButton", typeButton)
-
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
 			return
 		}
 
 		let managedContext = appDelegate.persistentContainer.viewContext
-		let entity = NSEntityDescription.entity(forEntityName: "CurrentPurchase", in: managedContext)!
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
+		if let result = try? managedContext.fetch(fetchRequest) {
+			managedContext.delete(result[buttonTag])
+		}
 
-		let person = NSManagedObject(entity: entity, insertInto: managedContext)
-		person.setValue("title", forKeyPath: "title")
-		person.setValue("units", forKeyPath: "units")
-		person.setValue("adds", forKeyPath: "adds")
+		do {
+			try managedContext.save()
+		} catch let error as NSError {
+			print("Could not fetch. \(error), \(error.userInfo)")
+		}
 
-		people[cell] = person
+		people.remove(at: buttonTag)
 //		tableItens.reloadData()
+		tableItens.deleteRows(at: [IndexPath(row: buttonTag, section: 0)],
+							  with: UITableView.RowAnimation.automatic)
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
