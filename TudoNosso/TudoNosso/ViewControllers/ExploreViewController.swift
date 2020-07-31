@@ -26,6 +26,7 @@ class ExploreViewController: UIViewController {
     "Triplo Cheese",
     "Duplo Cheddar"
     ]
+
     func showMenu() {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -96,13 +97,8 @@ class ExploreViewController: UIViewController {
     var selectedCause: String = ""
     var selectedOrganization: String = ""
     var selectedJob: Int = 0
-//    var organizationsList : [Organization] = []
-//    var filteredOrganizationsList : [Organization] = []
-//    var filteredOngoingJobs : [Job] = []
     let categories = ["Lanches", "Bebidas", "Destaques"]
     var searchController = UISearchController(searchResultsController: nil)
-//    var organization : Organization = Organization(name: "", address: CLLocationCoordinate2D(), email: "")
-//    var jobs : [Job] = []
     var backgroundQueue: OperationQueue {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 3
@@ -113,7 +109,6 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-//        setupSearchBar(searchBarDelegate: self, searchResultsUpdating: self, jobsTableView, searchController)
         setupJobsTableView()
         setupNavegationBar()
         
@@ -129,7 +124,7 @@ class ExploreViewController: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
     }
     
-    //MARK: setups
+    //MARK: - Setups
     func setupNavegationBar() {
         navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xB13424, a: 1)
         navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xB13424, a: 1)
@@ -349,6 +344,4 @@ class CustomCell: UITableViewCell {
         
         self.coverView.image = nil
     }
-    
-    
 }

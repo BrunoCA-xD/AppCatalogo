@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
@@ -16,6 +17,8 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	//  MARK: - IBAction
 	@IBAction func sendCarrinho(_ sender: Any) {
+
+		updateTextFields()
 
 		var str =
 
@@ -60,7 +63,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 	@IBAction func clearList(_ sender: Any) {
-		print("limpando carrinho")
+		CoreDataManager().deleteAllRecords()
+		updateData()
+		tableItens.reloadData()
 	}
 
 	//  MARK: - LifeCycle
@@ -68,12 +73,154 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		super.viewDidLoad()
 
 		buttonSend.layer.cornerRadius = 10
+		setepKeyboard()
+		dataTableview()
+	}
 
-		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+	override func viewWillAppear(_ animated: Bool) {
+		setupTextFields()
+	}
+
+	//  MARK: - TableView
+	let cellIdentifier = "CellIdentifier"
+
+	//tags
+	let titleTag = 1000
+	let addsTag = 1001
+	let priceTag = 1003
+	let unitsTag = 1004
+	let viewTag = 100
+	let imageTag = 10
+
+	func dataTableview() {
 
 		tableItens.delegate = self
 		tableItens.dataSource = self
 
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+			return
+		}
+
+		updateData()
+	}
+
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 150
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath)
+
+		let viewProd = cell.viewWithTag(viewTag)!
+		viewProd.layer.cornerRadius = 10
+		viewProd.layer.shadowOpacity = 0.5
+		viewProd.layer.shadowRadius = 3
+		viewProd.layer.shadowOffset = CGSize.zero
+
+		// Fetch Fruit
+		let fruit = people[indexPath.row]
+
+		let title = cell.viewWithTag(titleTag) as! UILabel
+		title.text = fruit.value(forKeyPath: "title") as? String
+
+		let adds = cell.viewWithTag(addsTag) as! UILabel
+		adds.text = fruit.value(forKeyPath: "adds") as? String
+
+		let price = cell.viewWithTag(priceTag) as! UILabel
+		price.text = "R$ 25"
+
+		let units = cell.viewWithTag(unitsTag) as! UILabel
+		units.text = fruit.value(forKeyPath: "units") as? String
+
+		let image = cell.viewWithTag(imageTag) as! UIImageView
+		image.image = UIImage(named: (fruit.value(forKeyPath: "title") as? String)!)
+		image.layer.cornerRadius = 5
+
+		cell
+		let addButton = cell.viewWithTag(1) as! UIButton
+		let subButton = cell.viewWithTag(2) as! UIButton
+
+		addButton.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+		addButton.tag = (indexPath.row * 10) + 1
+
+		subButton.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+		subButton.tag = (indexPath.row * 10)
+
+		return cell
+	}
+
+	@objc func connected(sender: UIButton){
+		let buttonTag = sender.tag
+		print(buttonTag)
+
+		let cell = Int(buttonTag/10)
+		let typeButton = Int(buttonTag%10)
+		print("cell", cell)
+		print("typeButton", typeButton)
+
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+			return
+		}
+
+		let managedContext = appDelegate.persistentContainer.viewContext
+		let entity = NSEntityDescription.entity(forEntityName: "CurrentPurchase", in: managedContext)!
+
+		let person = NSManagedObject(entity: entity, insertInto: managedContext)
+		person.setValue("title", forKeyPath: "title")
+		person.setValue("units", forKeyPath: "units")
+		person.setValue("adds", forKeyPath: "adds")
+
+		people[cell] = person
+//		tableItens.reloadData()
+	}
+
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		let numberOfRows = people.count
+		return numberOfRows
+	}
+
+	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		return 1
+	}
+
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return people.count
+	}
+
+//	MARK: - Textfield
+	//IBOutlet
+	@IBOutlet weak var nameText: UITextField!
+	@IBOutlet weak var cellphoneText: UITextField!
+	@IBOutlet weak var endressText: UITextField!
+	@IBOutlet weak var payformText: UITextField!
+	@IBOutlet weak var obsText: UITextField!
+
+	func setupTextFields() {
+		nameText.text = UserDefaults.standard.string(forKey: "nameText")
+		cellphoneText.text = UserDefaults.standard.string(forKey: "cellphoneText")
+		endressText.text = UserDefaults.standard.string(forKey: "endressText")
+		payformText.text = UserDefaults.standard.string(forKey: "payformText")
+		obsText.text = UserDefaults.standard.string(forKey: "obsText")
+
+		print("setupTextFields")
+	}
+
+	func updateTextFields() {
+		UserDefaults.standard.set(nameText.text, forKey: "nameText")
+		UserDefaults.standard.set(cellphoneText.text, forKey: "cellphoneText")
+		UserDefaults.standard.set(endressText.text, forKey: "endressText")
+		UserDefaults.standard.set(payformText.text, forKey: "payformText")
+		UserDefaults.standard.set(obsText.text, forKey: "obsText")
+
+		print("updateTextFields")
+	}
+
+
+//	MARK:  - Keyboard
+
+	func setepKeyboard() {
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
 		view.addGestureRecognizer(tap)
 
 		//keyboard
@@ -86,87 +233,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		endressText.delegate = self
 		payformText.delegate = self
 		obsText.delegate = self
-
-		
 	}
-
-	//  MARK: - TableView
-	let cellIdentifier = "CellIdentifier"
-
-	//tags
-	let titleTag = 1000
-	let addsTag = 1001
-	let obsTag = 1002
-	let priceTag = 1003
-	let unitsTag = 1004
-	let viewTag = 100
-	let imageTag = 10
-
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 150
-	}
-
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath)
-
-		// Fetch Fruit
-		let fruit = fruits[indexPath.row]
-
-		let title = cell.viewWithTag(titleTag) as! UILabel
-		title.text = fruit
-
-		let adds = cell.viewWithTag(addsTag) as! UILabel
-		adds.text = "Hamburguer extra"
-
-		let obs = cell.viewWithTag(obsTag) as! UILabel
-		obs.text = "Sem Alface"
-
-		let price = cell.viewWithTag(priceTag) as! UILabel
-		price.text = "R$ 25"
-
-		let units = cell.viewWithTag(unitsTag) as! UILabel
-		units.text = "1"
-
-		let viewProd = cell.viewWithTag(viewTag)!
-		viewProd.layer.cornerRadius = 10
-		viewProd.layer.shadowOpacity = 0.5
-		viewProd.layer.shadowRadius = 3
-		viewProd.layer.shadowOffset = CGSize.zero
-
-
-		let image = cell.viewWithTag(imageTag) as! UIImageView
-		image.image = UIImage(named: "Bacon Cheddar")
-		image.layer.cornerRadius = 5
-
-
-
-		return cell
-	}
-
-	let fruits = ["Apple", "Pineapple", "Orange", "Blackberry"]
-
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let numberOfRows = fruits.count
-		return numberOfRows
-	}
-
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 1
-	}
-
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return fruits.count
-	}
-
-//	MARK:  - Keyboard
-
-	//IBOutlet
-	@IBOutlet weak var nameText: UITextField!
-	@IBOutlet weak var cellphoneText: UITextField!
-	@IBOutlet weak var endressText: UITextField!
-	@IBOutlet weak var payformText: UITextField!
-	@IBOutlet weak var obsText: UITextField!
 
 	var isShowing = false
 
@@ -206,5 +273,29 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 
 		return true
+	}
+
+//	MARK: - COREDATA
+	var people: [NSManagedObject] = []
+
+	func updateData() {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+			return
+		}
+
+		let managedContext = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
+
+		do {
+			people = try managedContext.fetch(fetchRequest)
+		} catch let error as NSError {
+			print("Could not fetch. \(error), \(error.userInfo)")
+		}
+
+		do {
+			people = try managedContext.fetch(fetchRequest)
+		} catch let error as NSError {
+			print("Could not fetch. \(error), \(error.userInfo)")
+		}
 	}
 }

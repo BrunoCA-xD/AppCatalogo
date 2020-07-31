@@ -65,19 +65,41 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var unitsProduct: UILabel!
-    
     @IBOutlet weak var aditionalDescriptionView: UIView!
-    
-    
+
     //MARK: - ACTIONS
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addMarketPlace(_ sender: Any) {
+
+		let adds = getAditionals()
+		CoreDataManager().save(
+			title: titleHeader,
+			units: String(unitsInt),
+			adds: adds
+		)
         self.dismiss(animated: true, completion: nil)
     }
-    
+
+	func getAditionals() -> String{
+		var addsVet = [String]()
+
+		if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+			addsVet.append("hamburger")
+		}
+		if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+			addsVet.append("onion")
+		}
+		if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+			addsVet.append("cheese")
+		}
+
+		let stringRepresentation = addsVet.joined(separator:" • ")
+		return stringRepresentation
+	}
+
     @IBOutlet weak var aditionalsButton: UIButton!
     @IBAction func showAdditionals(_ sender: Any) {
         if(aditionalDescriptionView.isHidden) {
@@ -166,7 +188,7 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
         setupStyle()
         setupPopulate()
-        aditionalsButton.titleLabel?.text = "Ver Adicionais"
+//        aditionalsButton.titleLabel?.text = "Ver Adicionais"
         
         cheeseLabel.tintColor = UIColor.black
         hamburgerLabel.tintColor = UIColor.black

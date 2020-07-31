@@ -25,6 +25,8 @@
 		C46E728623745C1300D57BB9 /* CellCasesOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */; };
 		C46E729E2379985B00D57BB9 /* CategoryOportunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */; };
 		C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */; };
+		C4EAFD7A24D3F97500D86553 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAFD7924D3F97500D86553 /* DataManager.swift */; };
+		C4EAFD7C24D41DB600D86553 /* cellPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAFD7B24D41DB600D86553 /* cellPurchase.swift */; };
 		D765D3222373021000F596CD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765D3212373021000F596CD /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C4EAFD7724D3152E00D86553 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		C4EAFD7824D3153500D86553 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		C4EAFD7924D3F97500D86553 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C4EAFD7B24D41DB600D86553 /* cellPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellPurchase.swift; sourceTree = "<group>"; };
 		D765D3212373021000F596CD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,11 +155,11 @@
 		C40A2E7623704BA500DB87BB /* TudoNosso */ = {
 			isa = PBXGroup;
 			children = (
+				C40A2E7723704BA500DB87BB /* AppDelegate.swift */,
 				C422672E237055BD000A6DA3 /* ViewControllers */,
 				C422672D237055A1000A6DA3 /* Storyboards */,
 				D765D31E2373015500F596CD /* Extensions */,
 				1663B33523730D24005E3363 /* Fonts */,
-				C40A2E7723704BA500DB87BB /* AppDelegate.swift */,
 				C40A2E8323704BA700DB87BB /* Assets.xcassets */,
 				C40A2E8823704BA700DB87BB /* Info.plist */,
 				C40A2E8023704BA500DB87BB /* TudoNosso.xcdatamodeld */,
@@ -193,12 +197,14 @@
 		C422672E237055BD000A6DA3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C4EAFD7924D3F97500D86553 /* DataManager.swift */,
 				C4226733237057A3000A6DA3 /* ExploreViewController.swift */,
 				C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */,
 				C46E728323745C1200D57BB9 /* CategoryCollectionView.swift */,
 				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */,
 				C46082B424CD3AC000723751 /* DrinksViewController.swift */,
+				C4EAFD7B24D41DB600D86553 /* cellPurchase.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4EAFD7C24D41DB600D86553 /* cellPurchase.swift in Sources */,
 				C46082B524CD3AC000723751 /* DrinksViewController.swift in Sources */,
 				C40A2E8223704BA500DB87BB /* TudoNosso.xcdatamodeld in Sources */,
 				C46E728623745C1300D57BB9 /* CellCasesOrganizations.swift in Sources */,
@@ -356,6 +363,7 @@
 				C47849ED24C578C800AEA946 /* CarrinhoViewController.swift in Sources */,
 				C42267462371AF28000A6DA3 /* (null) in Sources */,
 				C42267422371AE1B000A6DA3 /* (null) in Sources */,
+				C4EAFD7A24D3F97500D86553 /* DataManager.swift in Sources */,
 				C40A2E7823704BA500DB87BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
