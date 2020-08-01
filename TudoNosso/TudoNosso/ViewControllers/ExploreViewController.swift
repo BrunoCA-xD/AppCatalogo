@@ -11,7 +11,6 @@ import CoreLocation
 
 class ExploreViewController: UIViewController {
     
-    
     //MARK: OUTLETS
     @IBOutlet weak var jobsTableView: UITableView!
     

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
@@ -106,10 +106,53 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		buttonSend.layer.cornerRadius = 10
 		setepKeyboard()
 		dataTableview()
+
+		let picker = UIPickerView()
+		picker.dataSource = self
+		picker.delegate = self
+
+		let btnDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.monthdoneButtonAction))
+		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelClick))
+
+		let barAccessory = UIToolbar(frame: CGRect(x: 0, y: 0, width: picker.frame.width, height: 44))
+		barAccessory.barStyle = .default
+		barAccessory.isTranslucent = false
+		barAccessory.items = [cancelButton, btnDone]
+		picker.addSubview(barAccessory)
+
+		payformText.inputView = picker
+		payformText.becomeFirstResponder()
+	}
+
+	@objc func monthdoneButtonAction() {
+		print("oi")
+	}
+
+	@objc func cancelClick() {
+		print("cancelClick")
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		setupTextFields()
+	}
+
+	//  MARK: - PickerView
+	var data =  ["Cartão","Dinheiro"]
+
+	public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+
+	public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+		return data.count
+	}
+
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		payformText.text = data[row]
+	}
+
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return data[row]
 	}
 
 	//  MARK: - TableView

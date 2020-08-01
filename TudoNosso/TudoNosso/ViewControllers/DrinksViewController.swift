@@ -77,13 +77,13 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
 		var addsVet = [String]()
 
 		if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("Coca-Cola")
+			addsVet.append(hamburgerLabel.text!)
 		}
 		if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("Guaraná")
+			addsVet.append(onionLabel.text!)
 		}
 		if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("Sprite")
+			addsVet.append(cheeseLabel.text!)
 		}
 
 		let stringRepresentation = addsVet.joined(separator:" • ")
