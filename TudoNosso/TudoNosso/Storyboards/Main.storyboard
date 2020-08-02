@@ -1320,7 +1320,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite observações sobre o pedido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbd-M6-Rzt">
+                                        <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite observações sobre o pedido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbd-M6-Rzt">
                                             <rect key="frame" x="10" y="282" width="394" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -1349,7 +1349,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o troco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3E4-Ip-JAU">
+                                        <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o troco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3E4-Ip-JAU">
                                             <rect key="frame" x="227" y="212" width="177" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
@@ -1878,7 +1878,7 @@
                             <constraint firstAttribute="trailing" secondItem="mfW-IE-rJI" secondAttribute="trailing" id="cem-4i-E2J"/>
                             <constraint firstItem="mfW-IE-rJI" firstAttribute="leading" secondItem="5Lb-VS-VEs" secondAttribute="leading" id="dcu-74-n8t"/>
                             <constraint firstItem="KDP-iu-ZLE" firstAttribute="leading" secondItem="5Lb-VS-VEs" secondAttribute="leading" constant="20" id="iXo-fd-iOc"/>
-                            <constraint firstItem="KDP-iu-ZLE" firstAttribute="top" secondItem="XxR-Qc-xQN" secondAttribute="bottom" id="k1A-oq-G1l"/>
+                            <constraint firstItem="KDP-iu-ZLE" firstAttribute="top" secondItem="XxR-Qc-xQN" secondAttribute="bottom" identifier="bottomConstraint" id="k1A-oq-G1l"/>
                             <constraint firstItem="mfW-IE-rJI" firstAttribute="top" secondItem="FMf-Cf-hcw" secondAttribute="top" id="xQ9-X3-R4r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Lb-VS-VEs"/>
@@ -1896,7 +1896,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMY-RR-aVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="1010"/>
+            <point key="canvasLocation" x="2950.7246376811595" y="1009.8214285714286"/>
         </scene>
     </scenes>
     <resources>

@@ -99,7 +99,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 				str += "*Troco:* " + retrunMoney
 			}
 
-			"\n\n*Total:* " + price
+			str += "\n\n*Total:* " + price
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -325,32 +325,23 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		obsText.delegate = self
 	}
 
-	var isShowing = false
-
 	@objc func dismissKeyboard() {
-		if(isShowing) {
 			view.endEditing(true)
-			isShowing = false
-		}
 	}
 
 	@objc func keyboardWillShow(sender: NSNotification) {
-		if (!isShowing)  {
+		print("keyboard was shown")
+		let info = sender.userInfo
+		let keyboardSize: CGRect = (info![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
-			let info = sender.userInfo!
-			let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-
-			self.view.frame.origin.y = -keyboardFrame.size.height
-
-			isShowing = true
-		}
+		tableItens.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+		tableItens.scrollIndicatorInsets = tableItens.contentInset
 	}
 
 	@objc func keyboardWillHide(sender: NSNotification) {
-		if (isShowing)  {
-			self.view.frame.origin.y = 0
-			isShowing = false
-		}
+		print("keyboard will be hidden")
+		tableItens.contentInset = UIEdgeInsets.zero
+		tableItens.scrollIndicatorInsets = UIEdgeInsets.zero
 	}
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -387,5 +378,38 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
+	}
+}
+
+extension UIViewController {
+
+	func registerForKeyboardWillShowNotification(_ scrollView: UIScrollView, usingBlock block: ((CGSize?) -> Void)? = nil) {
+		_ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: { notification -> Void in
+			let userInfo = notification.userInfo!
+			let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue.size
+			let contentInsets = UIEdgeInsets(top: scrollView.contentInset.top, left: scrollView.contentInset.left, bottom: keyboardSize.height, right: scrollView.contentInset.right)
+
+			scrollView.setContentInsetAndScrollIndicatorInsets(contentInsets)
+			block?(keyboardSize)
+		})
+	}
+
+	func registerForKeyboardWillHideNotification(_ scrollView: UIScrollView, usingBlock block: ((CGSize?) -> Void)? = nil) {
+		_ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil, using: { notification -> Void in
+			let userInfo = notification.userInfo!
+			let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue.size
+			let contentInsets = UIEdgeInsets(top: scrollView.contentInset.top, left: scrollView.contentInset.left, bottom: 0, right: scrollView.contentInset.right)
+
+			scrollView.setContentInsetAndScrollIndicatorInsets(contentInsets)
+			block?(keyboardSize)
+		})
+	}
+}
+
+extension UIScrollView {
+
+	func setContentInsetAndScrollIndicatorInsets(_ edgeInsets: UIEdgeInsets) {
+		self.contentInset = edgeInsets
+		self.scrollIndicatorInsets = edgeInsets
 	}
 }
