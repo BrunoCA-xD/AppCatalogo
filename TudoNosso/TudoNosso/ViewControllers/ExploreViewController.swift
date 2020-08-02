@@ -96,7 +96,7 @@ class ExploreViewController: UIViewController {
     var selectedCause: String = ""
     var selectedOrganization: String = ""
     var selectedJob: Int = 0
-    let categories = ["Lanches", "Bebidas", "Destaques"]
+    let categories = ["Anéis", "Colares", "Relógios"]
     var searchController = UISearchController(searchResultsController: nil)
     var backgroundQueue: OperationQueue {
         let queue = OperationQueue()
@@ -125,8 +125,8 @@ class ExploreViewController: UIViewController {
     
     //MARK: - Setups
     func setupNavegationBar() {
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xB13424, a: 1)
-        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xB13424, a: 1)
+		navigationController?.navigationBar.barTintColor = UIColor.blue
+        navigationController?.navigationBar.backgroundColor = UIColor.blue
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0xFFFFFF, a: 1)
         navigationController?.navigationBar.barStyle = .black
     }
@@ -250,28 +250,6 @@ extension ExploreViewController: UITableViewDataSource  {
             cell.delegate = self
             return cell
             
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier:  "cell3")!
-            
-            let viewDemo = UIView()
-            viewDemo.frame = CGRect(x: 10, y: 10, width: cell.frame.width - 20, height: cell.frame.height - 20)
-            viewDemo.layer.cornerRadius = 20
-            
-            let imageName = promoArray[indexPath.row]
-            let image = UIImage(named: imageName)
-            let imageView = UIImageView(image: image!)
-            
-            imageView.frame = CGRect(x: 0, y: 0, width: cell.frame.width - 20, height: cell.frame.height - 20)
-            imageView.clipsToBounds = true
-            imageView.contentMode = .scaleAspectFill
-            imageView.layer.cornerRadius = 20
-            
-            viewDemo.addSubview(imageView)
-            
-            cell.addSubview(viewDemo)
-            
-            return cell
-            
         default:
             return UITableViewCell()
         }
@@ -288,11 +266,11 @@ extension ExploreViewController: CategoryCollectionViewDelegate {
         
         if(OrganizationEmail == "0") {
             self.performSegue(withIdentifier: "showCauses", sender: self)
-            buttonCarrinho.isHidden = false
+//            buttonCarrinho.isHidden = false
         }
         else {
             self.performSegue(withIdentifier: "showDrinks", sender: self)
-            buttonCarrinho.isHidden = false
+//            buttonCarrinho.isHidden = false
         }
     }
 }

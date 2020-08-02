@@ -18,9 +18,9 @@ class CategoryCollectionView : UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var drinkList = ["Bacon Cheddar", "Pepperoni Venture", "Rogger Egg", "Rogger Onion", "Rogger Pepperoni"]
+    var drinkList = ["Adicionar produto","Anel Turquesa", "Anel Coral", "Anel Turquesa", "Anel Coral", "Anel Turquesa", "Anel Coral"]
     
-    var categorysList = ["Refrigerante", "Cerveja", "Água"]
+    var categorysList = ["Adicionar produto","Colar Ouro", "Colar Prata", "Colar Ouro", "Colar Prata", "Colar Ouro", "Colar Prata"]
 	
     weak var delegate: CategoryCollectionViewDelegate!
     

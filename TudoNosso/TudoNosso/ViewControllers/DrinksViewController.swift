@@ -173,8 +173,8 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     
     func setupPopulate() {
         
-        priceLabel.text = dictPrice[titleHeader]
-        descriptionLabel.text = dictDescription[titleHeader]
+//        priceLabel.text = dictPrice[titleHeader]
+//        descriptionLabel.text = dictDescription[titleHeader]
         
         var currentTitle = titleHeader.replacingOccurrences(of: " 1", with: "", options: .literal, range: nil)
         currentTitle = currentTitle.replacingOccurrences(of: " 2", with: "", options: .literal, range: nil)
@@ -207,19 +207,19 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
         setupStyle()
         setupPopulate()
         
-        cheeseLabel.tintColor = UIColor.black
-        hamburgerLabel.tintColor = UIColor.black
-        onionLabel.tintColor = UIColor.black
+        //cheeseLabel.tintColor = UIColor.black
+        //hamburgerLabel.tintColor = UIColor.black
+        //onionLabel.tintColor = UIColor.black
 
-		onionLabel.textColor = UIColor.init(rgb: 0x33BE00)
-		onionImage.image = UIImage(named: "circleSelected")
+		//onionLabel.textColor = UIColor.init(rgb: 0x33BE00)
+		//onionImage.image = UIImage(named: "circleSelected")
 
-		cheeseLabel.textColor = UIColor.black
-		cheeseImage.image = UIImage(named: "circle")
+		//cheeseLabel.textColor = UIColor.black
+		//cheeseImage.image = UIImage(named: "circle")
 
-		if(titleHeader == "Água") {
-			hamburgerLabel.isHidden = true
-			hambuergerImage.isHidden = true
-		}
+//		if(titleHeader == "Água") {
+//			hamburgerLabel.isHidden = true
+//			hambuergerImage.isHidden = true
+//		}
     }
 }

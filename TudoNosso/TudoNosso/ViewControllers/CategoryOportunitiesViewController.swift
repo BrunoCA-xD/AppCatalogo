@@ -149,8 +149,8 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     func setupPopulate() {
         
         headerItem.title = titleHeader
-        priceLabel.text = dictPrice[titleHeader]
-        descriptionLabel.text = dictDescription[titleHeader]
+//        priceLabel.text = dictPrice[titleHeader]
+//        descriptionLabel.text = dictDescription[titleHeader]
     }
     
     //MARK: - LIFECYCLE
