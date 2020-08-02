@@ -39,7 +39,7 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
         ["Budweiser", "Heineken", "Stela Artois"],
         
         "Água":
-        ["Com gás", "Sem gás"]
+        ["Sem gás", "Com gás"]
         ] as [String : Array<String>]
     
     var unitsInt = 1

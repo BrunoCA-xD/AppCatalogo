@@ -1827,7 +1827,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="additionalsLabel" destination="qJp-4C-AXo" id="90l-HG-aYO"/>
                                             <outlet property="deleteButton" destination="Dza-Pe-nLn" id="7vo-2C-M2D"/>
+                                            <outlet property="priceLabel" destination="9En-7V-ruy" id="jw4-Si-pjw"/>
+                                            <outlet property="titleLabel" destination="kj0-VR-ZA6" id="BlN-6B-pfk"/>
                                             <outlet property="unitsItem" destination="E65-5e-bax" id="kAv-WY-ulj"/>
                                         </connections>
                                     </tableViewCell>

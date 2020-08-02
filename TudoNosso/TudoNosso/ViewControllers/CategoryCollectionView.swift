@@ -97,7 +97,7 @@ extension CategoryCollectionView : UICollectionViewDataSource, UICollectionViewD
             
         } else {
             cell.titleLabel.text = categorysList[indexPath.row]
-            let image =  UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "ong-img_job")!
+            let image =  UIImage(named: categorysList[indexPath.row]) ?? UIImage(named: "logo")!
             cell.imageView.image = image
         }
         

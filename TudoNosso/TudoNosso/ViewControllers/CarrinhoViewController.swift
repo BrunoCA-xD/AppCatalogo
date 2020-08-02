@@ -51,18 +51,25 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		updateTextFields()
 		saveInRepeatPurchase()
 
+
 		var productsArray = [String]()
+		var totalPrice = 0
 
-		for onlyItem in itemsProduct {
+		for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
+			let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-			let units = onlyItem.value(forKeyPath: "units") as! String + "x "
-			let title = onlyItem.value(forKeyPath: "title") as! String + " "
-			let price = "R$ 25" + "\n"
-			let adds = onlyItem.value(forKeyPath: "adds") as! String
+			let units = (cell.unitsItem.text ?? "1") + "x "
+			let title = cell.titleLabel.text! + " "
+			var price = cell.priceLabel.text!
+			price = price.replacingOccurrences(of: "R$ ", with: "")
+			let adds = cell.additionalsLabel.text!
 			let aditionals = "_" + adds + "_"
-			let product = units + title + price + aditionals
+			let product = units + title + "R$ " + price  + "\n" + aditionals
 
 			productsArray.append(product)
+
+			print(price)
+			totalPrice += Int(price)!
 		}
 
 		let productsList = productsArray.joined(separator:" \n\n ") + "\n\n"
@@ -71,14 +78,14 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		let payform = payformText.text ?? "Não registrado"
 		let endress = endressText.text ?? "Não registrado"
-
+		let price = String(totalPrice)
 		var str =
-			"*Pedido* \n" + productsList +
-			"\n*Total* \n" + "R$ 30,00" +
-			"*Nome* \n" + name +
-			"\n*Observações* \n" + obs +
-			"\n*Pagamento* \n" + payform +
-			"\n*Endereço* \n" + endress
+			"*Nome:* " + name +
+			"\n*Endereço:* " + endress +
+			"\n\n*Pedido* \n" + productsList +
+			"*Observações:* " + obs +
+			"\n*Pagamento:* " + payform +
+			"\n\n*Total:* " + price
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 

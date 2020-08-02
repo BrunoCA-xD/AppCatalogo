@@ -103,7 +103,7 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 			adds = "Adicionais: " + stringRepresentation
 		}
 		else {
-			adds = "Adicionais: \n" + "Sem  adicionais"
+			adds = "Adicionais: " + "Sem  adicionais"
 		}
 		return adds
 	}
