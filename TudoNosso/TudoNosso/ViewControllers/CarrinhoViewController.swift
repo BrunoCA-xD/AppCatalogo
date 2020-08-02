@@ -25,7 +25,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "RepeatPurchase")
 
 		do {
-			people = try managedContext.fetch(fetchRequest)
+			itemsProduct = try managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
@@ -36,12 +36,12 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let fetchRequest2 = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
 
 		do {
-			people = try managedContext2.fetch(fetchRequest2)
+			itemsProduct = try managedContext2.fetch(fetchRequest2)
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
 
-		for person in people {
+		for person in itemsProduct {
 			RepeatCoreDataManager().save(title: (person.value(forKeyPath: "title") as? String)!, units: (person.value(forKeyPath: "units") as? String)!, adds: (person.value(forKeyPath: "adds") as? String)!)
 		}
 	}
@@ -51,26 +51,34 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		updateTextFields()
 		saveInRepeatPurchase()
 
+		var productsArray = [String]()
+
+		for onlyItem in itemsProduct {
+
+			let units = onlyItem.value(forKeyPath: "units") as! String + "x "
+			let title = onlyItem.value(forKeyPath: "title") as! String + " "
+			let price = "R$ 25" + "\n"
+			let adds = onlyItem.value(forKeyPath: "adds") as! String
+			let aditionals = "_" + adds + "_"
+			let product = units + title + price + aditionals
+
+			productsArray.append(product)
+		}
+
+		let productsList = productsArray.joined(separator:" \n\n ") + "\n\n"
+		let name = nameText.text ?? "Não registrado"
+		let obs = obsText.text ?? "Sem observações"
+
+		let payform = payformText.text ?? "Não registrado"
+		let endress = endressText.text ?? "Não registrado"
+
 		var str =
-
-			"*Pedido* \n" +
-				"1x Bacon Cheddar \n" +
-				"   * _catupiry_\n" +
-				"   * _onion_\n\n" +
-
-				"1x Guaraná lata \n\n" +
-
-				"*Observações* \n" +
-				"Lanche sem alface\n\n" +
-
-				"*Pagamento* \n" +
-				"Cartão Elo \n\n" +
-
-				"*Total* \n" +
-				"R$ 30,00 \n\n" +
-
-				"*Endereço* \n" +
-		"Rua Número, Bairro - Cidade"
+			"*Pedido* \n" + productsList +
+			"\n*Total* \n" + "R$ 30,00" +
+			"*Nome* \n" + name +
+			"\n*Observações* \n" + obs +
+			"\n*Pagamento* \n" + payform +
+			"\n*Endereço* \n" + endress
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -193,7 +201,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		viewProd.layer.shadowOffset = CGSize.zero
 
 		// Fetch Fruit
-		let fruit = people[indexPath.row]
+		let fruit = itemsProduct[indexPath.row]
 
 		let title = cell.viewWithTag(titleTag) as! UILabel
 		title.text = fruit.value(forKeyPath: "title") as? String
@@ -239,12 +247,12 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
 
-		people.remove(at: buttonTag)
+		itemsProduct.remove(at: buttonTag)
 		tableItens.reloadData()
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let numberOfRows = people.count
+		let numberOfRows = itemsProduct.count
 		return numberOfRows
 	}
 
@@ -253,20 +261,18 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return people.count
+		return itemsProduct.count
 	}
 
 //	MARK: - Textfield
 	//IBOutlet
 	@IBOutlet weak var nameText: UITextField!
-	@IBOutlet weak var cellphoneText: UITextField!
 	@IBOutlet weak var endressText: UITextField!
 	@IBOutlet weak var payformText: UITextField!
 	@IBOutlet weak var obsText: UITextField!
 
 	func setupTextFields() {
 		nameText.text = UserDefaults.standard.string(forKey: "nameText")
-		cellphoneText.text = UserDefaults.standard.string(forKey: "cellphoneText")
 		endressText.text = UserDefaults.standard.string(forKey: "endressText")
 		payformText.text = UserDefaults.standard.string(forKey: "payformText")
 		obsText.text = UserDefaults.standard.string(forKey: "obsText")
@@ -274,7 +280,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	func updateTextFields() {
 		UserDefaults.standard.set(nameText.text, forKey: "nameText")
-		UserDefaults.standard.set(cellphoneText.text, forKey: "cellphoneText")
 		UserDefaults.standard.set(endressText.text, forKey: "endressText")
 		UserDefaults.standard.set(payformText.text, forKey: "payformText")
 		UserDefaults.standard.set(obsText.text, forKey: "obsText")
@@ -293,7 +298,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
 
 		nameText.delegate = self
-		cellphoneText.delegate = self
 		endressText.delegate = self
 		payformText.delegate = self
 		obsText.delegate = self
@@ -340,7 +344,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 //	MARK: - COREDATA
-	var people: [NSManagedObject] = []
+	var itemsProduct: [NSManagedObject] = []
 
 	func updateData() {
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -351,13 +355,13 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
 
 		do {
-			people = try managedContext.fetch(fetchRequest)
+			itemsProduct = try managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
 
 		do {
-			people = try managedContext.fetch(fetchRequest)
+			itemsProduct = try managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}

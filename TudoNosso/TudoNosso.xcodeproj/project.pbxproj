@@ -201,13 +201,13 @@
 			children = (
 				C4EAFD7924D3F97500D86553 /* DataManager.swift */,
 				C4226733237057A3000A6DA3 /* ExploreViewController.swift */,
-				C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */,
 				C46E728323745C1200D57BB9 /* CategoryCollectionView.swift */,
-				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C46E728423745C1300D57BB9 /* CellCasesOrganizations.swift */,
-				C46082B424CD3AC000723751 /* DrinksViewController.swift */,
 				C4EAFD7B24D41DB600D86553 /* CellPurchase.swift */,
+				C46082B424CD3AC000723751 /* DrinksViewController.swift */,
+				C46E729D2379985B00D57BB9 /* CategoryOportunitiesViewController.swift */,
 				C4EAFD7D24D4554B00D86553 /* RepeatViewController.swift */,
+				C47849EC24C578C800AEA946 /* CarrinhoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

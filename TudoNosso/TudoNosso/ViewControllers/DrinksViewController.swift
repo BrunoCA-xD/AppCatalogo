@@ -56,7 +56,6 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     
     @IBOutlet weak var aditionalDescriptionView: UIView!
     
-    
     //MARK: - ACTIONS
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -218,7 +217,9 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
 		cheeseLabel.textColor = UIColor.black
 		cheeseImage.image = UIImage(named: "circle")
 
-		hamburgerLabel.textColor = UIColor.black
-		hambuergerImage.image = UIImage(named: "circle")
+		if(titleHeader == "Água") {
+			hamburgerLabel.isHidden = true
+			hambuergerImage.isHidden = true
+		}
     }
 }

@@ -89,21 +89,18 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 	func getAditionals() -> String{
 		var addsVet = [String]()
 
-		print("=============")
 		for add in additionalLabels {
 			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
 				print(add.text)
 				addsVet.append(add.text!)
-				print("-------")
 			}
 		}
-		print("=============")
 
 		let stringRepresentation = addsVet.joined(separator:" • ")
 
 		var adds = ""
 		if(!addsVet.isEmpty) {
-			adds = "Adicionais:  " + stringRepresentation
+			adds = "Adicionais: " + stringRepresentation
 		}
 		else {
 			adds = "Adicionais: \n" + "Sem  adicionais"
@@ -150,15 +147,10 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     }
     
     func setupPopulate() {
-        var currentTitle = titleHeader.replacingOccurrences(of: " 1", with: "", options: .literal, range: nil)
-        currentTitle = currentTitle.replacingOccurrences(of: " 2", with: "", options: .literal, range: nil)
-        currentTitle = currentTitle.replacingOccurrences(of: " 3", with: "", options: .literal, range: nil)
-        currentTitle = currentTitle.replacingOccurrences(of: " 4", with: "", options: .literal, range: nil)
-        currentTitle = currentTitle.replacingOccurrences(of: " 0", with: "", options: .literal, range: nil)
         
-        headerItem.title = currentTitle
-        priceLabel.text = dictPrice[currentTitle]
-        descriptionLabel.text = dictDescription[currentTitle]
+        headerItem.title = titleHeader
+        priceLabel.text = dictPrice[titleHeader]
+        descriptionLabel.text = dictDescription[titleHeader]
     }
     
     //MARK: - LIFECYCLE
