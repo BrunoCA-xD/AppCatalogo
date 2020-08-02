@@ -67,6 +67,9 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     @IBOutlet weak var unitsProduct: UILabel!
     @IBOutlet weak var aditionalDescriptionView: UIView!
 
+	@IBOutlet var additionalImages: [UIImageView]!
+	@IBOutlet var additionalLabels: [UILabel]!
+
     //MARK: - ACTIONS
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -85,21 +88,22 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
 	func getAditionals() -> String{
 		var addsVet = [String]()
-		if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("Hamburger")
+
+		print("=============")
+		for add in additionalLabels {
+			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
+				print(add.text)
+				addsVet.append(add.text!)
+				print("-------")
+			}
 		}
-		if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("Onion")
-		}
-		if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-			addsVet.append("Cheese")
-		}
+		print("=============")
 
 		let stringRepresentation = addsVet.joined(separator:" • ")
 
 		var adds = ""
 		if(!addsVet.isEmpty) {
-			adds = "Adicionais: \n" + stringRepresentation
+			adds = "Adicionais:  " + stringRepresentation
 		}
 		else {
 			adds = "Adicionais: \n" + "Sem  adicionais"
@@ -119,45 +123,20 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
             unitsProduct.text = String(unitsInt)
         }
     }
-    
-    @IBOutlet weak var onionImage: UIImageView!
-    @IBOutlet weak var onionLabel: UILabel!
-    @IBAction func addOnion(_ sender: Any) {
-        if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-            onionLabel.textColor = UIColor.black
-            onionImage.image = UIImage(named: "circle")
-        }
-        else {
-            onionLabel.textColor = UIColor.init(rgb: 0x33BE00)
-            onionImage.image = UIImage(named: "circleSelected")
-        }
-    }
-    
-    @IBOutlet weak var cheeseImage: UIImageView!
-    @IBOutlet weak var cheeseLabel: UILabel!
-    @IBAction func addCheese(_ sender: Any) {
-        if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-            cheeseLabel.textColor = UIColor.black
-            cheeseImage.image = UIImage(named: "circle")
-        }
-        else {
-            cheeseLabel.textColor = UIColor.init(rgb: 0x33BE00)
-            cheeseImage.image = UIImage(named: "circleSelected")
-        }
-    }
-    
-    @IBOutlet weak var hambuergerImage: UIImageView!
-    @IBOutlet weak var hamburgerLabel: UILabel!
-    @IBAction func addHamburger(_ sender: Any) {
-        if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
-            hamburgerLabel.textColor = UIColor.black
-            hambuergerImage.image = UIImage(named: "circle")
-        }
-        else {
-            hamburgerLabel.textColor = UIColor.init(rgb: 0x33BE00)
-            hambuergerImage.image = UIImage(named: "circleSelected")
-        }
-    }
+
+	@IBAction func additionalPressed(_ sender: UIButton) {
+		print(sender.tag)
+		if(additionalLabels[sender.tag].textColor == UIColor.init(rgb: 0x33BE00)) {
+			additionalImages[sender.tag].image = UIImage(named: "circle")
+			additionalLabels[sender.tag].textColor  = UIColor.black
+		}
+		else {
+			additionalImages[sender.tag].image = UIImage(named: "circleSelected")
+			additionalLabels[sender.tag].textColor  = UIColor.init(rgb: 0x33BE00)
+		}
+	}
+
+
     
     //MARK: - PROPERTIES
     var titleHeader: String = ""
@@ -188,10 +167,6 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
         setupStyle()
         setupPopulate()
-        
-        cheeseLabel.tintColor = UIColor.black
-        hamburgerLabel.tintColor = UIColor.black
-        onionLabel.tintColor = UIColor.black
     }
 }
 
