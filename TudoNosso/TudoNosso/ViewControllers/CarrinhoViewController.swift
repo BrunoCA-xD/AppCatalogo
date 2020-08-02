@@ -58,7 +58,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
 			let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-			let units = (cell.unitsItem.text ?? "1") + "x "
+			var units = (cell.unitsItem.text ?? "1")
+			units = units.replacingOccurrences(of: "", with: " ") + "x "
+
 			let title = cell.titleLabel.text! + " "
 			var price = cell.priceLabel.text!
 			price = price.replacingOccurrences(of: "R$ ", with: "")
@@ -73,18 +75,30 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 
 		let productsList = productsArray.joined(separator:" \n\n ") + "\n\n"
-		let name = nameText.text ?? "Não registrado"
-		let obs = obsText.text ?? "Sem observações"
+		let name = nameText.text ?? "Não preenchido"
 
-		let payform = payformText.text ?? "Não registrado"
-		let endress = endressText.text ?? "Não registrado"
+		let payform = payformText.text ?? "Não preenchido"
+		let endress = endressText.text ?? "Não preenchido"
+
+		let obs = obsText.text
+		let troco = returnPaymentText.text
+
 		let price = String(totalPrice)
 		var str =
 			"*Nome:* " + name +
 			"\n*Endereço:* " + endress +
-			"\n\n*Pedido* \n" + productsList +
-			"*Observações:* " + obs +
-			"\n*Pagamento:* " + payform +
+			"\n\n*Pedido* \n" + productsList
+
+			if let observation = obs {
+				str += "*Observações:* " + observation
+			}
+
+			str += "\n*Pagamento:* " + payform
+
+			if let retrunMoney = troco {
+				str += "*Troco:* " + retrunMoney
+			}
+
 			"\n\n*Total:* " + price
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
@@ -277,6 +291,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	@IBOutlet weak var endressText: UITextField!
 	@IBOutlet weak var payformText: UITextField!
 	@IBOutlet weak var obsText: UITextField!
+	@IBOutlet weak var returnPaymentText: UITextField!
 
 	func setupTextFields() {
 		nameText.text = UserDefaults.standard.string(forKey: "nameText")
