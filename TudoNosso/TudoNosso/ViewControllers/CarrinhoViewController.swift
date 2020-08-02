@@ -58,8 +58,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
 			let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-			var units = (cell.unitsItem.text ?? "1")
-			units = units.replacingOccurrences(of: "", with: " ") + "x "
+			let units = (cell.unitsItem.text ?? "1") + "x "
 
 			let title = cell.titleLabel.text! + " "
 			var price = cell.priceLabel.text!
@@ -74,7 +73,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			totalPrice += Int(price)!
 		}
 
-		let productsList = productsArray.joined(separator:" \n\n ") + "\n\n"
+		let productsList = productsArray.joined(separator:" \n\n") + "\n\n"
 		let name = nameText.text ?? "Não preenchido"
 
 		let payform = payformText.text ?? "Não preenchido"
@@ -87,7 +86,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		var str =
 			"*Nome:* " + name +
 			"\n*Endereço:* " + endress +
-			"\n\n*Pedido* \n" + productsList
+			"\n\n*Pedido*\n" + productsList
 
 			if let observation = obs {
 				str += "*Observações:* " + observation
@@ -96,7 +95,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			str += "\n*Pagamento:* " + payform
 
 			if let retrunMoney = troco {
-				str += "*Troco:* " + retrunMoney
+				print("------")
+				print("troco", retrunMoney)
+				str += "\n*Troco:* " + retrunMoney
 			}
 
 			str += "\n\n*Total:* " + price
@@ -378,38 +379,5 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		} catch let error as NSError {
 			print("Could not fetch. \(error), \(error.userInfo)")
 		}
-	}
-}
-
-extension UIViewController {
-
-	func registerForKeyboardWillShowNotification(_ scrollView: UIScrollView, usingBlock block: ((CGSize?) -> Void)? = nil) {
-		_ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: { notification -> Void in
-			let userInfo = notification.userInfo!
-			let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue.size
-			let contentInsets = UIEdgeInsets(top: scrollView.contentInset.top, left: scrollView.contentInset.left, bottom: keyboardSize.height, right: scrollView.contentInset.right)
-
-			scrollView.setContentInsetAndScrollIndicatorInsets(contentInsets)
-			block?(keyboardSize)
-		})
-	}
-
-	func registerForKeyboardWillHideNotification(_ scrollView: UIScrollView, usingBlock block: ((CGSize?) -> Void)? = nil) {
-		_ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil, using: { notification -> Void in
-			let userInfo = notification.userInfo!
-			let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue.size
-			let contentInsets = UIEdgeInsets(top: scrollView.contentInset.top, left: scrollView.contentInset.left, bottom: 0, right: scrollView.contentInset.right)
-
-			scrollView.setContentInsetAndScrollIndicatorInsets(contentInsets)
-			block?(keyboardSize)
-		})
-	}
-}
-
-extension UIScrollView {
-
-	func setContentInsetAndScrollIndicatorInsets(_ edgeInsets: UIEdgeInsets) {
-		self.contentInset = edgeInsets
-		self.scrollIndicatorInsets = edgeInsets
 	}
 }

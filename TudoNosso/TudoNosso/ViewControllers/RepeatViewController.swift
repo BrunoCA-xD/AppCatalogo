@@ -16,6 +16,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		@IBOutlet weak var tableItens: UITableView!
 
 		//  MARK: - IBAction
+
 		@IBAction func sendCarrinho(_ sender: Any) {
 
 			updateTextFields()
@@ -23,36 +24,52 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 			var productsArray = [String]()
 			var totalPrice = 0
 
-			for onlyItem in itemsProduct {
+			for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
+				let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-				let units = onlyItem.value(forKeyPath: "units") as! String + "x "
-				let title = onlyItem.value(forKeyPath: "title") as! String + " "
+				let units = (cell.unitsItem.text ?? "1") + "x "
 
-				let price = "R$ 25"
-				let adds = onlyItem.value(forKeyPath: "adds") as! String
+				let title = cell.titleLabel.text! + " "
+				var price = cell.priceLabel.text!
+				price = price.replacingOccurrences(of: "R$ ", with: "")
+				let adds = cell.additionalsLabel.text!
 				let aditionals = "_" + adds + "_"
-				let product = units + title + price  + "\n" + aditionals
+				let product = units + title + "R$ " + price  + "\n" + aditionals
 
 				productsArray.append(product)
+
+				print(price)
 				totalPrice += Int(price)!
 			}
-			
-			let totalPriceString = String(totalPrice)
 
-			let productsList = productsArray.joined(separator:" \n\n ") + "\n\n"
-			let name = nameText.text ?? "Não registrado"
-			let obs = obsText.text ?? "Sem observações"
+			let productsList = productsArray.joined(separator:" \n\n") + "\n\n"
+			let name = nameText.text ?? "Não preenchido"
 
-			let payform = payformText.text ?? "Não registrado"
-			let endress = endressText.text ?? "Não registrado"
+			let payform = payformText.text ?? "Não preenchido"
+			let endress = endressText.text ?? "Não preenchido"
 
+			let obs = obsText.text
+			let troco = returnPaymentText.text
+
+			let price = String(totalPrice)
 			var str =
-				"*Pedido* \n" + productsList +
-					"\n*Total* \n" + totalPriceString +
-					"*Nome* \n" + name +
-					"\n*Observações* \n" + obs +
-					"\n*Pagamento* \n" + payform +
-					"\n*Endereço* \n" + endress
+				"*Nome:* " + name +
+					"\n*Endereço:* " + endress +
+					"\n\n*Pedido*\n" + productsList
+
+			if let observation = obs {
+				str += "*Observações:* " + observation
+			}
+
+			str += "\n*Pagamento:* " + payform
+
+			if let retrunMoney = troco {
+				print("------")
+				print("troco", retrunMoney)
+				str += "\n*Troco:* " + retrunMoney
+			}
+
+			str += "\n\n*Total:* " + price
 
 			str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -244,6 +261,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		@IBOutlet weak var endressText: UITextField!
 		@IBOutlet weak var payformText: UITextField!
 		@IBOutlet weak var obsText: UITextField!
+		@IBOutlet weak var returnPaymentText: UITextField!
 
 		func setupTextFields() {
 			nameText.text = UserDefaults.standard.string(forKey: "nameText")
@@ -277,32 +295,23 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 			obsText.delegate = self
 		}
 
-		var isShowing = false
-
 		@objc func dismissKeyboard() {
-			if(isShowing) {
-				view.endEditing(true)
-				isShowing = false
-			}
+			view.endEditing(true)
 		}
 
 		@objc func keyboardWillShow(sender: NSNotification) {
-			if (!isShowing)  {
+			print("keyboard was shown")
+			let info = sender.userInfo
+			let keyboardSize: CGRect = (info![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
-				let info = sender.userInfo!
-				let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-
-				self.view.frame.origin.y = -keyboardFrame.size.height
-
-				isShowing = true
-			}
+			tableItens.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+			tableItens.scrollIndicatorInsets = tableItens.contentInset
 		}
 
 		@objc func keyboardWillHide(sender: NSNotification) {
-			if (isShowing)  {
-				self.view.frame.origin.y = 0
-				isShowing = false
-			}
+			print("keyboard will be hidden")
+			tableItens.contentInset = UIEdgeInsets.zero
+			tableItens.scrollIndicatorInsets = UIEdgeInsets.zero
 		}
 
 		func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -340,4 +349,4 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 				print("Could not fetch. \(error), \(error.userInfo)")
 			}
 		}
-}
+	}
