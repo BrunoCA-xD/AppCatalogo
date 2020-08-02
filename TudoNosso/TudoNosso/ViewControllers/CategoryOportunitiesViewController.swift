@@ -107,14 +107,7 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 		return adds
 	}
 
-    @IBOutlet weak var aditionalsButton: UIButton!
-    @IBAction func showAdditionals(_ sender: Any) {
-        if(aditionalDescriptionView.isHidden) {
-            aditionalDescriptionView.isHidden = false
-            aditionalsButton.isHidden = true
-        }
-    }
-    
+    //MARK: - Aditionals buttons
     @IBAction func addUnit(_ sender: Any) {
         unitsInt += 1
         unitsProduct.text = String(unitsInt)
@@ -195,12 +188,10 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
         setupStyle()
         setupPopulate()
-//        aditionalsButton.titleLabel?.text = "Ver Adicionais"
         
         cheeseLabel.tintColor = UIColor.black
         hamburgerLabel.tintColor = UIColor.black
         onionLabel.tintColor = UIColor.black
-        aditionalDescriptionView.isHidden = true
     }
 }
 

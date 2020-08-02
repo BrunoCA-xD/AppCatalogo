@@ -21,7 +21,7 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     var dictDescription =
     [
         "Refrigerante":
-        "Refrigerante lata 350 ml",
+        "Refrigerante lata 350ml",
         
         "Cerveja":
         "Cervejas long neck 390 ml",
@@ -36,7 +36,7 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
         ["Coca-Cola", "Guaraná", "Sprite"],
         
         "Cerveja":
-        ["Brahma", "Skol", "Itaipava"],
+        ["Budweiser", "Heineken", "Stela Artois"],
         
         "Água":
         ["Com gás", "Sem gás"]

@@ -107,29 +107,28 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		setepKeyboard()
 		dataTableview()
 
-		let picker = UIPickerView()
+		let picker = UIPickerView(frame: CGRect(x: 0, y: self.view.frame.size.height-320, width: self.view.frame.size.width, height: 320))
 		picker.dataSource = self
 		picker.delegate = self
 
-		let btnDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.monthdoneButtonAction))
-		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelClick))
 
-		let barAccessory = UIToolbar(frame: CGRect(x: 0, y: 0, width: picker.frame.width, height: 44))
-		barAccessory.barStyle = .default
-		barAccessory.isTranslucent = false
-		barAccessory.items = [cancelButton, btnDone]
-		picker.addSubview(barAccessory)
-
+        payformText.inputAccessoryView = inputAccessoryViewPicker
 		payformText.inputView = picker
-		payformText.becomeFirstResponder()
 	}
 
-	@objc func monthdoneButtonAction() {
-		print("oi")
+	var inputAccessoryViewPicker: UIView? {
+
+		let toolbar = UIToolbar()
+		toolbar.sizeToFit()
+		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+		let doneButton = UIBarButtonItem(title: "Próximo", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.doneDatePicker))
+		toolbar.setItems([spaceButton, doneButton], animated: false)
+
+		return toolbar
 	}
 
-	@objc func cancelClick() {
-		print("cancelClick")
+	@objc func doneDatePicker() {
+		obsText.becomeFirstResponder()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -271,8 +270,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		endressText.text = UserDefaults.standard.string(forKey: "endressText")
 		payformText.text = UserDefaults.standard.string(forKey: "payformText")
 		obsText.text = UserDefaults.standard.string(forKey: "obsText")
-
-		print("setupTextFields")
 	}
 
 	func updateTextFields() {
@@ -281,8 +278,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		UserDefaults.standard.set(endressText.text, forKey: "endressText")
 		UserDefaults.standard.set(payformText.text, forKey: "payformText")
 		UserDefaults.standard.set(obsText.text, forKey: "obsText")
-
-		print("updateTextFields")
 	}
 
 
