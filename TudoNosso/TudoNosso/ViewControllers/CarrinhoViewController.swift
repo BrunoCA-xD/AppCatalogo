@@ -46,11 +46,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 	}
 
-	@IBAction func sendCarrinho(_ sender: Any) {
-
+	func sendToWhatsApp() {
 		updateTextFields()
 		saveInRepeatPurchase()
-
 
 		var productsArray = [String]()
 		var totalPrice = 0
@@ -58,19 +56,19 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
 			let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-			let units = (cell.unitsItem.text ?? "1") + "x "
-
+			let units = (cell.unitsItem.text ?? "1")
+			let unitsString = units + "x "
 			let title = cell.titleLabel.text! + " "
 			var price = cell.priceLabel.text!
 			price = price.replacingOccurrences(of: "R$ ", with: "")
 			let adds = cell.additionalsLabel.text!
 			let aditionals = "_" + adds + "_"
-			let product = units + title + "R$ " + price  + "\n" + aditionals
+			let product = unitsString + title + "R$ " + price  + "\n" + aditionals
 
 			productsArray.append(product)
 
 			print(price)
-			totalPrice += Int(price)!
+			totalPrice += Int(price)! * Int(units)!
 		}
 
 		let productsList = productsArray.joined(separator:" \n\n") + "\n\n"
@@ -85,24 +83,24 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let price = String(totalPrice)
 		var str =
 			"*Nome:* " + name +
-			"\n*Endereço:* " + endress +
-			"\n\n*Pedido*\n" + productsList
+				"\n*Endereço:* " + endress +
+				"\n\n*Pedido*\n" + productsList
 
-			if let observation = obs {
-				if(observation != "") {
-					str += "*Observações*\n" + observation + "\n\n"
-				}
+		if let observation = obs {
+			if(observation != "") {
+				str += "*Observações*\n" + observation + "\n\n"
 			}
+		}
 
-			str += "*Pagamento:* " + payform
+		str += "*Pagamento:* " + payform
 
-			if let retrunMoney = troco {
-				if(retrunMoney != "") {
-					str += "\n*Troco:* " + retrunMoney
-				}
+		if let retrunMoney = troco {
+			if(retrunMoney != "") {
+				str += "\n*Troco:* " + retrunMoney
 			}
+		}
 
-			str += "\n\n*Total:* " + price
+		str += "\n\n*Total:* " + price
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -121,7 +119,27 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 	}
 
+	@IBAction func sendCarrinho(_ sender: Any) {
+
+		if(tableItens.numberOfRows(inSection: 0) == 0) {
+			showAlert(title: "Carrinho Vazio", message: "Volte para o menu e selecione os produtos desejados")
+		}
+		else if(nameText.text == "" || nameText.text == nil) {
+			nameText.becomeFirstResponder()
+		}
+		else if(endressText.text == "" || endressText.text == nil) {
+			endressText.becomeFirstResponder()
+		}
+		else if(payformText.text == "" || payformText.text == nil) {
+			payformText.becomeFirstResponder()
+		}
+		else {
+			sendToWhatsApp()
+		}
+	}
+
 	@IBAction func closeView(_ sender: Any) {
+		updateTextFields()
 		self.dismiss(animated: true, completion: nil)
 	}
 
@@ -129,6 +147,19 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		CoreDataManager().deleteAllRecords()
 		updateData()
 		tableItens.reloadData()
+	}
+
+//	MARK: - UIALERT
+	func showAlert(title: String, message: String) {
+
+		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+		alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
+			action in
+			self.dismiss(animated: true, completion: nil)
+		}))
+
+		self.present(alert, animated: true, completion: nil)
 	}
 
 	//  MARK: - LifeCycle
@@ -299,7 +330,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	func setupTextFields() {
 		nameText.text = UserDefaults.standard.string(forKey: "nameText")
 		endressText.text = UserDefaults.standard.string(forKey: "endressText")
-		payformText.text = UserDefaults.standard.string(forKey: "payformText")
+		payformText.text = UserDefaults.standard.string(forKey: "payformText") ?? "Cartão"
 		obsText.text = UserDefaults.standard.string(forKey: "obsText")
 	}
 
@@ -326,6 +357,11 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		endressText.delegate = self
 		payformText.delegate = self
 		obsText.delegate = self
+
+		nameText.autocapitalizationType = .words
+		endressText.autocapitalizationType = .words
+		payformText.autocapitalizationType = .words
+		obsText.autocapitalizationType = .sentences
 	}
 
 	@objc func dismissKeyboard() {
