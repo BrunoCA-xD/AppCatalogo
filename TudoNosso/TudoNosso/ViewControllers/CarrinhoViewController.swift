@@ -14,6 +14,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
 	@IBOutlet weak var tableItens: UITableView!
+	@IBOutlet weak var paymentTotalLabel: UILabel!
 
 	//  MARK: - IBAction
 	func saveInRepeatPurchase() {
@@ -147,6 +148,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		CoreDataManager().deleteAllRecords()
 		updateData()
 		tableItens.reloadData()
+		updateTotalValue()
 	}
 
 //	MARK: - UIALERT
@@ -194,8 +196,38 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		obsText.becomeFirstResponder()
 	}
 
+	func updateTotalValue() {
+		var totalPrice = 0
+
+		if (tableItens.numberOfRows(inSection: 0) > 0) {
+			for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
+				let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
+
+				let units = (cell.unitsItem.text ?? "1")
+				var price = cell.priceLabel.text!
+				price = price.replacingOccurrences(of: "R$ ", with: "")
+				totalPrice += Int(price)! * Int(units)!
+			}
+			let price = String(totalPrice)
+
+			paymentTotalLabel.text = "Total: R$ " + price
+		}
+		else {
+			paymentTotalLabel.text = "Total: R$ 0"
+		}
+	}
+
 	override func viewWillAppear(_ animated: Bool) {
 		setupTextFields()
+		updateTotalValue()
+	}
+
+	@IBAction func addButtonPressed(_ sender: Any) {
+		updateTotalValue()
+	}
+
+	@IBAction func subButtonPressed(_ sender: Any) {
+		updateTotalValue()
 	}
 
 	//  MARK: - PickerView
@@ -304,6 +336,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		itemsProduct.remove(at: buttonTag)
 		tableItens.reloadData()
+		updateTotalValue()
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
