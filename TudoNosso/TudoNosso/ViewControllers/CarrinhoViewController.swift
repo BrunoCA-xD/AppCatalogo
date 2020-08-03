@@ -89,15 +89,17 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			"\n\n*Pedido*\n" + productsList
 
 			if let observation = obs {
-				str += "*Observações:* " + observation
+				if(observation != "") {
+					str += "*Observações*\n" + observation + "\n\n"
+				}
 			}
 
-			str += "\n*Pagamento:* " + payform
+			str += "*Pagamento:* " + payform
 
 			if let retrunMoney = troco {
-				print("------")
-				print("troco", retrunMoney)
-				str += "\n*Troco:* " + retrunMoney
+				if(retrunMoney != "") {
+					str += "\n*Troco:* " + retrunMoney
+				}
 			}
 
 			str += "\n\n*Total:* " + price
