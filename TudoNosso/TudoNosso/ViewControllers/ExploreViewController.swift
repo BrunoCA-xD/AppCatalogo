@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+import CoreData
+
 class ExploreViewController: UIViewController {
     
     //MARK: OUTLETS
@@ -110,12 +112,26 @@ class ExploreViewController: UIViewController {
         setupTableView()
         setupJobsTableView()
         setupNavegationBar()
-        
-        buttonCarrinho.isHidden = true
+
+		buttonCarrinho.isHidden = true
+
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+			return
+		}
+
+		let managedContext = appDelegate.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
+
+		do {
+			let itemsProduct = try managedContext.fetch(fetchRequest)
+			if(!itemsProduct.isEmpty) {
+				buttonCarrinho.isHidden = false
+			}
+		} catch let error as NSError {
+			print("Could not fetch. \(error), \(error.userInfo)")
+		}
     }
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -137,7 +153,6 @@ class ExploreViewController: UIViewController {
         
         jobsTableView.delegate = self
         jobsTableView.dataSource = self
-
     }
     
     func setupTableView(){
