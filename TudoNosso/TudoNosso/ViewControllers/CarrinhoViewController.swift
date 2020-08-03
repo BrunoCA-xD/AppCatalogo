@@ -96,11 +96,11 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		if let retrunMoney = troco {
 			if(retrunMoney != "") {
-				str += "\n*Troco:* " + retrunMoney
+				str += "\n*Troco:* R$ " + retrunMoney
 			}
 		}
 
-		str += "\n\n*Total:* " + price
+		str += "\n\n*Total:* R$ " + price
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -357,6 +357,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		endressText.delegate = self
 		payformText.delegate = self
 		obsText.delegate = self
+		returnPaymentText.delegate = self
 
 		nameText.autocapitalizationType = .words
 		endressText.autocapitalizationType = .words
