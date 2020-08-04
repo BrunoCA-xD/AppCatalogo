@@ -155,7 +155,6 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
 		var addsVet = [Int]()
 
-		print("====================")
 		for add in additionalLabels {
 			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
 				print(additionals[add.tag])
@@ -163,9 +162,9 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 				addsVet.append(additionalsPriceDict[additionals[add.tag]]!)
 			}
 		}
-		print("====================")
+
 		let sum = addsVet.reduce(0, +)
-		priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt) + sum)
+		priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt) + (sum * unitsInt))
 	}
 
 	func populateAdditionals() {
