@@ -19,7 +19,7 @@
         <!--Rogger Burguer's-->
         <scene sceneID="psT-e2-Nmf">
             <objects>
-                <viewController id="82i-MY-zrX" customClass="ExploreViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="82i-MY-zrX" customClass="ExploreViewController" customModule="Rogger_Burgers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h0x-dn-rc0"/>
                         <viewControllerLayoutGuide type="bottom" id="iXS-Y1-fWR"/>
@@ -40,7 +40,7 @@
                                 <color key="sectionIndexBackgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.97645872831344604" green="0.97646445035934448" blue="0.97647935152053833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="jN8-ZS-eIZ" customClass="CategoryCollectionView" customModule="Burger" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="jN8-ZS-eIZ" customClass="CategoryCollectionView" customModule="Rogger_Burgers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jN8-ZS-eIZ" id="tVs-VA-CSR">
@@ -57,7 +57,7 @@
                                                         <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="3u5-Je-OTF" customClass="CellCasesOrganizations" customModule="Burger" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="3u5-Je-OTF" customClass="CellCasesOrganizations" customModule="Rogger_Burgers" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="15" width="140" height="170"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -143,7 +143,7 @@
                                             <outlet property="collectionView" destination="ZNJ-0v-6UX" id="SjX-hC-dw4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="200" id="gFN-nL-nFY" customClass="CategoryCollectionView" customModule="Burger" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="200" id="gFN-nL-nFY" customClass="CategoryCollectionView" customModule="Rogger_Burgers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="255.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFN-nL-nFY" id="FQH-Ie-StJ">
@@ -160,7 +160,7 @@
                                                         <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="RNp-A9-VIr" customClass="CellCasesOrganizations" customModule="Burger" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="CellCasesOrganizations" id="RNp-A9-VIr" customClass="CellCasesOrganizations" customModule="Rogger_Burgers" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="15" width="140" height="170"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -241,7 +241,7 @@
                                             <outlet property="collectionView" destination="H06-l2-Fjf" id="FBQ-7j-ido"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="HgM-sp-wGb" userLabel="cell3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="center" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="HgM-sp-wGb" userLabel="cell3">
                                         <rect key="frame" x="0.0" y="455.5" width="414" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HgM-sp-wGb" id="Uio-Xd-FfL">
@@ -339,7 +339,7 @@
         <!--Cadastro Organização-->
         <scene sceneID="WAF-67-iBl">
             <objects>
-                <viewController storyboardIdentifier="SegueCardsViewController" id="JYl-qx-D3N" customClass="CategoryOportunitiesViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SegueCardsViewController" id="JYl-qx-D3N" customClass="CategoryOportunitiesViewController" customModule="Rogger_Burgers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y4F-go-ges">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -441,7 +441,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="mlx-p1-ygq"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ovo na chapa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azv-hj-w9s">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ovo na chapa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azv-hj-w9s">
                                                                 <rect key="frame" x="23" y="10.5" width="164" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -479,7 +479,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="dsE-5C-B5Y"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cebola Roxa no Molho Barbecue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTa-M3-Owa">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cebola Roxa no Molho Barbecue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTa-M3-Owa">
                                                                 <rect key="frame" x="23" y="1" width="164" height="38.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -517,7 +517,7 @@
                                                                     <constraint firstAttribute="width" secondItem="757-pM-rfB" secondAttribute="height" multiplier="1:1" id="aMI-Fk-dGX"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cebola Roxa na chapa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGX-Og-K0E">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cebola Roxa na chapa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGX-Og-K0E">
                                                                 <rect key="frame" x="23" y="10.5" width="164" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -555,7 +555,7 @@
                                                                     <constraint firstAttribute="width" secondItem="W7F-pd-jYy" secondAttribute="height" multiplier="1:1" id="k2e-pP-HaO"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catupiry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iT-nt-PIA">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catupiry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iT-nt-PIA">
                                                                 <rect key="frame" x="23" y="10.5" width="164" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -593,7 +593,7 @@
                                                                     <constraint firstAttribute="width" secondItem="a6a-mH-qdq" secondAttribute="height" multiplier="1:1" id="rHq-as-q2A"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hambúrguer Angus 180g" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYD-vA-dfm">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hambúrguer Angus 180g" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYD-vA-dfm">
                                                                 <rect key="frame" x="23" y="10.5" width="164" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -631,7 +631,7 @@
                                                                     <constraint firstAttribute="width" secondItem="UE8-wp-8HF" secondAttribute="height" multiplier="1:1" id="jQr-DN-3rH"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doritos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myu-ij-Vnc">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doritos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myu-ij-Vnc">
                                                                 <rect key="frame" x="23" y="10.5" width="164" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -669,7 +669,7 @@
                                                                     <constraint firstAttribute="width" secondItem="v4e-RA-cu0" secondAttribute="height" multiplier="1:1" id="Ymm-uJ-9lt"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barbecue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDT-FP-vei">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barbecue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDT-FP-vei">
                                                                 <rect key="frame" x="23" y="10.5" width="174" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -707,7 +707,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="oLv-6b-eEX"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salada de alface e tomate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKg-Ep-txV">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salada de alface e tomate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKg-Ep-txV">
                                                                 <rect key="frame" x="23" y="10.5" width="174" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -745,7 +745,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="yR8-22-2MA"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcR-0b-Cl8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcR-0b-Cl8">
                                                                 <rect key="frame" x="23" y="10.5" width="174" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -783,7 +783,7 @@
                                                                     <constraint firstAttribute="width" secondItem="rd3-ae-iy0" secondAttribute="height" multiplier="1:1" id="w2F-sJ-4V6"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hambúrguer de Frango" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdr-cG-lbo">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hambúrguer de Frango" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdr-cG-lbo">
                                                                 <rect key="frame" x="23" y="10.5" width="174" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -821,7 +821,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="R8I-tf-FZ5"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hambúrguer Angus 120g" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfR-Md-T3L">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hambúrguer Angus 120g" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfR-Md-T3L">
                                                                 <rect key="frame" x="23" y="10.5" width="174" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -1020,7 +1020,7 @@
         <!--Cadastro Organização-->
         <scene sceneID="MyZ-tj-vez">
             <objects>
-                <viewController storyboardIdentifier="DrinkViewController" id="8of-De-bii" customClass="DrinksViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrinkViewController" id="8of-De-bii" customClass="DrinksViewController" customModule="Rogger_Burgers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTp-hX-zft">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1262,7 +1262,7 @@
         <!--Cadastro Organização-->
         <scene sceneID="W2u-FY-vFG">
             <objects>
-                <viewController id="Iga-HL-Xrf" customClass="CarrinhoViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Iga-HL-Xrf" customClass="CarrinhoViewController" customModule="Rogger_Burgers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FMf-Cf-hcw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1608,7 +1608,7 @@
         <!--Cadastro Organização-->
         <scene sceneID="hYO-W5-hd7">
             <objects>
-                <viewController id="3am-fI-qfb" customClass="RepeatViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3am-fI-qfb" customClass="RepeatViewController" customModule="Rogger_Burgers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xjc-mI-oV1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

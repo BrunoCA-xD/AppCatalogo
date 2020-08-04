@@ -12,16 +12,16 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     //MARK: - Variables
     var dictPrice =
     [
-        "Bacon Cheddar": "R$ 21",
-        "Pepperoni Venture": "R$ 22",
-        "Rogger Egg": "R$ 23",
-        "Rogger Onion": "R$ 24",
-        "Rogger Pepperoni": "R$ 25",
+        "Bacon Cheddar": 22,
+        "Pepperoni Venture": 22,
+        "Rogger Egg": 22,
+        "Rogger Onion": 25,
+        "Rogger Pepperoni": 25,
         
-        "Duplo Salada": "R$ 40",
-        "Duplo Burguer": "R$ 40",
-        "Triplo Cheese": "R$ 65",
-        "Duplo Cheddar": "R$ 45"
+        "Duplo Salada": 40,
+        "Duplo Burguer": 40,
+        "Triplo Cheese": 40,
+        "Duplo Cheddar": 40
     ]
     
     var dictDescription =
@@ -53,9 +53,30 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
         "Duplo Cheddar":
         "Dois lanches com hamburguer premium de picanha, maionese, catchup, mostarda,mussarela, tomate, alface americana, milho, bacon, cebola, catupiry, queijo mineiro e provolone",
     ]
-    
+
+	var additionals = [
+		"Bacon", "Ovo na chapa", "Cebola Roxa no Molho Barbecue",
+		"Cebola Roxa na chapa", "Catupiry", "Hambúrguer Angus 180g",
+		"Doritos", "Barbecue", "Salada de alface e tomate", "Onion",
+		"Hambúrguer de Frango", "Hambúrguer Angus 120g"
+	]
+
+	var additionalsPriceDict = [
+		"Bacon" : 3,
+		"Ovo na chapa" : 2,
+		"Cebola Roxa no Molho Barbecue" : 3,
+		"Cebola Roxa na chapa" : 3,
+		"Catupiry" : 3,
+		"Hambúrguer Angus 180g" : 6,
+		"Doritos" : 3,
+		"Barbecue" : 3,
+		"Salada de alface e tomate" : 2,
+		"Onion" : 3,
+		"Hambúrguer de Frango" : 6,
+		"Hambúrguer Angus 120g" : 6
+	]
     var unitsInt = 1
-    
+
     //MARK: - OUTLETS
     @IBOutlet weak var headerItem: UINavigationItem!
     @IBOutlet weak var imageProduct: UIImageView!
@@ -91,7 +112,6 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
 		for add in additionalLabels {
 			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
-				print(add.text)
 				addsVet.append(add.text!)
 			}
 		}
@@ -108,21 +128,22 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 		return adds
 	}
 
-    //MARK: - Aditionals buttons
+    //MARK: - Aditionals options
     @IBAction func addUnit(_ sender: Any) {
         unitsInt += 1
         unitsProduct.text = String(unitsInt)
+		priceLabel.text = "R$ " + String(dictPrice[titleHeader]! * unitsInt)
     }
     
     @IBAction func subUnit(_ sender: Any) {
         if(unitsInt > 1) {
             unitsInt -= 1
             unitsProduct.text = String(unitsInt)
+			priceLabel.text = "R$ " + String(dictPrice[titleHeader]! * unitsInt)
         }
     }
 
 	@IBAction func additionalPressed(_ sender: UIButton) {
-		print(sender.tag)
 		if(additionalLabels[sender.tag].textColor == UIColor.init(rgb: 0x33BE00)) {
 			additionalImages[sender.tag].image = UIImage(named: "circle")
 			additionalLabels[sender.tag].textColor  = UIColor.black
@@ -131,8 +152,25 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 			additionalImages[sender.tag].image = UIImage(named: "circleSelected")
 			additionalLabels[sender.tag].textColor  = UIColor.init(rgb: 0x33BE00)
 		}
+
+		var addsVet = [String]()
+
+		print("====================")
+		for add in additionalLabels {
+			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
+
+				print(add.text)
+			}
+		}
+		print("====================")
+//		priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt) - additionalsPriceDict[additionals[sender.tag]]!)
 	}
 
+	func populateAdditionals() {
+		for x in 0...11 {
+			additionalLabels[x].text = additionals[x] + " R$" + String(additionalsPriceDict[additionals[x]]!)
+		}
+	}
 
     
     //MARK: - PROPERTIES
@@ -147,9 +185,8 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
     }
     
     func setupPopulate() {
-        
         headerItem.title = titleHeader
-        priceLabel.text = dictPrice[titleHeader]
+        priceLabel.text = "R$ " + String(dictPrice[titleHeader]!)
         descriptionLabel.text = dictDescription[titleHeader]
     }
     
@@ -159,6 +196,7 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
         setupStyle()
         setupPopulate()
+		populateAdditionals()
     }
 }
 
