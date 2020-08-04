@@ -133,14 +133,38 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 	@IBAction func addUnit(_ sender: Any) {
 		unitsInt += 1
 		unitsProduct.text = String(unitsInt)
-		priceLabel.text = "R$ " + String(dictPrice[titleHeader]! * unitsInt)
+
+		var addsVet = [Int]()
+
+		for add in additionalLabels {
+			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
+				print(additionals[add.tag])
+				print(additionalsPriceDict[additionals[add.tag]]!)
+				addsVet.append(additionalsPriceDict[additionals[add.tag]]!)
+			}
+		}
+
+		let sum = addsVet.reduce(0, +)
+		priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt) + (sum * unitsInt))
 	}
 
 	@IBAction func subUnit(_ sender: Any) {
 		if(unitsInt > 1) {
 			unitsInt -= 1
 			unitsProduct.text = String(unitsInt)
-			priceLabel.text = "R$ " + String(dictPrice[titleHeader]! * unitsInt)
+
+			var addsVet = [Int]()
+
+			for add in additionalLabels {
+				if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
+					print(additionals[add.tag])
+					print(additionalsPriceDict[additionals[add.tag]]!)
+					addsVet.append(additionalsPriceDict[additionals[add.tag]]!)
+				}
+			}
+
+			let sum = addsVet.reduce(0, +)
+			priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt) + (sum * unitsInt))
 		}
 	}
 

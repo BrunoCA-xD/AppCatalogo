@@ -340,7 +340,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		print("=====================")
 		let type = fruit.value(forKeyPath: "type") as? String
-		if(adds.text != "Sem  adicionais" && type == "Lanche" ) {
+		if(adds.text != "Sem  adicionais" && type == "Lanches" ) {
 
 			print("New  Cell")
 			var sumAdditionals = 0
@@ -355,8 +355,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 				print(teste!)
 				sumAdditionals += teste!
 			}
-			print("total dos adicionais:", sumAdditionals )
-			print("=====================")
 
 			let price = cell.viewWithTag(priceTag) as! UILabel
 			price.text = "R$ " + String(25 + sumAdditionals)
