@@ -13,7 +13,8 @@ class CoreDataManager {
 
 	func save(title: String,
 			  units: String,
-			  adds: String) {
+			  adds: String,
+			  type: String) {
 
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
 			return
@@ -25,6 +26,7 @@ class CoreDataManager {
 		person.setValue(title, forKeyPath: "title")
 		person.setValue(units, forKeyPath: "units")
 		person.setValue(adds, forKeyPath: "adds")
+		person.setValue(type, forKeyPath: "type")
 
 		do {
 			try managedContext.save()
@@ -58,7 +60,8 @@ class RepeatCoreDataManager {
 
 	func save(title: String,
 			  units: String,
-			  adds: String) {
+			  adds: String,
+			  type: String) {
 
 		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
 			return
@@ -70,6 +73,7 @@ class RepeatCoreDataManager {
 		person.setValue(title, forKeyPath: "title")
 		person.setValue(units, forKeyPath: "units")
 		person.setValue(adds, forKeyPath: "adds")
+		person.setValue(type, forKeyPath: "type")
 
 		do {
 			try managedContext.save()

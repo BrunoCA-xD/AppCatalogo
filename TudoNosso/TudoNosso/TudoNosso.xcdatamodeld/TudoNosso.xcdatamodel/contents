@@ -3,15 +3,17 @@
     <entity name="CurrentPurchase" representedClassName="CurrentPurchase" syncable="YES" codeGenerationType="class">
         <attribute name="adds" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="units" optional="YES" attributeType="String"/>
     </entity>
     <entity name="RepeatPurchase" representedClassName="RepeatPurchase" syncable="YES" codeGenerationType="class">
         <attribute name="adds" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="units" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CurrentPurchase" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="RepeatPurchase" positionX="-54" positionY="-9" width="128" height="88"/>
+        <element name="CurrentPurchase" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="RepeatPurchase" positionX="-54" positionY="-9" width="128" height="103"/>
     </elements>
 </model>

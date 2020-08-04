@@ -9,7 +9,37 @@
 import UIKit
 import CoreData
 
+var dictPrice =
+	[
+		"Bacon Cheddar": 22,
+		"Pepperoni Venture": 22,
+		"Rogger Egg": 22,
+		"Rogger Onion": 25,
+		"Rogger Pepperoni": 25,
+
+		"Duplo Salada": 40,
+		"Duplo Burguer": 40,
+		"Triplo Cheese": 40,
+		"Duplo Cheddar": 40
+]
+
+var additionalsPriceDict = [
+	"Bacon" : 3,
+	"Ovo na chapa" : 2,
+	"Cebola Roxa no Molho Barbecue" : 3,
+	"Cebola Roxa na chapa" : 3,
+	"Catupiry" : 3,
+	"Hambúrguer Angus 180g" : 6,
+	"Doritos" : 3,
+	"Barbecue" : 3,
+	"Salada de alface e tomate" : 2,
+	"Onion" : 3,
+	"Hambúrguer de Frango" : 6,
+	"Hambúrguer Angus 120g" : 6
+]
+
 class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+
 
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
@@ -43,7 +73,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		}
 
 		for person in itemsProduct {
-			RepeatCoreDataManager().save(title: (person.value(forKeyPath: "title") as? String)!, units: (person.value(forKeyPath: "units") as? String)!, adds: (person.value(forKeyPath: "adds") as? String)!)
+			RepeatCoreDataManager().save(title: (person.value(forKeyPath: "title") as? String)!, units: (person.value(forKeyPath: "units") as? String)!, adds: (person.value(forKeyPath: "adds") as? String)!, type: (person.value(forKeyPath: "type") as? String)!)
 		}
 	}
 
@@ -296,9 +326,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let adds = cell.viewWithTag(addsTag) as! UILabel
 		adds.text = fruit.value(forKeyPath: "adds") as? String
 
-		let price = cell.viewWithTag(priceTag) as! UILabel
-		price.text = "R$ 25"
-
 		let units = cell.viewWithTag(unitsTag) as! UILabel
 		units.text = fruit.value(forKeyPath: "units") as? String
 
@@ -310,6 +337,34 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		addButton!.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
 		addButton!.tag = indexPath.row
+
+		print("=====================")
+		let type = fruit.value(forKeyPath: "type") as? String
+		if(adds.text != "Sem  adicionais" && type == "Lanche" ) {
+
+			print("New  Cell")
+			var sumAdditionals = 0
+			let additionalsString = fruit.value(forKeyPath: "adds") as? String
+			let additionals = additionalsString?.replacingOccurrences(of: "Adicionais: ", with: "")
+			let arrayAdd = additionals!.components(separatedBy: " • ")
+
+			for add in  arrayAdd {
+				let separateAdd = add.components(separatedBy: " R$")
+				print(separateAdd[0])
+				let teste = additionalsPriceDict[separateAdd[0]]
+				print(teste!)
+				sumAdditionals += teste!
+			}
+			print("total dos adicionais:", sumAdditionals )
+			print("=====================")
+
+			let price = cell.viewWithTag(priceTag) as! UILabel
+			price.text = "R$ " + String(25 + sumAdditionals)
+		}
+		else {
+			let price = cell.viewWithTag(priceTag) as! UILabel
+			price.text = "R$ " + String(25)
+		}
 
 		return cell
 	}

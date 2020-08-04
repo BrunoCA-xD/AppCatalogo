@@ -66,7 +66,8 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
 		CoreDataManager().save(
 			title: titleHeader,
 			units: String(unitsInt),
-			adds: adds
+			adds: adds,
+			type: "Drink"
 		)
 
         self.dismiss(animated: true, completion: nil)
