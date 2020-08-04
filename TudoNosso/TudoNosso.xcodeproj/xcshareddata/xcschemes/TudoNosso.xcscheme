@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C40A2E7323704BA500DB87BB"
-               BuildableName = "Rogger Burgers.app"
-               BlueprintName = "Rogger"
-               ReferencedContainer = "container:Rogger.xcodeproj">
+               BuildableName = "Burger.app"
+               BlueprintName = "TudoNosso"
+               ReferencedContainer = "container:TudoNosso.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C40A2E8C23704BA700DB87BB"
-               BuildableName = "RoggerTests.xctest"
-               BlueprintName = "RoggerTests"
-               ReferencedContainer = "container:Rogger.xcodeproj">
+               BuildableName = "TudoNossoTests.xctest"
+               BlueprintName = "TudoNossoTests"
+               ReferencedContainer = "container:TudoNosso.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C40A2E9723704BA700DB87BB"
-               BuildableName = "RoggerUITests.xctest"
-               BlueprintName = "RoggerUITests"
-               ReferencedContainer = "container:Rogger.xcodeproj">
+               BuildableName = "TudoNossoUITests.xctest"
+               BlueprintName = "TudoNossoUITests"
+               ReferencedContainer = "container:TudoNosso.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C40A2E7323704BA500DB87BB"
-            BuildableName = "Rogger Burgers.app"
-            BlueprintName = "Rogger"
-            ReferencedContainer = "container:Rogger.xcodeproj">
+            BuildableName = "Burger.app"
+            BlueprintName = "TudoNosso"
+            ReferencedContainer = "container:TudoNosso.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C40A2E7323704BA500DB87BB"
-            BuildableName = "Rogger Burgers.app"
-            BlueprintName = "Rogger"
-            ReferencedContainer = "container:Rogger.xcodeproj">
+            BuildableName = "Burger.app"
+            BlueprintName = "TudoNosso"
+            ReferencedContainer = "container:TudoNosso.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

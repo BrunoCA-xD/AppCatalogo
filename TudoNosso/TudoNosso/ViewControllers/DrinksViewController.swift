@@ -104,6 +104,11 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     @IBOutlet weak var onionImage: UIImageView!
     @IBOutlet weak var onionLabel: UILabel!
     @IBAction func addOnion(_ sender: Any) {
+        if(onionLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+            onionLabel.textColor = UIColor.black
+            onionImage.image = UIImage(named: "circle")
+        }
+        else {
             onionLabel.textColor = UIColor.init(rgb: 0x33BE00)
             onionImage.image = UIImage(named: "circleSelected")
             
@@ -112,12 +117,17 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
             
             hamburgerLabel.textColor = UIColor.black
             hambuergerImage.image = UIImage(named: "circle")
+        }
     }
     
     @IBOutlet weak var cheeseImage: UIImageView!
     @IBOutlet weak var cheeseLabel: UILabel!
     @IBAction func addCheese(_ sender: Any) {
-
+        if(cheeseLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+            cheeseLabel.textColor = UIColor.black
+            cheeseImage.image = UIImage(named: "circle")
+        }
+        else {
             cheeseLabel.textColor = UIColor.init(rgb: 0x33BE00)
             cheeseImage.image = UIImage(named: "circleSelected")
             
@@ -126,11 +136,17 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
             
             hamburgerLabel.textColor = UIColor.black
             hambuergerImage.image = UIImage(named: "circle")
+        }
     }
     
     @IBOutlet weak var hambuergerImage: UIImageView!
     @IBOutlet weak var hamburgerLabel: UILabel!
     @IBAction func addHamburger(_ sender: Any) {
+        if(hamburgerLabel.textColor == UIColor.init(rgb: 0x33BE00)) {
+            hamburgerLabel.textColor = UIColor.black
+            hambuergerImage.image = UIImage(named: "circle")
+        }
+        else {
             hamburgerLabel.textColor = UIColor.init(rgb: 0x33BE00)
             hambuergerImage.image = UIImage(named: "circleSelected")
             
@@ -139,6 +155,7 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
             
             cheeseLabel.textColor = UIColor.black
             cheeseImage.image = UIImage(named: "circle")
+        }
     }
     
     //MARK: - PROPERTIES

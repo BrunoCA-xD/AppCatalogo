@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C40A2E7323704BA500DB87BB"
-               BuildableName = "Rogger Burgers.app"
-               BlueprintName = "Rogger"
-               ReferencedContainer = "container:Rogger.xcodeproj">
+               BuildableName = "Burger.app"
+               BlueprintName = "TudoNosso"
+               ReferencedContainer = "container:TudoNosso.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C40A2E7323704BA500DB87BB"
-            BuildableName = "Rogger Burgers.app"
-            BlueprintName = "Rogger"
-            ReferencedContainer = "container:Rogger.xcodeproj">
+            BuildableName = "Burger.app"
+            BlueprintName = "TudoNosso"
+            ReferencedContainer = "container:TudoNosso.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C40A2E7323704BA500DB87BB"
-            BuildableName = "Rogger Burgers.app"
-            BlueprintName = "Rogger"
-            ReferencedContainer = "container:Rogger.xcodeproj">
+            BuildableName = "Burger.app"
+            BlueprintName = "TudoNosso"
+            ReferencedContainer = "container:TudoNosso.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

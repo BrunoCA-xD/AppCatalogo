@@ -28,4 +28,5 @@ class CellPurchase: UITableViewCell {
 			unitsItem.text = String(Int(unitsItem.text!)! - 1)
 		}
 	}
+
 }

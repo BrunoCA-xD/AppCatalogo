@@ -53,16 +53,16 @@
 		162820122372FEF700CCFCBE /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		1663B33623730D90005E3363 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		1663B33723730D90005E3363 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		C40A2E7423704BA500DB87BB /* Rogger Burgers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rogger Burgers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A2E7423704BA500DB87BB /* Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40A2E7723704BA500DB87BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40A2E8123704BA500DB87BB /* TudoNosso.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TudoNosso.xcdatamodel; sourceTree = "<group>"; };
 		C40A2E8323704BA700DB87BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40A2E8623704BA700DB87BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40A2E8823704BA700DB87BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C40A2E8D23704BA700DB87BB /* RoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A2E8D23704BA700DB87BB /* TudoNossoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TudoNossoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40A2E9123704BA700DB87BB /* TudoNossoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TudoNossoTests.swift; sourceTree = "<group>"; };
 		C40A2E9323704BA700DB87BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C40A2E9823704BA700DB87BB /* RoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A2E9823704BA700DB87BB /* TudoNossoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TudoNossoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40A2E9C23704BA700DB87BB /* TudoNossoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TudoNossoUITests.swift; sourceTree = "<group>"; };
 		C40A2E9E23704BA700DB87BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40A2EAE23704E7C00DB87BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 		C40A2E7523704BA500DB87BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C40A2E7423704BA500DB87BB /* Rogger Burgers.app */,
-				C40A2E8D23704BA700DB87BB /* RoggerTests.xctest */,
-				C40A2E9823704BA700DB87BB /* RoggerUITests.xctest */,
+				C40A2E7423704BA500DB87BB /* Burger.app */,
+				C40A2E8D23704BA700DB87BB /* TudoNossoTests.xctest */,
+				C40A2E9823704BA700DB87BB /* TudoNossoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C40A2E7323704BA500DB87BB /* Rogger */ = {
+		C40A2E7323704BA500DB87BB /* TudoNosso */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C40A2EA123704BA700DB87BB /* Build configuration list for PBXNativeTarget "Rogger" */;
+			buildConfigurationList = C40A2EA123704BA700DB87BB /* Build configuration list for PBXNativeTarget "TudoNosso" */;
 			buildPhases = (
 				C40A2E7023704BA500DB87BB /* Sources */,
 				C40A2E7123704BA500DB87BB /* Frameworks */,
@@ -235,14 +235,14 @@
 			);
 			dependencies = (
 			);
-			name = Rogger;
+			name = TudoNosso;
 			productName = TudoNosso;
-			productReference = C40A2E7423704BA500DB87BB /* Rogger Burgers.app */;
+			productReference = C40A2E7423704BA500DB87BB /* Burger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C40A2E8C23704BA700DB87BB /* RoggerTests */ = {
+		C40A2E8C23704BA700DB87BB /* TudoNossoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C40A2EA423704BA700DB87BB /* Build configuration list for PBXNativeTarget "RoggerTests" */;
+			buildConfigurationList = C40A2EA423704BA700DB87BB /* Build configuration list for PBXNativeTarget "TudoNossoTests" */;
 			buildPhases = (
 				C40A2E8923704BA700DB87BB /* Sources */,
 				C40A2E8A23704BA700DB87BB /* Frameworks */,
@@ -253,14 +253,14 @@
 			dependencies = (
 				C40A2E8F23704BA700DB87BB /* PBXTargetDependency */,
 			);
-			name = RoggerTests;
+			name = TudoNossoTests;
 			productName = TudoNossoTests;
-			productReference = C40A2E8D23704BA700DB87BB /* RoggerTests.xctest */;
+			productReference = C40A2E8D23704BA700DB87BB /* TudoNossoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C40A2E9723704BA700DB87BB /* RoggerUITests */ = {
+		C40A2E9723704BA700DB87BB /* TudoNossoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C40A2EA723704BA700DB87BB /* Build configuration list for PBXNativeTarget "RoggerUITests" */;
+			buildConfigurationList = C40A2EA723704BA700DB87BB /* Build configuration list for PBXNativeTarget "TudoNossoUITests" */;
 			buildPhases = (
 				C40A2E9423704BA700DB87BB /* Sources */,
 				C40A2E9523704BA700DB87BB /* Frameworks */,
@@ -271,9 +271,9 @@
 			dependencies = (
 				C40A2E9A23704BA700DB87BB /* PBXTargetDependency */,
 			);
-			name = RoggerUITests;
+			name = TudoNossoUITests;
 			productName = TudoNossoUITests;
-			productReference = C40A2E9823704BA700DB87BB /* RoggerUITests.xctest */;
+			productReference = C40A2E9823704BA700DB87BB /* TudoNossoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -299,7 +299,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C40A2E6F23704BA500DB87BB /* Build configuration list for PBXProject "Rogger" */;
+			buildConfigurationList = C40A2E6F23704BA500DB87BB /* Build configuration list for PBXProject "TudoNosso" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -313,9 +313,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C40A2E7323704BA500DB87BB /* Rogger */,
-				C40A2E8C23704BA700DB87BB /* RoggerTests */,
-				C40A2E9723704BA700DB87BB /* RoggerUITests */,
+				C40A2E7323704BA500DB87BB /* TudoNosso */,
+				C40A2E8C23704BA700DB87BB /* TudoNossoTests */,
+				C40A2E9723704BA700DB87BB /* TudoNossoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -393,12 +393,12 @@
 /* Begin PBXTargetDependency section */
 		C40A2E8F23704BA700DB87BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C40A2E7323704BA500DB87BB /* Rogger */;
+			target = C40A2E7323704BA500DB87BB /* TudoNosso */;
 			targetProxy = C40A2E8E23704BA700DB87BB /* PBXContainerItemProxy */;
 		};
 		C40A2E9A23704BA700DB87BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C40A2E7323704BA500DB87BB /* Rogger */;
+			target = C40A2E7323704BA500DB87BB /* TudoNosso */;
 			targetProxy = C40A2E9923704BA700DB87BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -541,8 +541,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joaoFlores.Rogger;
-				PRODUCT_NAME = "Rogger Burgers";
+				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.Burger;
+				PRODUCT_NAME = Burger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -560,8 +560,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joaoFlores.Rogger;
-				PRODUCT_NAME = "Rogger Burgers";
+				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.Burger;
+				PRODUCT_NAME = Burger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -585,7 +585,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rogger.app/Rogger";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TudoNosso.app/TudoNosso";
 			};
 			name = Debug;
 		};
@@ -607,7 +607,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rogger.app/Rogger";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TudoNosso.app/TudoNosso";
 			};
 			name = Release;
 		};
@@ -654,7 +654,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C40A2E6F23704BA500DB87BB /* Build configuration list for PBXProject "Rogger" */ = {
+		C40A2E6F23704BA500DB87BB /* Build configuration list for PBXProject "TudoNosso" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C40A2E9F23704BA700DB87BB /* Debug */,
@@ -663,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C40A2EA123704BA700DB87BB /* Build configuration list for PBXNativeTarget "Rogger" */ = {
+		C40A2EA123704BA700DB87BB /* Build configuration list for PBXNativeTarget "TudoNosso" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C40A2EA223704BA700DB87BB /* Debug */,
@@ -672,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C40A2EA423704BA700DB87BB /* Build configuration list for PBXNativeTarget "RoggerTests" */ = {
+		C40A2EA423704BA700DB87BB /* Build configuration list for PBXNativeTarget "TudoNossoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C40A2EA523704BA700DB87BB /* Debug */,
@@ -681,7 +681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C40A2EA723704BA700DB87BB /* Build configuration list for PBXNativeTarget "RoggerUITests" */ = {
+		C40A2EA723704BA700DB87BB /* Build configuration list for PBXNativeTarget "TudoNossoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C40A2EA823704BA700DB87BB /* Debug */,

@@ -151,7 +151,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		updateTotalValue()
 	}
 
-//	MARK: - UIALERT
+	//	MARK: - UIALERT
 	func showAlert(title: String, message: String) {
 
 		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -177,7 +177,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		picker.delegate = self
 
 
-        payformText.inputAccessoryView = inputAccessoryViewPicker
+		payformText.inputAccessoryView = inputAccessoryViewPicker
 		payformText.inputView = picker
 	}
 
@@ -352,7 +352,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		return itemsProduct.count
 	}
 
-//	MARK: - Textfield
+	//	MARK: - Textfield
 	//IBOutlet
 	@IBOutlet weak var nameText: UITextField!
 	@IBOutlet weak var endressText: UITextField!
@@ -375,7 +375,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 
-//	MARK:  - Keyboard
+	//	MARK:  - Keyboard
 
 	func setepKeyboard() {
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -399,7 +399,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 	@objc func dismissKeyboard() {
-			view.endEditing(true)
+		view.endEditing(true)
 	}
 
 	@objc func keyboardWillShow(sender: NSNotification) {
@@ -429,7 +429,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		return true
 	}
 
-//	MARK: - COREDATA
+	//	MARK: - COREDATA
 	var itemsProduct: [NSManagedObject] = []
 
 	func updateData() {
