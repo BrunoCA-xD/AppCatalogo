@@ -116,7 +116,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
-		let phoneNumber =  "+5514996525883" // you need to change this number
+		let phoneNumber =  "+5514998985367" // you need to change this number
 
 		let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)&text=\(str)")!
 		if UIApplication.shared.canOpenURL(appURL) {

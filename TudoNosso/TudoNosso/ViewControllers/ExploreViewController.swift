@@ -32,7 +32,7 @@ class ExploreViewController: UIViewController {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "Ligar", style: .default, handler: { (action) -> Void in
-            let number = 14996525883
+            let number = 14998985367
             if let url = URL(string: "tel://\(number)") {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url)
@@ -65,7 +65,7 @@ class ExploreViewController: UIViewController {
             
             str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
             
-            let phoneNumber =  "+5514996525883" // you need to change this number
+            let phoneNumber =  "+5514998985367" // you need to change this number
             
             let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)&text=\(str)")!
             if UIApplication.shared.canOpenURL(appURL) {
