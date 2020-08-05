@@ -9,8 +9,49 @@
 import UIKit
 import CoreData
 
+
+//
+//  CarrinhoViewController.swift
+//  TudoNosso
+//
+//  Created by Joao Flores on 20/07/20.
+//  Copyright © 2020 Joao Flores. All rights reserved.
+//
+
 class RepeatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
+	var dictPrice =
+		[
+			"Bacon Cheddar": 22,
+			"Pepperoni Venture": 22,
+			"Rogger Egg": 22,
+			"Rogger Onion": 25,
+			"Rogger Pepperoni": 25,
+
+			"Duplo Salada": 40,
+			"Duplo Burguer": 40,
+			"Triplo Cheese": 40,
+			"Duplo Cheddar": 40,
+
+			"Refrigerante": 5,
+			"Cerveja": 8,
+			"Água": 5
+	]
+
+	var additionalsPriceDict = [
+		"Bacon" : 3,
+		"Ovo na chapa" : 2,
+		"Cebola Roxa no Molho Barbecue" : 3,
+		"Cebola Roxa na chapa" : 3,
+		"Catupiry" : 3,
+		"Hambúrguer Angus 180g" : 6,
+		"Doritos" : 3,
+		"Barbecue" : 3,
+		"Salada de alface e tomate" : 2,
+		"Onion" : 3,
+		"Hambúrguer de Frango" : 6,
+		"Hambúrguer Angus 120g" : 6
+	]
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
 	@IBOutlet weak var tableItens: UITableView!
@@ -34,12 +75,12 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 			price = price.replacingOccurrences(of: "R$ ", with: "")
 			let adds = cell.additionalsLabel.text!
 			let aditionals = "_" + adds + "_"
-			let product = unitsString + title + "R$ " + price  + "\n" + aditionals
+			let product = "*" + unitsString + title + "R$" + price  + "*" + "\n" + aditionals
 
 			productsArray.append(product)
 
 			print(price)
-			totalPrice += Int(price)! * Int(units)!
+			totalPrice += Int(price)!
 		}
 
 		let productsList = productsArray.joined(separator:" \n\n") + "\n\n"
@@ -55,7 +96,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		var str =
 			"*Nome:* " + name +
 				"\n*Endereço:* " + endress +
-				"\n\n*Pedido*\n" + productsList
+				"\n\n*Pedido*\n\n" + productsList
 
 		if let observation = obs {
 			if(observation != "") {
@@ -67,11 +108,11 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 
 		if let retrunMoney = troco {
 			if(retrunMoney != "") {
-				str += "\n*Troco:* R$ " + retrunMoney
+				str += "\n*Troco:* R$" + retrunMoney
 			}
 		}
 
-		str += "\n\n*Total:* R$ " + price
+		str += "\n\n*Total: R$" + price + "*"
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -146,7 +187,6 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		picker.dataSource = self
 		picker.delegate = self
 
-
 		payformText.inputAccessoryView = inputAccessoryViewPicker
 		payformText.inputView = picker
 	}
@@ -173,10 +213,9 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 			for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
 				let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-				let units = (cell.unitsItem.text ?? "1")
 				var price = cell.priceLabel.text!
 				price = price.replacingOccurrences(of: "R$ ", with: "")
-				totalPrice += Int(price)! * Int(units)!
+				totalPrice += Int(price)!
 			}
 			let price = String(totalPrice)
 
@@ -266,9 +305,6 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		let adds = cell.viewWithTag(addsTag) as! UILabel
 		adds.text = fruit.value(forKeyPath: "adds") as? String
 
-		let price = cell.viewWithTag(priceTag) as! UILabel
-		price.text = "R$ 25"
-
 		let units = cell.viewWithTag(unitsTag) as! UILabel
 		units.text = fruit.value(forKeyPath: "units") as? String
 
@@ -280,6 +316,31 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 
 		addButton!.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
 		addButton!.tag = indexPath.row
+
+		let type = fruit.value(forKeyPath: "type") as? String
+		if(adds.text != "Adicionais: Sem  adicionais" && type == "Lanches" ) {
+
+			print("New  Cell")
+			var sumAdditionals = 0
+			let additionalsString = fruit.value(forKeyPath: "adds") as? String
+			let additionals = additionalsString?.replacingOccurrences(of: "Adicionais: ", with: "")
+			let arrayAdd = additionals!.components(separatedBy: " • ")
+
+			for add in  arrayAdd {
+				let teste = additionalsPriceDict[add]
+				print(teste!)
+				sumAdditionals += teste!
+			}
+
+			let price = cell.viewWithTag(priceTag) as! UILabel
+			price.text = "R$ " + String((dictPrice[title.text!]! + sumAdditionals) * Int(units.text!)!)
+			cell.priceUnit = dictPrice[title.text!]! + sumAdditionals
+		}
+		else {
+			let price = cell.viewWithTag(priceTag) as! UILabel
+			price.text = "R$ " + String(dictPrice[title.text!]! * Int(units.text!)!)
+			cell.priceUnit = dictPrice[title.text!]!
+		}
 
 		return cell
 	}
@@ -293,7 +354,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		}
 
 		let managedContext = appDelegate.persistentContainer.viewContext
-		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "RepeatPurchase")
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
 		if let result = try? managedContext.fetch(fetchRequest) {
 			managedContext.delete(result[buttonTag])
 		}
@@ -333,7 +394,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 	func setupTextFields() {
 		nameText.text = UserDefaults.standard.string(forKey: "nameText")
 		endressText.text = UserDefaults.standard.string(forKey: "endressText")
-		payformText.text = UserDefaults.standard.string(forKey: "payformText") ?? "Cartão"
+		payformText.text = "Cartão"
 		obsText.text = UserDefaults.standard.string(forKey: "obsText")
 	}
 
@@ -408,7 +469,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
 		}
 
 		let managedContext = appDelegate.persistentContainer.viewContext
-		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "RepeatPurchase")
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrentPurchase")
 
 		do {
 			itemsProduct = try managedContext.fetch(fetchRequest)

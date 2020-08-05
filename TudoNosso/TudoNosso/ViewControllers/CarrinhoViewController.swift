@@ -9,41 +9,40 @@
 import UIKit
 import CoreData
 
-var dictPrice =
-	[
-		"Bacon Cheddar": 22,
-		"Pepperoni Venture": 22,
-		"Rogger Egg": 22,
-		"Rogger Onion": 25,
-		"Rogger Pepperoni": 25,
-
-		"Duplo Salada": 40,
-		"Duplo Burguer": 40,
-		"Triplo Cheese": 40,
-		"Duplo Cheddar": 40,
-
-		"Refrigerante": 5,
-		"Cerveja": 8,
-		"Água": 5
-]
-
-var additionalsPriceDict = [
-	"Bacon" : 3,
-	"Ovo na chapa" : 2,
-	"Cebola Roxa no Molho Barbecue" : 3,
-	"Cebola Roxa na chapa" : 3,
-	"Catupiry" : 3,
-	"Hambúrguer Angus 180g" : 6,
-	"Doritos" : 3,
-	"Barbecue" : 3,
-	"Salada de alface e tomate" : 2,
-	"Onion" : 3,
-	"Hambúrguer de Frango" : 6,
-	"Hambúrguer Angus 120g" : 6
-]
-
 class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
+	var dictPrice =
+		[
+			"Bacon Cheddar": 22,
+			"Pepperoni Venture": 22,
+			"Rogger Egg": 22,
+			"Rogger Onion": 25,
+			"Rogger Pepperoni": 25,
+
+			"Duplo Salada": 40,
+			"Duplo Burguer": 40,
+			"Triplo Cheese": 40,
+			"Duplo Cheddar": 40,
+
+			"Refrigerante": 5,
+			"Cerveja": 8,
+			"Água": 5
+	]
+
+	var additionalsPriceDict = [
+		"Bacon" : 3,
+		"Ovo na chapa" : 2,
+		"Cebola Roxa no Molho Barbecue" : 3,
+		"Cebola Roxa na chapa" : 3,
+		"Catupiry" : 3,
+		"Hambúrguer Angus 180g" : 6,
+		"Doritos" : 3,
+		"Barbecue" : 3,
+		"Salada de alface e tomate" : 2,
+		"Onion" : 3,
+		"Hambúrguer de Frango" : 6,
+		"Hambúrguer Angus 120g" : 6
+	]
 
 	//  MARK: - IBAction
 	@IBOutlet weak var buttonSend: UIButton!
