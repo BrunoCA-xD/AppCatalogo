@@ -767,7 +767,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj0-VR-ZA6">
-                                                            <rect key="frame" x="129" y="10" width="142" height="20"/>
+                                                            <rect key="frame" x="129" y="10" width="162" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="QAm-D3-zYa"/>
                                                             </constraints>
@@ -776,9 +776,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9En-7V-ruy">
-                                                            <rect key="frame" x="281" y="10" width="70" height="20.5"/>
+                                                            <rect key="frame" x="301" y="10" width="50" height="20.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="u3g-uS-WbJ"/>
+                                                                <constraint firstAttribute="width" constant="50" id="u3g-uS-WbJ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="15"/>
                                                             <nil key="textColor"/>

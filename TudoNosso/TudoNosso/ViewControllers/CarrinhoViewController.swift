@@ -135,7 +135,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			}
 		}
 
-		str += "\n\n*Total:* R$" + price
+		str += "\n\n*Total: R$" + price + "*"
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -350,9 +350,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			let arrayAdd = additionals!.components(separatedBy: " • ")
 
 			for add in  arrayAdd {
-				let separateAdd = add.components(separatedBy: " R$")
-				print(separateAdd[0])
-				let teste = additionalsPriceDict[separateAdd[0]]
+				let teste = additionalsPriceDict[add]
 				print(teste!)
 				sumAdditionals += teste!
 			}

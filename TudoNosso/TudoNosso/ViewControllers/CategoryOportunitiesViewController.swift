@@ -113,7 +113,10 @@ class CategoryOportunitiesViewController : UIViewController,UISearchBarDelegate 
 
 		for add in additionalLabels {
 			if(add.textColor == UIColor.init(rgb: 0x33BE00)) {
-				addsVet.append(add.text!)
+				let adds = add.text!
+				let separateAdd = adds.components(separatedBy: " R$")
+				print(separateAdd[0])
+				addsVet.append(separateAdd[0])
 			}
 		}
 
