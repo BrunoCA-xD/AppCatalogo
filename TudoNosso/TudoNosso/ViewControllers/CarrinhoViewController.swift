@@ -98,7 +98,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			price = price.replacingOccurrences(of: "R$ ", with: "")
 			let adds = cell.additionalsLabel.text!
 			let aditionals = "_" + adds + "_"
-			let product = unitsString + title + "R$ " + price  + "\n" + aditionals
+			let product = "*" + unitsString + title + "R$" + price  + "*" + "\n" + aditionals
 
 			productsArray.append(product)
 
@@ -119,7 +119,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		var str =
 			"*Nome:* " + name +
 				"\n*Endereço:* " + endress +
-				"\n\n*Pedido*\n" + productsList
+				"\n\n*Pedido*\n\n" + productsList
 
 		if let observation = obs {
 			if(observation != "") {
@@ -131,11 +131,11 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 		if let retrunMoney = troco {
 			if(retrunMoney != "") {
-				str += "\n*Troco:* R$ " + retrunMoney
+				str += "\n*Troco:* R$" + retrunMoney
 			}
 		}
 
-		str += "\n\n*Total:* R$ " + price
+		str += "\n\n*Total:* R$" + price
 
 		str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
 
@@ -209,7 +209,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		let picker = UIPickerView(frame: CGRect(x: 0, y: self.view.frame.size.height-320, width: self.view.frame.size.width, height: 320))
 		picker.dataSource = self
 		picker.delegate = self
-
 
 		payformText.inputAccessoryView = inputAccessoryViewPicker
 		payformText.inputView = picker
@@ -360,7 +359,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 
 			let price = cell.viewWithTag(priceTag) as! UILabel
 			price.text = "R$ " + String((dictPrice[title.text!]! + sumAdditionals) * Int(units.text!)!)
-			cell.priceUnit = (dictPrice[title.text!]! + sumAdditionals) * Int(units.text!)!
+			cell.priceUnit = dictPrice[title.text!]! + sumAdditionals
 		}
 		else {
 			let price = cell.viewWithTag(priceTag) as! UILabel
@@ -420,7 +419,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 	func setupTextFields() {
 		nameText.text = UserDefaults.standard.string(forKey: "nameText")
 		endressText.text = UserDefaults.standard.string(forKey: "endressText")
-		payformText.text = UserDefaults.standard.string(forKey: "payformText") ?? "Cartão"
+		payformText.text = "Cartão"
 		obsText.text = UserDefaults.standard.string(forKey: "obsText")
 	}
 
