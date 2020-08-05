@@ -103,7 +103,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			productsArray.append(product)
 
 			print(price)
-			totalPrice += Int(price)! * Int(units)!
+			totalPrice += Int(price)!
 		}
 
 		let productsList = productsArray.joined(separator:" \n\n") + "\n\n"
