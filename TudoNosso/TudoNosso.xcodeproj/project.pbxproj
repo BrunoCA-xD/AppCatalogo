@@ -53,7 +53,7 @@
 		162820122372FEF700CCFCBE /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		1663B33623730D90005E3363 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		1663B33723730D90005E3363 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		C40A2E7423704BA500DB87BB /* Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A2E7423704BA500DB87BB /* Rogger Burguers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rogger Burguers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40A2E7723704BA500DB87BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40A2E8123704BA500DB87BB /* TudoNosso.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TudoNosso.xcdatamodel; sourceTree = "<group>"; };
 		C40A2E8323704BA700DB87BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		C40A2E7523704BA500DB87BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C40A2E7423704BA500DB87BB /* Burger.app */,
+				C40A2E7423704BA500DB87BB /* Rogger Burguers.app */,
 				C40A2E8D23704BA700DB87BB /* TudoNossoTests.xctest */,
 				C40A2E9823704BA700DB87BB /* TudoNossoUITests.xctest */,
 			);
@@ -237,7 +237,7 @@
 			);
 			name = TudoNosso;
 			productName = TudoNosso;
-			productReference = C40A2E7423704BA500DB87BB /* Burger.app */;
+			productReference = C40A2E7423704BA500DB87BB /* Rogger Burguers.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C40A2E8C23704BA700DB87BB /* TudoNossoTests */ = {
@@ -542,7 +542,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.Burger;
-				PRODUCT_NAME = Burger;
+				PRODUCT_NAME = "Rogger Burguers";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -561,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = joaoFlores.Burger;
-				PRODUCT_NAME = Burger;
+				PRODUCT_NAME = "Rogger Burguers";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
