@@ -98,7 +98,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			price = price.replacingOccurrences(of: "R$ ", with: "")
 			let adds = cell.additionalsLabel.text!
 			let aditionals = "_" + adds + "_"
-			let product = unitsString + title + "R$ " + price  + "\n" + aditionals
+			let product = "*" + unitsString + title + "R$" + price  + "*" + "\n" + aditionals
 
 			productsArray.append(product)
 
@@ -119,7 +119,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		var str =
 			"*Nome:* " + name +
 				"\n*Endereço:* " + endress +
-				"\n\n*Pedido*\n" + productsList
+				"\n\n*Pedido*\n\n" + productsList
 
 		if let observation = obs {
 			if(observation != "") {
