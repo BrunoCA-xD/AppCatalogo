@@ -357,11 +357,11 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			}
 
 			let price = cell.viewWithTag(priceTag) as! UILabel
-			price.text = "R$ " + String(25 + sumAdditionals)
+			price.text = "R$ " + String(dictPrice[title.text!]! + sumAdditionals)
 		}
 		else {
 			let price = cell.viewWithTag(priceTag) as! UILabel
-			price.text = "R$ " + String(25)
+			price.text = "R$ " + String(dictPrice[title.text!]!)
 		}
 
 		return cell
