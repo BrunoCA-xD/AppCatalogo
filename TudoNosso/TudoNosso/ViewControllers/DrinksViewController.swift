@@ -13,9 +13,9 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     //MARK: - Variables
     var dictPrice =
     [
-        "Refrigerante": "R$ 5",
-        "Cerveja": "R$ 8",
-        "Água": "R$ 5"
+        "Refrigerante": 5,
+        "Cerveja": 8,
+        "Água": 5
     ]
     
     var dictDescription =
@@ -93,12 +93,14 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     @IBAction func addUnit(_ sender: Any) {
         unitsInt += 1
         unitsProduct.text = String(unitsInt)
+		priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt))
     }
     
     @IBAction func subUnit(_ sender: Any) {
         if(unitsInt > 1) {
             unitsInt -= 1
             unitsProduct.text = String(unitsInt)
+			priceLabel.text = "R$ " + String((dictPrice[titleHeader]! * unitsInt))
         }
     }
     
@@ -174,7 +176,7 @@ class DrinksViewController: UIViewController,UISearchBarDelegate {
     
     func setupPopulate() {
         
-        priceLabel.text = dictPrice[titleHeader]
+        priceLabel.text = "R$ " + String(dictPrice[titleHeader]!)
         descriptionLabel.text = dictDescription[titleHeader]
         
         var currentTitle = titleHeader.replacingOccurrences(of: " 1", with: "", options: .literal, range: nil)

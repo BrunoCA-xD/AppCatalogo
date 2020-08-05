@@ -20,7 +20,11 @@ var dictPrice =
 		"Duplo Salada": 40,
 		"Duplo Burguer": 40,
 		"Triplo Cheese": 40,
-		"Duplo Cheddar": 40
+		"Duplo Cheddar": 40,
+
+		"Refrigerante": 5,
+		"Cerveja": 8,
+		"Água": 5
 ]
 
 var additionalsPriceDict = [
@@ -233,10 +237,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			for x in 0...(tableItens.numberOfRows(inSection: 0)-1) {
 				let cell = tableItens.cellForRow(at: IndexPath(row: x, section: 0)) as! CellPurchase
 
-				let units = (cell.unitsItem.text ?? "1")
 				var price = cell.priceLabel.text!
 				price = price.replacingOccurrences(of: "R$ ", with: "")
-				totalPrice += Int(price)! * Int(units)!
+				totalPrice += Int(price)!
 			}
 			let price = String(totalPrice)
 
@@ -338,9 +341,8 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 		addButton!.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
 		addButton!.tag = indexPath.row
 
-		print("=====================")
 		let type = fruit.value(forKeyPath: "type") as? String
-		if(adds.text != "Sem  adicionais" && type == "Lanches" ) {
+		if(adds.text != "Adicionais: Sem  adicionais" && type == "Lanches" ) {
 
 			print("New  Cell")
 			var sumAdditionals = 0
@@ -357,11 +359,13 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource, UITableVi
 			}
 
 			let price = cell.viewWithTag(priceTag) as! UILabel
-			price.text = "R$ " + String(dictPrice[title.text!]! + sumAdditionals)
+			price.text = "R$ " + String((dictPrice[title.text!]! + sumAdditionals) * Int(units.text!)!)
+			cell.priceUnit = (dictPrice[title.text!]! + sumAdditionals) * Int(units.text!)!
 		}
 		else {
 			let price = cell.viewWithTag(priceTag) as! UILabel
-			price.text = "R$ " + String(dictPrice[title.text!]!)
+			price.text = "R$ " + String(dictPrice[title.text!]! * Int(units.text!)!)
+			cell.priceUnit = dictPrice[title.text!]!
 		}
 
 		return cell

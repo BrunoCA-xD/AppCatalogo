@@ -767,20 +767,20 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj0-VR-ZA6">
-                                                            <rect key="frame" x="129" y="10" width="162" height="20"/>
+                                                            <rect key="frame" x="129" y="10" width="142" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="QAm-D3-zYa"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9En-7V-ruy">
-                                                            <rect key="frame" x="301" y="7.5" width="50" height="25"/>
+                                                            <rect key="frame" x="281" y="9" width="70" height="22"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="u3g-uS-WbJ"/>
+                                                                <constraint firstAttribute="width" constant="70" id="u3g-uS-WbJ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1273,7 +1273,7 @@
         <!--Cadastro Organização-->
         <scene sceneID="t7M-vf-V0g">
             <objects>
-                <viewController storyboardIdentifier="SegueCardsViewController" id="37x-6u-6vd" customClass="CategoryOportunitiesViewController" customModule="Rogger_Burgers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SegueCardsViewController" id="37x-6u-6vd" customClass="CategoryOportunitiesViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwU-QJ-qEg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
