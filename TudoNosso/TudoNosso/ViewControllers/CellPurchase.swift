@@ -40,13 +40,13 @@ class CellPurchase: UITableViewCell {
 
 	@IBAction func AddButton(_ sender: Any) {
 		unitsItem.text = String(Int(unitsItem.text!)! + 1)
-		priceLabel.text = "R$" + String(priceUnit * Int(unitsItem.text!)!)
+		priceLabel.text = "R$ " + String(priceUnit * Int(unitsItem.text!)!)
 	}
 
 	@IBAction func subButton(_ sender: Any) {
 		if(Int(unitsItem.text!)! > 1) {
 			unitsItem.text = String(Int(unitsItem.text!)! - 1)
-			priceLabel.text = "R$" + String(priceUnit * Int(unitsItem.text!)!)
+			priceLabel.text = "R$ " + String(priceUnit * Int(unitsItem.text!)!)
 		}
 	}
 

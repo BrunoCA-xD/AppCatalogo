@@ -44,7 +44,24 @@ class ExploreViewController: UIViewController {
             
             var str =
                 
-                "Olá, gostaria de realizar um novo pedido"
+                "*Pedido* \n" +
+                "1x Bacon Cheddar \n" +
+                "   * _catupiry_\n" +
+                "   * _onion_\n\n" +
+                
+                "1x Guaraná lata \n\n" +
+                    
+                "*Observações* \n" +
+                "Lanche sem alface\n\n" +
+            
+                "*Pagamento* \n" +
+                "Cartão Elo \n\n" +
+                    
+                "*Total* \n" +
+                "R$ 30,00 \n\n" +
+                    
+                "*Endereço* \n" +
+                "Rua Número, Bairro - Cidade"
             
             str = str.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
             
