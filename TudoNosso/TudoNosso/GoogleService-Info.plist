@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1026194487575-a9ajfnqjdnaeihuk24bi5j0kb339e9cu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1026194487575-a9ajfnqjdnaeihuk24bi5j0kb339e9cu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJmmp6U42n1m0e5jvuFAjIFxbS8g-pM_U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1026194487575</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>joaoFlores.Burger</string>
+	<key>PROJECT_ID</key>
+	<string>roggerapp-1b9b8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>roggerapp-1b9b8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1026194487575:ios:8052850e8ad2c4dd825f52</string>
+	<key>DATABASE_URL</key>
+	<string>https://roggerapp-1b9b8.firebaseio.com</string>
+</dict>
+</plist>
