@@ -29,6 +29,7 @@ struct Snack {
             let name: String = Self.snapshotFieldReader(snapshot, .name),
             let price: Float = Self.snapshotFieldReader(snapshot, .price)
         else { return nil }
+        self.id = id
         self.name = name
         self.price = price
         self.description = Self.snapshotFieldReader(snapshot, .description)
