@@ -10,6 +10,7 @@ import Foundation
 
 protocol DatabaseManipulatable {
     associatedtype fieldEnum
+    var id: String? {get set}
 
     var representation: [String: Any] { get }
     static func interpret(data: NSDictionary) -> Self?
