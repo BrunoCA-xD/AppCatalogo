@@ -83,3 +83,7 @@ class DrinkDAO: GenericsDAO {
         }
     }
 }
+
+extension DrinkDAO: StorageAccessor {
+    var storageName: String {TABLENAME}
+}

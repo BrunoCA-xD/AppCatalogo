@@ -82,3 +82,7 @@ class AdditionalDAO: GenericsDAO {
         }
     }
 }
+
+extension AdditionalDAO: StorageAccessor {
+    var storageName: String {TABLENAME}
+}

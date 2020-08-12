@@ -81,3 +81,7 @@ class PromotionDAO: GenericsDAO {
         }
     }
 }
+
+extension PromotionDAO: StorageAccessor {
+    var storageName: String {TABLENAME}
+}

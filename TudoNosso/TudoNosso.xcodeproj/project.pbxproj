@@ -23,6 +23,7 @@
 		5671B74424E1F47B00D71661 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671B73724E1F47B00D71661 /* Drink.swift */; };
 		5671B74524E1F47B00D71661 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671B73824E1F47B00D71661 /* Snack.swift */; };
 		5671B74624E1F47B00D71661 /* DatabaseManipulatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671B73924E1F47B00D71661 /* DatabaseManipulatable.swift */; };
+		5671B74B24E346D600D71661 /* StorageAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671B74724E232B200D71661 /* StorageAccessor.swift */; };
 		567284DC2384106B00DF4EA5 /* TudoNossoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A2E9123704BA700DB87BB /* TudoNossoTests.swift */; };
 		9ED3269579744F305D9F06AD /* Pods_TudoNosso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67838C4DD60C569D0085F39A /* Pods_TudoNosso.framework */; };
 		C40A2E7823704BA500DB87BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A2E7723704BA500DB87BB /* AppDelegate.swift */; };
@@ -83,6 +84,7 @@
 		5671B73724E1F47B00D71661 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		5671B73824E1F47B00D71661 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		5671B73924E1F47B00D71661 /* DatabaseManipulatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManipulatable.swift; sourceTree = "<group>"; };
+		5671B74724E232B200D71661 /* StorageAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageAccessor.swift; sourceTree = "<group>"; };
 		67838C4DD60C569D0085F39A /* Pods_TudoNosso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TudoNosso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9351FEC89066BC416C5EE9A6 /* Pods_TudoNosso_TudoNossoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TudoNosso_TudoNossoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8D098870F343887258C7E /* Pods-TudoNosso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TudoNosso.release.xcconfig"; path = "Target Support Files/Pods-TudoNosso/Pods-TudoNosso.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,12 +198,13 @@
 		5671B72F24E1F47B00D71661 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				5671B74724E232B200D71661 /* StorageAccessor.swift */,
 				5671B73024E1F47B00D71661 /* DrinkDAO.swift */,
 				5671B73124E1F47B00D71661 /* PromotionDAO.swift */,
 				5671B73224E1F47B00D71661 /* PortionDAO.swift */,
 				5671B73324E1F47B00D71661 /* AdditionalDAO.swift */,
-				5671B73424E1F47B00D71661 /* GenericsDAO.swift */,
 				5671B73524E1F47B00D71661 /* SnackDAO.swift */,
+				5671B73424E1F47B00D71661 /* GenericsDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				5671B74424E1F47B00D71661 /* Drink.swift in Sources */,
 				5671B73F24E1F47B00D71661 /* PortionDAO.swift in Sources */,
 				C42267422371AE1B000A6DA3 /* (null) in Sources */,
+				5671B74B24E346D600D71661 /* StorageAccessor.swift in Sources */,
 				5671B73B24E1F47B00D71661 /* Portion.swift in Sources */,
 				C4EAFD7A24D3F97500D86553 /* DataManager.swift in Sources */,
 				C40A2E7823704BA500DB87BB /* AppDelegate.swift in Sources */,

@@ -81,4 +81,10 @@ class SnackDAO: GenericsDAO {
             }
         }
     }
+    
+}
+
+
+extension SnackDAO: StorageAccessor {
+    var storageName: String {TABLENAME}
 }

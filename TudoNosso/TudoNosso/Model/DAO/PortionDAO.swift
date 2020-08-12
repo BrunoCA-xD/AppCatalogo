@@ -81,3 +81,7 @@ class PortionDAO: GenericsDAO {
         }
     }
 }
+
+extension PortionDAO: StorageAccessor {
+    var storageName: String {TABLENAME}
+}
